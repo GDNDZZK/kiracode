@@ -315,6 +315,12 @@
 		--vscode-banner-background: #252526;
 		--vscode-banner-foreground: #cccccc;
 
+		/* Task timeline colors */
+		--vscode-editor-findMatchBackground: #515c6a;
+		--vscode-activityBarBadge-background: #0078d4;
+		--vscode-editorGutter-addedBackground: #2ea04380;
+		--vscode-textLink-activeForeground: #3794ff;
+
 		/* Menu (for popover component) */
 		--vscode-menu-background: #252526;
 		--vscode-menu-foreground: #cccccc;
