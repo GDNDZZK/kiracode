@@ -105,7 +105,11 @@ export async function getOCAModels(
 						? "chat-completions"
 						: "unknown",
 				...{ supportsReasoningEffort: info?.is_reasoning_model ? info?.reasoning_effort_options : false },
-				reasoningEffort: info?.is_reasoning_model ? info?.reasoning_effort_options.includes("medium") ? "medium" : info?.reasoning_effort_options[0] : undefined
+				reasoningEffort: info?.is_reasoning_model
+					? info?.reasoning_effort_options.includes("medium")
+						? "medium"
+						: info?.reasoning_effort_options[0]
+					: undefined,
 			}
 
 			models[modelId] = baseInfo
@@ -126,7 +130,7 @@ export async function getOCAModels(
 			userMsg = `Did you set up your OCA access through entitlements? OCA service returned ${status ?? "unknown"} ${statusText ?? "Unknown Status"}.`
 		} else if (req) {
 			userMsg =
-				"Only environment variable based proxy settings is supported. PAC/WPAD files(Ex: http://wpad/wpad.dat) are not supported in kilocode. Remove if any WPAD/PAC reference from your IDE proxy settings, restart the IDE, and try again. (Refer OCA Kilo troubleshooting guide.)"
+				"Only environment variable based proxy settings is supported. PAC/WPAD files(Ex: http://wpad/wpad.dat) are not supported in kiracode. Remove if any WPAD/PAC reference from your IDE proxy settings, restart the IDE, and try again. (Refer OCA Kilo troubleshooting guide.)"
 		} else {
 			userMsg = error?.message || "Error occurred while fetching OCA models."
 			console.error(userMsg, error)

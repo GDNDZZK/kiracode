@@ -133,6 +133,7 @@ export default defineConfig(({ mode }) => {
 					index: resolve(__dirname, "index.html"), // kilocode_change - DO NOT CHANGE
 					"agent-manager": resolve(__dirname, "agent-manager.html"), // kilocode_change
 					"browser-panel": resolve(__dirname, "browser-panel.html"),
+					web: resolve(__dirname, "web.html"), // kilocode_change: Web mode entry
 				},
 				output: {
 					entryFileNames: `assets/[name].js`,

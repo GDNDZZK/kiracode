@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "Welcome to Kilo Code!",
-		"introText1": "Kilo Code is a free, open source AI coding agent.",
+		"greeting": "Welcome to Kira Code!",
+		"introText1": "Kira Code is a free, open source AI coding agent.",
 		"introText2": "It works with the latest AI models like Claude Opus 4.5, Gemini 3 Pro, GPT-5.2, and 450+ more.",
 		"introText3": "Create a free account to get started.",
 		"ctaButton": "Get Started",
@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Add Credit",
-		"lowBalance": "Your Kilo Code balance is low",
+		"lowBalance": "Your Kira Code balance is low",
 		"switchToFreeModel": "Switch to Free Model instead"
 	},
 	"memoryWarning": {
@@ -73,13 +73,14 @@
 		"sections": {
 			"mcp": "MCP Servers",
 			"agentBehaviour": "Agent Behaviour",
-			"skills": "Skills"
+			"skills": "Skills",
+			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Kilo Code Account",
-			"apiKey": "Kilo Code API Key",
-			"login": "Log in at Kilo Code",
-			"logout": "Log out from Kilo Code",
+			"account": "Kira Code Account",
+			"apiKey": "Kira Code API Key",
+			"login": "Log in at Kira Code",
+			"logout": "Log out from Kira Code",
 			"loginForPremiumModels": "Log in to access premium models & features",
 			"providerRouting": {
 				"title": "Provider Routing",
@@ -115,15 +116,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Allow very large file reads",
-				"description": "When enabled, Kilo Code will perform very large file or MCP output reads even if there is a high chance of overflowing the context window (content size >80% of context window)."
+				"description": "When enabled, Kira Code will perform very large file or MCP output reads even if there is a high chance of overflowing the context window (content size >80% of context window)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Enable System Notifications",
-			"description": "When enabled, Kilo Code will send system notifications for important events like task completion or errors.",
+			"description": "When enabled, Kira Code will send system notifications for important events like task completion or errors.",
 			"testButton": "Test Notification",
-			"testTitle": "Kilo Code",
-			"testMessage": "This is a test notification from Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "This is a test notification from Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -140,11 +141,34 @@
 			"embeddingBatchSizeDescription": "Number of code segments to batch together for embedding generation and vector store upserts. Higher values can improve indexing speed but may increase memory usage. Lower values reduce memory usage but may slow down indexing.",
 			"scannerMaxBatchRetriesLabel": "Scanner Max Batch Retries",
 			"scannerMaxBatchRetriesDescription": "Maximum number of times to retry a failed batch during directory scanning. Higher values increase resilience to transient errors but may slow down indexing if errors persist. Lower values fail faster but may skip content on temporary issues."
+		},
+		"webServer": {
+			"title": "Web Access",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code wants to condense your conversation",
+			"wantsToCondense": "Kira Code wants to condense your conversation",
 			"condenseConversation": "Condense Conversation"
 		},
 		"seeNewChanges": "See New Changes",
@@ -183,14 +207,14 @@
 			"modes": "Modes",
 			"skills": "Skills"
 		},
-		"ariaLabel": "Kilo Code Rules",
+		"ariaLabel": "Kira Code Rules",
 		"tabs": {
 			"rules": "Rules",
 			"workflows": "Workflows"
 		},
 		"description": {
-			"rules": "Rules allow you to provide Kilo Code with instructions it should follow in all modes and for all prompts. They are a persistent way to include context and preferences for all conversations in your workspace or globally.",
-			"workflows": "Workflows are a prepared template for a conversation. Workflows can allow you to define prompts you use frequently, and can include a series of steps to guide Kilo Code through repetitive tasks, such as deploying a service or submitting a PR. To invoke a workflow, type",
+			"rules": "Rules allow you to provide Kira Code with instructions it should follow in all modes and for all prompts. They are a persistent way to include context and preferences for all conversations in your workspace or globally.",
+			"workflows": "Workflows are a prepared template for a conversation. Workflows can allow you to define prompts you use frequently, and can include a series of steps to guide Kira Code through repetitive tasks, such as deploying a service or submitting a PR. To invoke a workflow, type",
 			"workflowsInChat": "in the chat."
 		},
 		"sections": {
@@ -306,7 +330,7 @@
 			},
 			"noCredits": {
 				"title": "No credits in your account",
-				"description": "Your Kilo Code account has no credits. To use autocomplete, please add credits to your account.",
+				"description": "Your Kira Code account has no credits. To use autocomplete, please add credits to your account.",
 				"buyCredits": "Buy credits →"
 			},
 			"configureAutocompleteProfile": "Use any model by going to profiles and configuring a Profile of the Profile Type Autocomplete."
@@ -349,7 +373,7 @@
 		"shareModesNewBanner": "New: Share modes by creating an organization"
 	},
 	"deviceAuth": {
-		"title": "Sign in to Kilo Code",
+		"title": "Sign in to Kira Code",
 		"step1": "Open the following URL on your browser",
 		"step2": "Verify the code and authorize this device on your browser",
 		"scanQr": "Or scan this QR code with your phone",

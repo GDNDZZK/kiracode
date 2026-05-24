@@ -170,6 +170,7 @@ export class ClineProvider
 	private currentWorkspacePath: string | undefined
 	private autoPurgeScheduler?: any // kilocode_change - (Any) Prevent circular import
 	private deviceAuthHandler?: DeviceAuthHandler // kilocode_change - Device auth handler
+	private webServerService?: any // kilocode_change - Web Server service (lazy loaded)
 
 	private recentTasksCache?: string[]
 	private pendingOperations: Map<string, PendingEditOperation> = new Map()
@@ -338,6 +339,7 @@ export class ClineProvider
 
 		// kilocode_change start - Initialize auto-purge scheduler
 		this.initializeAutoPurgeScheduler()
+		this.initializeWebServerService()
 		// kilocode_change end
 	}
 
@@ -379,6 +381,98 @@ export class ClineProvider
 				`Failed to initialize auto-purge scheduler: ${error instanceof Error ? error.message : String(error)}`,
 			)
 		}
+	}
+	// kilocode_change end
+
+	// kilocode_change start: Web Server service initialization and config update
+	private async initializeWebServerService() {
+		try {
+			const { WebServerService } = await import("../../services/web-server")
+			this.webServerService = new WebServerService(this.outputChannel)
+
+			const state = await this.getState()
+			// kilocode_change: Read webServerAccessToken from secret storage directly,
+			// since getState() returns GlobalState which excludes secret keys.
+			const accessToken = (this.contextProxy.getValue("webServerAccessToken") as string) ?? ""
+			if (state.webServerEnabled) {
+				await this.webServerService.start(
+					{
+						enabled: true,
+						port: state.webServerPort ?? 22141,
+						accessToken,
+					},
+					this,
+				)
+			}
+
+			this.log("Web server service initialized")
+		} catch (error) {
+			this.log(
+				`Failed to initialize web server service: ${error instanceof Error ? error.message : String(error)}`,
+			)
+		}
+	}
+
+	async updateWebServerConfig() {
+		// kilocode_change: only save config, don't auto start/stop
+		// Start/stop is now controlled by explicit startWebServer/stopWebServer messages
+		await this.postWebServerStatus()
+	}
+
+	async startWebServer() {
+		if (!this.webServerService) {
+			return
+		}
+
+		try {
+			const state = await this.getState()
+			// kilocode_change: Read webServerAccessToken from secret storage directly,
+			// since getState() returns GlobalState which excludes secret keys.
+			const accessToken = (this.contextProxy.getValue("webServerAccessToken") as string) ?? ""
+			const config = {
+				enabled: true,
+				port: state.webServerPort ?? 22141,
+				accessToken,
+			}
+
+			const status = this.webServerService.getStatus()
+			if (status.running) {
+				await this.webServerService.restart(config, this)
+			} else {
+				await this.webServerService.start(config, this)
+			}
+
+			await this.postWebServerStatus()
+		} catch (error) {
+			this.log(`Failed to start web server: ${error instanceof Error ? error.message : String(error)}`)
+			// kilocode_change: Send error status to webview so UI can display it
+			await this.postWebServerStatus()
+		}
+	}
+
+	async stopWebServer() {
+		if (!this.webServerService) {
+			return
+		}
+
+		try {
+			await this.webServerService.stop()
+			await this.postWebServerStatus()
+		} catch (error) {
+			this.log(`Failed to stop web server: ${error instanceof Error ? error.message : String(error)}`)
+		}
+	}
+
+	private async postWebServerStatus() {
+		if (!this.webServerService) {
+			return
+		}
+
+		const status = this.webServerService.getStatus()
+		await this.postMessageToWebview({
+			type: "webServerStatus",
+			webServerStatus: status,
+		})
 	}
 	// kilocode_change end
 
@@ -695,10 +789,14 @@ export class ClineProvider
 		this.marketplaceManager?.cleanup()
 		this.customModesManager?.dispose()
 
-		// kilocode_change start - Stop auto-purge scheduler and device auth service
+		// kilocode_change start - Stop auto-purge scheduler, device auth service, and web server
 		if (this.autoPurgeScheduler) {
 			this.autoPurgeScheduler.stop()
 			this.autoPurgeScheduler = undefined
+		}
+		if (this.webServerService) {
+			this.webServerService.dispose()
+			this.webServerService = undefined
 		}
 		// kilocode_change end
 
@@ -1290,7 +1388,7 @@ export class ClineProvider
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 						window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 					</script>
-					<title>Kilo Code</title>
+					<title>Kira Code</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -1373,7 +1471,7 @@ export class ClineProvider
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 				window.KILOCODE_BACKEND_BASE_URL = "${process.env.KILOCODE_BACKEND_BASE_URL ?? ""}"
 			</script>
-            <title>Kilo Code</title>
+            <title>Kira Code</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1862,7 +1960,7 @@ export class ClineProvider
 			kilocodeToken: token,
 		})
 
-		vscode.window.showInformationMessage("Kilo Code successfully configured!")
+		vscode.window.showInformationMessage("Kira Code successfully configured!")
 
 		if (this.getCurrentTask()) {
 			this.getCurrentTask()!.api = buildApiHandler({
@@ -2572,6 +2670,12 @@ export class ClineProvider
 					return false
 				}
 			})(),
+			// kilocode_change start: Web Server status and access token
+			webServerStatus: this.webServerService?.getStatus() ?? { running: false },
+			// Read webServerAccessToken from secret storage directly since getState()
+			// returns GlobalState which excludes secret keys.
+			webServerAccessToken: this.contextProxy.getValue("webServerAccessToken") as string | undefined,
+			// kilocode_change end
 			debug: vscode.workspace.getConfiguration(Package.name).get<boolean>("debug", false),
 		}
 	}
@@ -2943,7 +3047,7 @@ export class ClineProvider
 			return
 		}
 
-		// Logout from Kilo Code provider before resetting (same approach as ProfileView logout)
+		// Logout from Kira Code provider before resetting (same approach as ProfileView logout)
 		const { apiConfiguration, currentApiConfigName = "default" } = await this.getState()
 		if (apiConfiguration.kilocodeToken) {
 			await this.upsertProviderProfile(currentApiConfigName, {

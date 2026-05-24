@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "¡Bienvenido a Kilo Code!",
-		"introText1": "Kilo Code es un agente de codificación de IA gratuito y de código abierto.",
+		"greeting": "¡Bienvenido a Kira Code!",
+		"introText1": "Kira Code es un agente de codificación de IA gratuito y de código abierto.",
 		"introText2": "Funciona con los modelos de IA más recientes como Claude Opus 4.5, Gemini 3 Pro, GPT-5.2, y más de 450 modelos adicionales.",
 		"introText3": "Crea una cuenta gratuita para empezar.",
 		"ctaButton": "Empezar",
@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Añadir Crédito",
-		"lowBalance": "Tu saldo de Kilo Code es bajo",
+		"lowBalance": "Tu saldo de Kira Code es bajo",
 		"switchToFreeModel": "Cambiar a un modelo gratuito"
 	},
 	"pagination": {
@@ -58,19 +58,20 @@
 		"sections": {
 			"mcp": "Servidores MCP",
 			"agentBehaviour": "Comportamiento del Agente",
-			"skills": "Habilidades"
+			"skills": "Habilidades",
+			"webServer": "Acceso Web"
 		},
 		"provider": {
-			"account": "Cuenta de Kilo Code",
-			"apiKey": "Clave API de Kilo Code",
-			"login": "Iniciar sesión en Kilo Code",
-			"logout": "Cerrar sesión de Kilo Code",
+			"account": "Cuenta de Kira Code",
+			"apiKey": "Clave API de Kira Code",
+			"login": "Iniciar sesión en Kira Code",
+			"logout": "Cerrar sesión de Kira Code",
 			"loginForPremiumModels": "Inicia sesión para acceder a modelos y funciones premium",
 			"providerRouting": {
 				"title": "Enrutamiento de proveedores",
 				"managedByOrganization": "Gestionar enrutamiento de proveedores a nivel de organización",
 				"createOrganization": "Crear organización para gestionar enrutamiento de proveedores",
-				"description": "Kilo Code enruta las solicitudes a los mejores proveedores disponibles para su modelo. De forma predeterminada, las solicitudes se equilibran en carga entre los principales proveedores para maximizar el tiempo de actividad. Sin embargo, puede elegir un proveedor específico para usar para este modelo.",
+				"description": "Kira Code enruta las solicitudes a los mejores proveedores disponibles para su modelo. De forma predeterminada, las solicitudes se equilibran en carga entre los principales proveedores para maximizar el tiempo de actividad. Sin embargo, puede elegir un proveedor específico para usar para este modelo.",
 				"sorting": {
 					"default": "Ordenación de proveedor predeterminada",
 					"price": "Preferir proveedores con precio más bajo",
@@ -101,15 +102,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Permitir lecturas de archivos muy grandes",
-				"description": "Cuando está activado, Kilo Code realizará lecturas de archivos o salidas MCP muy grandes aunque exista una alta probabilidad de desbordar la ventana de contexto (tamaño del contenido >80% de la ventana de contexto)."
+				"description": "Cuando está activado, Kira Code realizará lecturas de archivos o salidas MCP muy grandes aunque exista una alta probabilidad de desbordar la ventana de contexto (tamaño del contenido >80% de la ventana de contexto)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Activar notificaciones del sistema",
-			"description": "Cuando está activado, Kilo Code enviará notificaciones del sistema para eventos importantes como la finalización de tareas o errores.",
+			"description": "Cuando está activado, Kira Code enviará notificaciones del sistema para eventos importantes como la finalización de tareas o errores.",
 			"testButton": "Probar notificación",
-			"testTitle": "Kilo Code",
-			"testMessage": "Esta es una notificación de prueba de Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "Esta es una notificación de prueba de Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -126,6 +127,29 @@
 			"embeddingBatchSizeDescription": "Número de segmentos de código a agrupar juntos para la generación de embeddings y actualizaciones del almacén vectorial. Valores más altos pueden mejorar la velocidad de indexación pero pueden aumentar el uso de memoria. Valores más bajos reducen el uso de memoria pero pueden ralentizar la indexación.",
 			"scannerMaxBatchRetriesLabel": "Reintentos Máximos de Lote del Escáner",
 			"scannerMaxBatchRetriesDescription": "Número máximo de veces para reintentar un lote fallido durante el escaneo de directorios. Valores más altos aumentan la resistencia a errores transitorios pero pueden ralentizar la indexación si los errores persisten. Valores más bajos fallan más rápido pero pueden omitir contenido en problemas temporales."
+		},
+		"webServer": {
+			"title": "Configuración del servidor Web",
+			"description": "Configura el acceso Web para usar Kira Code desde el navegador",
+			"enableLabel": "Habilitar acceso Web",
+			"enableDescription": "Al habilitarlo, podrás acceder a Kira Code desde el navegador",
+			"statusRunning": "Ejecutándose en el puerto {{port}}",
+			"statusStopped": "Detenido",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Número de puerto",
+			"portDescription": "Puerto de escucha del servidor Web",
+			"tokenLabel": "Token de acceso",
+			"tokenPlaceholder": "Introduce el token de acceso...",
+			"tokenDescription": "Token secreto para la autenticación Web. Establece una contraseña segura",
+			"showToken": "Mostrar",
+			"hideToken": "Ocultar",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"toolCallStyle": {
@@ -137,7 +161,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code quiere condensar tu conversación",
+			"wantsToCondense": "Kira Code quiere condensar tu conversación",
 			"condenseConversation": "Condensar Conversación"
 		},
 		"seeNewChanges": "Mostrar Nuevos Cambios",
@@ -176,14 +200,14 @@
 			"modes": "Modos",
 			"skills": "Habilidades"
 		},
-		"ariaLabel": "Reglas de Kilo Code",
+		"ariaLabel": "Reglas de Kira Code",
 		"tabs": {
 			"rules": "Reglas",
 			"workflows": "Flujos de Trabajo"
 		},
 		"description": {
-			"rules": "Las reglas te permiten proporcionar a Kilo Code instrucciones que debe seguir en todos los modos y para todos los prompts. Son una forma persistente de incluir contexto y preferencias para todas las conversaciones en tu espacio de trabajo o globalmente.",
-			"workflows": "Los flujos de trabajo son una plantilla preparada para una conversación. Los flujos de trabajo te permiten definir prompts que usas frecuentemente, y pueden incluir una serie de pasos para guiar a Kilo Code a través de tareas repetitivas, como desplegar un servicio o enviar una PR. Para invocar un flujo de trabajo, escribe",
+			"rules": "Las reglas te permiten proporcionar a Kira Code instrucciones que debe seguir en todos los modos y para todos los prompts. Son una forma persistente de incluir contexto y preferencias para todas las conversaciones en tu espacio de trabajo o globalmente.",
+			"workflows": "Los flujos de trabajo son una plantilla preparada para una conversación. Los flujos de trabajo te permiten definir prompts que usas frecuentemente, y pueden incluir una serie de pasos para guiar a Kira Code a través de tareas repetitivas, como desplegar un servicio o enviar una PR. Para invocar un flujo de trabajo, escribe",
 			"workflowsInChat": "en el chat."
 		},
 		"sections": {
@@ -292,7 +316,7 @@
 			},
 			"noCredits": {
 				"title": "No hay créditos en tu cuenta",
-				"description": "Tu cuenta de Kilo Code no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.",
+				"description": "Tu cuenta de Kira Code no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.",
 				"buyCredits": "Comprar créditos →"
 			},
 			"configureAutocompleteProfile": "Usa cualquier modelo yendo a perfiles y configurando un Perfil del Tipo de Perfil Autocompletado."
@@ -350,7 +374,7 @@
 		"shareModesNewBanner": "Nuevo: Comparte modos creando una organización"
 	},
 	"deviceAuth": {
-		"title": "Iniciar sesión en Kilo Code",
+		"title": "Iniciar sesión en Kira Code",
 		"step1": "Abre la siguiente URL en tu navegador",
 		"step2": "Verifica el código y autoriza este dispositivo en tu navegador",
 		"scanQr": "O escanea este código QR con tu teléfono",

@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "Selamat datang di Kilo Code!",
-		"introText1": "Kilo Code adalah agen coding AI gratis dan open source.",
+		"greeting": "Selamat datang di Kira Code!",
+		"introText1": "Kira Code adalah agen coding AI gratis dan open source.",
 		"introText2": "Bekerja dengan model AI terbaru seperti Claude Opus 4.5, Gemini 3 Pro, GPT-5.2, dan lebih dari 450 model lainnya.",
 		"introText3": "Buat akun gratis untuk memulai.",
 		"ctaButton": "Mulai",
@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Tambah Kredit",
-		"lowBalance": "Saldo Kilo Code kamu rendah",
+		"lowBalance": "Saldo Kira Code kamu rendah",
 		"switchToFreeModel": "Beralih ke Model Gratis"
 	},
 	"pagination": {
@@ -58,19 +58,20 @@
 		"sections": {
 			"mcp": "Server MCP",
 			"agentBehaviour": "Perilaku Agen",
-			"skills": "Skill"
+			"skills": "Skill",
+			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Akun Kilo Code",
-			"apiKey": "API Key Kilo Code",
-			"login": "Masuk ke Kilo Code",
-			"logout": "Keluar dari Kilo Code",
+			"account": "Akun Kira Code",
+			"apiKey": "API Key Kira Code",
+			"login": "Masuk ke Kira Code",
+			"logout": "Keluar dari Kira Code",
 			"loginForPremiumModels": "Masuk untuk mengakses model dan fitur premium",
 			"providerRouting": {
 				"title": "Perutean Penyedia",
 				"managedByOrganization": "Kelola Perutean Penyedia Tingkat Organisasi",
 				"createOrganization": "Buat Organisasi untuk Mengelola Perutean Penyedia",
-				"description": "Kilo Code merutekan permintaan ke penyedia terbaik yang tersedia untuk model Anda. Secara default, permintaan diseimbangkan bebannya di seluruh penyedia teratas untuk memaksimalkan waktu aktif. Namun, Anda dapat memilih penyedia tertentu untuk digunakan untuk model ini.",
+				"description": "Kira Code merutekan permintaan ke penyedia terbaik yang tersedia untuk model Anda. Secara default, permintaan diseimbangkan bebannya di seluruh penyedia teratas untuk memaksimalkan waktu aktif. Namun, Anda dapat memilih penyedia tertentu untuk digunakan untuk model ini.",
 				"sorting": {
 					"default": "Pengurutan penyedia default",
 					"price": "Utamakan penyedia dengan harga lebih rendah",
@@ -101,15 +102,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Izinkan pembacaan file yang sangat besar",
-				"description": "Saat diaktifkan, Kilo Code akan melakukan pembacaan file atau output MCP yang sangat besar meskipun ada kemungkinan tinggi meluapnya jendela konteks (ukuran konten >80% dari jendela konteks)."
+				"description": "Saat diaktifkan, Kira Code akan melakukan pembacaan file atau output MCP yang sangat besar meskipun ada kemungkinan tinggi meluapnya jendela konteks (ukuran konten >80% dari jendela konteks)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Aktifkan Notifikasi Sistem",
-			"description": "Saat diaktifkan, Kilo Code akan mengirim notifikasi sistem untuk kejadian penting seperti penyelesaian tugas atau kesalahan.",
+			"description": "Saat diaktifkan, Kira Code akan mengirim notifikasi sistem untuk kejadian penting seperti penyelesaian tugas atau kesalahan.",
 			"testButton": "Uji Notifikasi",
-			"testTitle": "Kilo Code",
-			"testMessage": "Ini adalah notifikasi uji dari Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "Ini adalah notifikasi uji dari Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -126,11 +127,34 @@
 			"embeddingBatchSizeDescription": "Jumlah segmen kode yang digabung untuk pembuatan embedding dan penyisipan vector store. Nilai lebih tinggi dapat meningkatkan kecepatan pengindeksan tetapi dapat meningkatkan penggunaan memori. Nilai lebih rendah mengurangi penggunaan memori tetapi dapat memperlambat pengindeksan.",
 			"scannerMaxBatchRetriesLabel": "Maksimum Percobaan Ulang Batch Scanner",
 			"scannerMaxBatchRetriesDescription": "Jumlah maksimum percobaan ulang batch yang gagal selama pemindaian direktori. Nilai lebih tinggi meningkatkan ketahanan terhadap error sementara tetapi dapat memperlambat pengindeksan jika error berlanjut. Nilai lebih rendah gagal lebih cepat tetapi dapat melewatkan konten pada masalah sementara."
+		},
+		"webServer": {
+			"title": "Web Server Settings",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code ingin mengondensasi percakapan kamu",
+			"wantsToCondense": "Kira Code ingin mengondensasi percakapan kamu",
 			"condenseConversation": "Kondensasi Percakapan"
 		},
 		"seeNewChanges": "Tampilkan Perubahan Baru",
@@ -169,14 +193,14 @@
 			"modes": "Mode",
 			"skills": "Skill"
 		},
-		"ariaLabel": "Aturan Kilo Code",
+		"ariaLabel": "Aturan Kira Code",
 		"tabs": {
 			"rules": "Aturan",
 			"workflows": "Alur Kerja"
 		},
 		"description": {
-			"rules": "Aturan memungkinkan kamu memberikan instruksi kepada Kilo Code yang harus diikuti di semua mode dan untuk semua prompt. Mereka adalah cara persisten untuk menyertakan konteks dan preferensi untuk semua percakapan di workspace kamu atau secara global.",
-			"workflows": "Alur kerja adalah template yang disiapkan untuk percakapan. Alur kerja memungkinkan kamu menentukan prompt yang sering kamu gunakan, dan dapat mencakup serangkaian langkah untuk memandu Kilo Code melalui tugas-tugas berulang, seperti menerapkan layanan atau mengirim PR. Untuk memanggil alur kerja, ketik",
+			"rules": "Aturan memungkinkan kamu memberikan instruksi kepada Kira Code yang harus diikuti di semua mode dan untuk semua prompt. Mereka adalah cara persisten untuk menyertakan konteks dan preferensi untuk semua percakapan di workspace kamu atau secara global.",
+			"workflows": "Alur kerja adalah template yang disiapkan untuk percakapan. Alur kerja memungkinkan kamu menentukan prompt yang sering kamu gunakan, dan dapat mencakup serangkaian langkah untuk memandu Kira Code melalui tugas-tugas berulang, seperti menerapkan layanan atau mengirim PR. Untuk memanggil alur kerja, ketik",
 			"workflowsInChat": "di chat."
 		},
 		"sections": {
@@ -285,7 +309,7 @@
 			},
 			"noCredits": {
 				"title": "Tidak ada kredit di akun kamu",
-				"description": "Akun Kilo Code kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.",
+				"description": "Akun Kira Code kamu tidak memiliki kredit. Untuk menggunakan autocomplete, silakan tambahkan kredit ke akun kamu.",
 				"buyCredits": "Beli kredit →"
 			},
 			"configureAutocompleteProfile": "Gunakan model apa pun dengan pergi ke profil dan mengonfigurasi Profil dengan Tipe Profil Autocomplete."
@@ -350,7 +374,7 @@
 		"shareModesNewBanner": "Baru: Bagikan mode dengan membuat organisasi"
 	},
 	"deviceAuth": {
-		"title": "Masuk ke Kilo Code",
+		"title": "Masuk ke Kira Code",
 		"step1": "Buka URL berikut di browser kamu",
 		"step2": "Verifikasi kode dan otorisasi perangkat ini di browser kamu",
 		"scanQr": "Atau pindai kode QR ini dengan ponsel kamu",

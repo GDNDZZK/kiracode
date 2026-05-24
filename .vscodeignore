@@ -76,3 +76,9 @@ assets/docs/**
 # Ignore IntelliJ and Qodo plugin folders
 .idea/**
 .qodo/**
+
+# kilocode_change: Include dist-web directory for Web Server static files
+# Must be at the end of the file to override **/*.map and **/*.ts rules
+!webview-ui/dist-web/**
+!webview-ui/dist-web/assets/**
+!webview-ui/dist-web/assets/*.map

@@ -28,9 +28,9 @@ export function getSupportedSlashCommands(
 			name: "newrule",
 			description: "Create a new Kilo rule with context from your conversation",
 		},
-		{ name: "reportbug", description: "Create a KiloCode GitHub issue" },
+		{ name: "reportbug", description: "Create a KiraCode GitHub issue" },
 		// kilocode_change start
-		{ name: "init", description: "Initialize Kilo Code for this workspace" },
+		{ name: "init", description: "Initialize Kira Code for this workspace" },
 		{ name: "smol", description: "Condenses your current context window" },
 		{ name: "condense", description: "Condenses your current context window" },
 		{ name: "compact", description: "Condenses your current context window" },

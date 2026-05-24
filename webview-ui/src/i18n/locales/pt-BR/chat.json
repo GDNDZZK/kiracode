@@ -1,5 +1,5 @@
 {
-	"greeting": "O que o Kilo Code pode fazer por você?",
+	"greeting": "O que o Kira Code pode fazer por você?",
 	"task": {
 		"title": "Tarefa",
 		"expand": "Expandir tarefa",
@@ -22,7 +22,7 @@
 		"sharePublicly": "Compartilhar publicamente",
 		"sharePubliclyDescription": "Qualquer pessoa com o link pode acessar",
 		"connectToCloud": "Conectar ao Cloud",
-		"connectToCloudDescription": "Entre no Kilo Code Cloud para compartilhar tarefas",
+		"connectToCloudDescription": "Entre no Kira Code Cloud para compartilhar tarefas",
 		"sharingDisabledByOrganization": "Compartilhamento desabilitado pela organização",
 		"shareSuccessOrganization": "Link da organização copiado para a área de transferência",
 		"shareSuccessPublic": "Link público copiado para a área de transferência",
@@ -101,7 +101,7 @@
 	"scrollToBottom": "Rolar para o final do chat",
 	"about": "Gere, refatore e depure código com assistência de IA. Confira nossa <DocsLink>documentação</DocsLink> para aprender mais.",
 	"docs": "Confira nossa <DocsLink>documentação</DocsLink> para saber mais.",
-	"onboarding": "<strong>Sua lista de tarefas neste espaço de trabalho está vazia.</strong> Comece digitando uma tarefa abaixo. Não sabe como começar? Leia mais sobre o que o Kilo Code pode fazer por você nos <DocsLink>documentos</DocsLink>.",
+	"onboarding": "<strong>Sua lista de tarefas neste espaço de trabalho está vazia.</strong> Comece digitando uma tarefa abaixo. Não sabe como começar? Leia mais sobre o que o Kira Code pode fazer por você nos <DocsLink>documentos</DocsLink>.",
 	"rooTips": {
 		"customizableModes": {
 			"title": "Modos personalizáveis",
@@ -145,7 +145,7 @@
 	"diffError": {
 		"title": "Edição mal-sucedida"
 	},
-	"troubleMessage": "Kilo Code está tendo problemas...",
+	"troubleMessage": "Kira Code está tendo problemas...",
 	"apiRequest": {
 		"title": "Requisição API",
 		"failed": "Requisição API falhou",
@@ -188,48 +188,48 @@
 		"current": "Atual"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code quer buscar instruções detalhadas para ajudar com a tarefa atual"
+		"wantsToFetch": "Kira Code quer buscar instruções detalhadas para ajudar com a tarefa atual"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code quer ler este arquivo",
-		"wantsToReadOutsideWorkspace": "Kilo Code quer ler este arquivo fora do espaço de trabalho",
-		"didRead": "Kilo Code leu este arquivo",
-		"wantsToEdit": "Kilo Code quer editar este arquivo",
-		"wantsToEditOutsideWorkspace": "Kilo Code quer editar este arquivo fora do espaço de trabalho",
-		"wantsToEditProtected": "Kilo Code quer editar um arquivo de configuração protegido",
-		"wantsToCreate": "Kilo Code quer criar um novo arquivo",
-		"wantsToSearchReplace": "Kilo Code quer realizar busca e substituição neste arquivo",
-		"didSearchReplace": "Kilo Code realizou busca e substituição neste arquivo",
-		"wantsToInsert": "Kilo Code quer inserir conteúdo neste arquivo",
-		"wantsToInsertWithLineNumber": "Kilo Code quer inserir conteúdo neste arquivo na linha {{lineNumber}}",
-		"wantsToInsertAtEnd": "Kilo Code quer adicionar conteúdo ao final deste arquivo",
-		"wantsToReadAndXMore": "Kilo Code quer ler este arquivo e mais {{count}}",
-		"wantsToReadMultiple": "Kilo Code deseja ler múltiplos arquivos",
-		"wantsToApplyBatchChanges": "Kilo Code quer aplicar alterações a múltiplos arquivos",
-		"wantsToGenerateImage": "Kilo Code quer gerar uma imagem",
-		"wantsToGenerateImageOutsideWorkspace": "Kilo Code quer gerar uma imagem fora do espaço de trabalho",
-		"wantsToGenerateImageProtected": "Kilo Code quer gerar uma imagem em um local protegido",
-		"didGenerateImage": "Kilo Code gerou uma imagem",
-		"wantsToDelete": "Kilo Code quer excluir este arquivo",
-		"wantsToDeleteDirectory": "Kilo Code quer excluir este diretório"
+		"wantsToRead": "Kira Code quer ler este arquivo",
+		"wantsToReadOutsideWorkspace": "Kira Code quer ler este arquivo fora do espaço de trabalho",
+		"didRead": "Kira Code leu este arquivo",
+		"wantsToEdit": "Kira Code quer editar este arquivo",
+		"wantsToEditOutsideWorkspace": "Kira Code quer editar este arquivo fora do espaço de trabalho",
+		"wantsToEditProtected": "Kira Code quer editar um arquivo de configuração protegido",
+		"wantsToCreate": "Kira Code quer criar um novo arquivo",
+		"wantsToSearchReplace": "Kira Code quer realizar busca e substituição neste arquivo",
+		"didSearchReplace": "Kira Code realizou busca e substituição neste arquivo",
+		"wantsToInsert": "Kira Code quer inserir conteúdo neste arquivo",
+		"wantsToInsertWithLineNumber": "Kira Code quer inserir conteúdo neste arquivo na linha {{lineNumber}}",
+		"wantsToInsertAtEnd": "Kira Code quer adicionar conteúdo ao final deste arquivo",
+		"wantsToReadAndXMore": "Kira Code quer ler este arquivo e mais {{count}}",
+		"wantsToReadMultiple": "Kira Code deseja ler múltiplos arquivos",
+		"wantsToApplyBatchChanges": "Kira Code quer aplicar alterações a múltiplos arquivos",
+		"wantsToGenerateImage": "Kira Code quer gerar uma imagem",
+		"wantsToGenerateImageOutsideWorkspace": "Kira Code quer gerar uma imagem fora do espaço de trabalho",
+		"wantsToGenerateImageProtected": "Kira Code quer gerar uma imagem em um local protegido",
+		"didGenerateImage": "Kira Code gerou uma imagem",
+		"wantsToDelete": "Kira Code quer excluir este arquivo",
+		"wantsToDeleteDirectory": "Kira Code quer excluir este diretório"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code quer visualizar os arquivos de nível superior neste diretório",
-		"didViewTopLevel": "Kilo Code visualizou os arquivos de nível superior neste diretório",
-		"wantsToViewRecursive": "Kilo Code quer visualizar recursivamente todos os arquivos neste diretório",
-		"didViewRecursive": "Kilo Code visualizou recursivamente todos os arquivos neste diretório",
-		"wantsToViewDefinitions": "Kilo Code quer visualizar nomes de definição de código-fonte usados neste diretório",
-		"didViewDefinitions": "Kilo Code visualizou nomes de definição de código-fonte usados neste diretório",
-		"wantsToSearch": "Kilo Code quer pesquisar neste diretório por <code>{{regex}}</code>",
-		"didSearch": "Kilo Code pesquisou neste diretório por <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Kilo Code quer pesquisar neste diretório (fora do espaço de trabalho) por <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Kilo Code pesquisou neste diretório (fora do espaço de trabalho) por <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Kilo Code quer visualizar os arquivos de nível superior neste diretório (fora do espaço de trabalho)",
-		"didViewTopLevelOutsideWorkspace": "Kilo Code visualizou os arquivos de nível superior neste diretório (fora do espaço de trabalho)",
-		"wantsToViewRecursiveOutsideWorkspace": "Kilo Code quer visualizar recursivamente todos os arquivos neste diretório (fora do espaço de trabalho)",
-		"didViewRecursiveOutsideWorkspace": "Kilo Code visualizou recursivamente todos os arquivos neste diretório (fora do espaço de trabalho)",
-		"wantsToViewDefinitionsOutsideWorkspace": "Kilo Code quer visualizar nomes de definição de código-fonte usados neste diretório (fora do espaço de trabalho)",
-		"didViewDefinitionsOutsideWorkspace": "Kilo Code visualizou nomes de definição de código-fonte usados neste diretório (fora do espaço de trabalho)"
+		"wantsToViewTopLevel": "Kira Code quer visualizar os arquivos de nível superior neste diretório",
+		"didViewTopLevel": "Kira Code visualizou os arquivos de nível superior neste diretório",
+		"wantsToViewRecursive": "Kira Code quer visualizar recursivamente todos os arquivos neste diretório",
+		"didViewRecursive": "Kira Code visualizou recursivamente todos os arquivos neste diretório",
+		"wantsToViewDefinitions": "Kira Code quer visualizar nomes de definição de código-fonte usados neste diretório",
+		"didViewDefinitions": "Kira Code visualizou nomes de definição de código-fonte usados neste diretório",
+		"wantsToSearch": "Kira Code quer pesquisar neste diretório por <code>{{regex}}</code>",
+		"didSearch": "Kira Code pesquisou neste diretório por <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "Kira Code quer pesquisar neste diretório (fora do espaço de trabalho) por <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "Kira Code pesquisou neste diretório (fora do espaço de trabalho) por <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "Kira Code quer visualizar os arquivos de nível superior neste diretório (fora do espaço de trabalho)",
+		"didViewTopLevelOutsideWorkspace": "Kira Code visualizou os arquivos de nível superior neste diretório (fora do espaço de trabalho)",
+		"wantsToViewRecursiveOutsideWorkspace": "Kira Code quer visualizar recursivamente todos os arquivos neste diretório (fora do espaço de trabalho)",
+		"didViewRecursiveOutsideWorkspace": "Kira Code visualizou recursivamente todos os arquivos neste diretório (fora do espaço de trabalho)",
+		"wantsToViewDefinitionsOutsideWorkspace": "Kira Code quer visualizar nomes de definição de código-fonte usados neste diretório (fora do espaço de trabalho)",
+		"didViewDefinitionsOutsideWorkspace": "Kira Code visualizou nomes de definição de código-fonte usados neste diretório (fora do espaço de trabalho)"
 	},
 	"commandOutput": "Saída do comando",
 	"commandExecution": {
@@ -257,18 +257,18 @@
 		"youSaid": "Você disse"
 	},
 	"mcp": {
-		"wantsToUseTool": "Kilo Code quer usar uma ferramenta no servidor MCP {{serverName}}",
-		"wantsToAccessResource": "Kilo Code quer acessar um recurso no servidor MCP {{serverName}}"
+		"wantsToUseTool": "Kira Code quer usar uma ferramenta no servidor MCP {{serverName}}",
+		"wantsToAccessResource": "Kira Code quer acessar um recurso no servidor MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code quer mudar para o modo <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Kilo Code quer mudar para o modo <code>{{mode}}</code> porque: {{reason}}",
-		"didSwitch": "Kilo Code mudou para o modo <code>{{mode}}</code>",
-		"didSwitchWithReason": "Kilo Code mudou para o modo <code>{{mode}}</code> porque: {{reason}}"
+		"wantsToSwitch": "Kira Code quer mudar para o modo <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "Kira Code quer mudar para o modo <code>{{mode}}</code> porque: {{reason}}",
+		"didSwitch": "Kira Code mudou para o modo <code>{{mode}}</code>",
+		"didSwitchWithReason": "Kira Code mudou para o modo <code>{{mode}}</code> porque: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code quer criar uma nova subtarefa no modo <code>{{mode}}</code>",
-		"wantsToFinish": "Kilo Code quer finalizar esta subtarefa",
+		"wantsToCreate": "Kira Code quer criar uma nova subtarefa no modo <code>{{mode}}</code>",
+		"wantsToFinish": "Kira Code quer finalizar esta subtarefa",
 		"newTaskContent": "Instruções da subtarefa",
 		"completionContent": "Subtarefa concluída",
 		"resultContent": "Resultados da subtarefa",
@@ -276,7 +276,7 @@
 		"completionInstructions": "Subtarefa concluída! Você pode revisar os resultados e sugerir correções ou próximos passos. Se tudo parecer bom, confirme para retornar o resultado à tarefa principal."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code tem uma pergunta"
+		"hasQuestion": "Kira Code tem uma pergunta"
 	},
 	"taskCompleted": "Tarefa concluída",
 	"modelResponseIncomplete": "Resposta do modelo incompleta",
@@ -361,7 +361,7 @@
 			"tryButton": "Experimentar Agentes em Nuvem"
 		},
 		"careers": "Além disso, <careersLink>estamos contratando!</careersLink>",
-		"socialLinks": "Junte-se a nós no <xLink>X</xLink>, <discordLink>Discord</discordLink>, ou <redditLink>r/KiloCode</redditLink> 🚀"
+		"socialLinks": "Junte-se a nós no <xLink>X</xLink>, <discordLink>Discord</discordLink>, ou <redditLink>r/KiraCode</redditLink> 🚀"
 	},
 	"costs": {
 		"totalWithSubtasks": "Custo Total (incluindo subtarefas): ${{cost}}",
@@ -371,7 +371,7 @@
 	"browser": {
 		"session": "Sessão do Navegador",
 		"active": "Ativo",
-		"rooWantsToUse": "Kilo Code quer usar o navegador",
+		"rooWantsToUse": "Kira Code quer usar o navegador",
 		"consoleLogs": "Logs do console",
 		"noNewLogs": "(Sem novos logs)",
 		"screenshot": "Captura de tela do navegador",
@@ -419,24 +419,24 @@
 	"profileViolationWarning": "O perfil atual não é compatível com as configurações da sua organização",
 	"shellIntegration": {
 		"title": "Aviso de execução de comando",
-		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Kilo Code</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
+		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Kira Code</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
 		"troubleshooting": "Clique aqui para a documentação de integração de shell."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Limite de Solicitações Auto-aprovadas Atingido",
-			"description": "Kilo Code atingiu o limite auto-aprovado de {{count}} solicitação(ões) de API. Deseja redefinir a contagem e prosseguir com a tarefa?",
+			"description": "Kira Code atingiu o limite auto-aprovado de {{count}} solicitação(ões) de API. Deseja redefinir a contagem e prosseguir com a tarefa?",
 			"button": "Redefinir e Continuar"
 		},
 		"autoApprovedCostLimitReached": {
 			"title": "Limite de Custo com Aprovação Automática Atingido",
-			"description": "Kilo Code atingiu o limite de custo com aprovação automática de US${{count}}. Você gostaria de redefinir o custo e prosseguir com a tarefa?",
+			"description": "Kira Code atingiu o limite de custo com aprovação automática de US${{count}}. Você gostaria de redefinir o custo e prosseguir com a tarefa?",
 			"button": "Redefinir e Continuar"
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Kilo Code quer pesquisar na base de código por <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Kilo Code quer pesquisar na base de código por <code>{{query}}</code> em <code>{{path}}</code>",
+		"wantsToSearch": "Kira Code quer pesquisar na base de código por <code>{{query}}</code>",
+		"wantsToSearchWithPath": "Kira Code quer pesquisar na base de código por <code>{{query}}</code> em <code>{{path}}</code>",
 		"didSearch_one": "Encontrado 1 resultado",
 		"didSearch_other": "Encontrados {{count}} resultados",
 		"resultTooltip": "Pontuação de similaridade: {{score}} (clique para abrir o arquivo)"
@@ -501,8 +501,8 @@
 		"clickToEdit": "Clique para editar a mensagem"
 	},
 	"slashCommand": {
-		"wantsToRun": "Kilo Code quer executar um comando slash",
-		"didRun": "Kilo Code executou um comando slash"
+		"wantsToRun": "Kira Code quer executar um comando slash",
+		"didRun": "Kira Code executou um comando slash"
 	},
 	"todo": {
 		"partial": "{{completed}} de {{total}} tarefas concluídas",

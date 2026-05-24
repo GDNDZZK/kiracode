@@ -531,6 +531,15 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 					}
 					break
 				}
+				// kilocode_change start: Web Server status
+				case "webServerStatus": {
+					setState((prevState) => ({
+						...prevState,
+						webServerStatus: message.webServerStatus,
+					}))
+					break
+				}
+				// kilocode_change end
 			}
 		},
 		[setListApiConfigMeta],

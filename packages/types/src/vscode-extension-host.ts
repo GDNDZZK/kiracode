@@ -269,6 +269,7 @@ export interface ExtensionMessage {
 		| "skillsData"
 		| "askReviewScope" // kilocode_change: Review mode scope selection
 		| "openAiCodexRateLimits"
+		| "webServerStatus" // kilocode_change: Web Server status update
 	text?: string
 	// kilocode_change start
 	completionRequestId?: string // Correlation ID from request
@@ -474,6 +475,13 @@ export interface ExtensionMessage {
 		error?: string
 	}
 	// kilocode_change end: Review mode
+	// kilocode_change start: Web Server status
+	webServerStatus?: {
+		running: boolean
+		port?: number
+		error?: string
+	}
+	// kilocode_change end: Web Server status
 }
 
 export interface OpenAiCodexRateLimitsMessage {
@@ -578,6 +586,9 @@ export type ExtensionState = Pick<
 	| "maxGitStatusFiles"
 	| "requestDelaySeconds"
 	| "selectedMicrophoneDevice" // kilocode_change: Selected microphone device for STT
+	| "webServerEnabled" // kilocode_change: Web Server enabled
+	| "webServerPort" // kilocode_change: Web Server port
+	| "webServerAccessToken" // kilocode_change: Web Server access token
 > & {
 	version: string
 	clineMessages: ClineMessage[]
@@ -671,6 +682,13 @@ export type ExtensionState = Pick<
 	debug?: boolean
 	speechToTextStatus?: { available: boolean; reason?: "openaiKeyMissing" | "ffmpegNotInstalled" } // kilocode_change: Speech-to-text availability status with failure reason
 	appendSystemPrompt?: string // kilocode_change: Custom text to append to system prompt (CLI only)
+	// kilocode_change start: Web Server status
+	webServerStatus?: {
+		running: boolean
+		port?: number
+		error?: string
+	}
+	// kilocode_change end: Web Server status
 }
 
 export interface Command {
@@ -948,6 +966,8 @@ export interface WebviewMessage {
 		| "oca/status"
 		| "oca/logout-success"
 		// kilocode_change end
+		| "startWebServer" // kilocode_change: Start Web Server
+		| "stopWebServer" // kilocode_change: Stop Web Server
 		| "openMarkdownPreview"
 		| "updateSettings"
 		| "requestManagedIndexerState" // kilocode_change
@@ -983,6 +1003,11 @@ export interface WebviewMessage {
 		| "debugSetting"
 		| "refreshSkills"
 		| "reviewScopeSelected" // kilocode_change: Review mode scope selection
+		// kilocode_change start: Web Server settings
+		| "webServerEnabled"
+		| "webServerPort"
+		| "webServerAccessToken"
+	// kilocode_change end: Web Server settings
 	text?: string
 	suggestionLength?: number // kilocode_change: Length of accepted suggestion for telemetry
 	completionRequestId?: string // kilocode_change
