@@ -160,9 +160,9 @@ describe("WebApp", () => {
 		})
 	})
 
-	// kilocode_change: Test WebSocket message unwrapping
+	// kilocode_change: Test WebSocket message unwrapping and buffering
 	describe("WebSocket message forwarding", () => {
-		test("unwraps WebSocketMessage payload before dispatching to ExtensionStateContext", async () => {
+		test("buffers messages before connected state and replays them after mount", async () => {
 			;(getSessionToken as ReturnType<typeof vi.fn>).mockReturnValue("test-token")
 
 			// Create a mock transport that captures the onMessage callback
@@ -194,27 +194,42 @@ describe("WebApp", () => {
 				expect(mockTransport.onMessage).toHaveBeenCalled()
 			})
 
-			// Simulate receiving a WebSocketMessage with payload (double-wrapped format)
+			// Simulate receiving a WebSocketMessage with payload BEFORE connected state
+			// (messages should be buffered, not dispatched yet)
 			const callback = capturedCallback.current
-			if (callback) {
-				const extensionMessage = { type: "state", state: { apiConfiguration: { apiProvider: "anthropic" } } }
-				const wsMessage = { type: "state", payload: extensionMessage }
-
-				callback(wsMessage)
-
-				// The dispatched message should be the unwrapped payload (ExtensionMessage),
-				// not the full WebSocketMessage wrapper
-				expect(dispatchedMessages.length).toBe(1)
-				expect(dispatchedMessages[0]).toEqual(extensionMessage)
-				expect(dispatchedMessages[0]).not.toEqual(wsMessage)
-				expect(dispatchedMessages[0].state).toBeDefined()
-				expect(dispatchedMessages[0].state.apiConfiguration).toBeDefined()
+			const extensionMessage = {
+				type: "state",
+				state: { apiConfiguration: { apiProvider: "anthropic" } },
 			}
+			const wsMessage = { type: "state", payload: extensionMessage }
+
+			if (callback) {
+				callback(wsMessage)
+			}
+
+			// Message should NOT be dispatched yet (buffered)
+			expect(dispatchedMessages.length).toBe(0)
+
+			// Wait for connected state (setInterval detects isConnected=true)
+			// After connected, buffered messages are replayed via queueMicrotask
+			await waitFor(
+				() => {
+					expect(dispatchedMessages.length).toBe(1)
+				},
+				{ timeout: 3000 },
+			)
+
+			// The dispatched message should be the unwrapped payload (ExtensionMessage),
+			// not the full WebSocketMessage wrapper
+			expect(dispatchedMessages[0]).toEqual(extensionMessage)
+			expect(dispatchedMessages[0]).not.toEqual(wsMessage)
+			expect(dispatchedMessages[0].state).toBeDefined()
+			expect(dispatchedMessages[0].state.apiConfiguration).toBeDefined()
 
 			window.removeEventListener("message", messageHandler)
 		})
 
-		test("handles messages without payload by forwarding the message itself", async () => {
+		test("dispatches messages immediately after connected state", async () => {
 			;(getSessionToken as ReturnType<typeof vi.fn>).mockReturnValue("test-token")
 
 			const capturedCallback = { current: null as ((message: any) => void) | null }
@@ -239,20 +254,28 @@ describe("WebApp", () => {
 
 			render(React.createElement(WebApp))
 
-			await waitFor(() => {
-				expect(mockTransport.onMessage).toHaveBeenCalled()
-			})
+			// Wait for connected state (main app renders)
+			await waitFor(
+				() => {
+					expect(screen.getByTestId("main-app")).toBeTruthy()
+				},
+				{ timeout: 3000 },
+			)
 
-			const callback = capturedCallback.current
-			if (callback) {
-				// Simulate a message without payload (e.g., pong heartbeat or direct ExtensionMessage)
-				const directMessage = { type: "pong" }
-				callback(directMessage)
-
-				expect(dispatchedMessages.length).toBe(1)
-				// When no payload, the message itself should be forwarded
-				expect(dispatchedMessages[0]).toEqual(directMessage)
-			}
+			// Wait for the setTimeout(200ms) in the replay effect to fire,
+			// which sets isDispatchReadyRef.current = true
+			await waitFor(
+				() => {
+					// Now send a message - should be dispatched immediately
+					const callback = capturedCallback.current
+					if (callback) {
+						const directMessage = { type: "pong" }
+						callback(directMessage)
+					}
+					expect(dispatchedMessages.length).toBeGreaterThanOrEqual(1)
+				},
+				{ timeout: 1000 },
+			)
 
 			window.removeEventListener("message", messageHandler)
 		})

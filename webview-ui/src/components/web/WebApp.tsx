@@ -28,6 +28,15 @@ const WebApp: React.FC = () => {
 	const [transport, setTransport] = useState<Transport | null>(null)
 	const transportRef = useRef<Transport | null>(null)
 
+	// kilocode_change start: Buffer messages received before ExtensionStateContext mounts.
+	// The bridge sends initial state immediately when WebSocket connects, but
+	// ExtensionStateContext (which listens for window messages) hasn't mounted yet
+	// because AppWithProviders only renders when connectionState === "connected".
+	// This buffer ensures the initial state is replayed after the context mounts.
+	const isDispatchReadyRef = useRef(false)
+	const messageBufferRef = useRef<any[]>([])
+	// kilocode_change end
+
 	// Keep ref in sync with state
 	useEffect(() => {
 		connectionStateRef.current = connectionState
@@ -103,6 +112,24 @@ const WebApp: React.FC = () => {
 	useEffect(() => {
 		if (!transport) return
 
+		// kilocode_change start: Set window globals for icon/audio paths in web mode.
+		// In VS Code webview, ClineProvider sets these via inline <script> in the HTML.
+		// In browser web mode, we set them to relative paths that the HTTP server can serve.
+		const w = window as any
+		if (!w.ICONS_BASE_URI) {
+			w.ICONS_BASE_URI = "/icons"
+		}
+		if (!w.MATERIAL_ICONS_BASE_URI) {
+			w.MATERIAL_ICONS_BASE_URI = "/vscode-material-icons/icons"
+		}
+		if (!w.IMAGES_BASE_URI) {
+			w.IMAGES_BASE_URI = "/images"
+		}
+		if (!w.AUDIO_BASE_URI) {
+			w.AUDIO_BASE_URI = "/audio"
+		}
+		// kilocode_change end
+
 		const unsubscribe = transport.onMessage((message: any) => {
 			// kilocode_change: Unwrap WebSocketMessage to extract ExtensionMessage payload.
 			// WebSocket messages from WebServerBridge are wrapped as {type, payload}
@@ -111,6 +138,17 @@ const WebApp: React.FC = () => {
 			// to unwrap the payload here to avoid double-wrapping issues that
 			// cause apiConfiguration to be undefined.
 			const extensionMessage = message.payload ?? message
+
+			// kilocode_change: Buffer messages if ExtensionStateContext hasn't mounted yet.
+			// The bridge sends initial state immediately on WebSocket connect, but
+			// AppWithProviders (which contains ExtensionStateContext) only renders
+			// when connectionState === "connected". Messages arriving before that
+			// would be dispatched to window with no listener, causing state loss.
+			if (!isDispatchReadyRef.current) {
+				messageBufferRef.current.push(extensionMessage)
+				return
+			}
+
 			window.dispatchEvent(
 				new MessageEvent("message", {
 					data: extensionMessage,
@@ -120,6 +158,31 @@ const WebApp: React.FC = () => {
 
 		return unsubscribe
 	}, [transport])
+
+	// kilocode_change start: Replay buffered messages when ExtensionStateContext is ready.
+	// When connectionState becomes "connected", AppWithProviders renders (via React.lazy)
+	// and ExtensionStateContext mounts its window message listener in a child effect.
+	// We use setTimeout with a delay to ensure the lazy-loaded component has finished
+	// loading and child effects have run before replaying buffered messages.
+	// queueMicrotask was insufficient on mobile browsers where React.lazy chunk loading
+	// takes longer due to slower networks and CPUs.
+	useEffect(() => {
+		if (connectionState !== "connected") return
+
+		const timer = setTimeout(() => {
+			isDispatchReadyRef.current = true
+			for (const msg of messageBufferRef.current) {
+				window.dispatchEvent(new MessageEvent("message", { data: msg }))
+			}
+			messageBufferRef.current = []
+		}, 200)
+
+		return () => {
+			clearTimeout(timer)
+			isDispatchReadyRef.current = false
+		}
+	}, [connectionState])
+	// kilocode_change end
 
 	// Set the web transport override so vscode.postMessage routes through WebSocket
 	useEffect(() => {

@@ -33,11 +33,12 @@ function checkSessionToken(req: http.IncomingMessage, serverSecret: string): Pro
  * @param log 日志函数
  * @returns http.Server 实例
  */
-// kilocode_change start: Add assetsPath parameter for serving extension icons
+// kilocode_change start: Add assetsPath and webviewAudioPath parameters for serving extension icons and audio
 export function createHttpServer(
 	config: WebServerConfig,
 	staticPath: string,
 	assetsPath: string,
+	webviewAudioPath: string,
 	serverSecret: string,
 	log: (message: string) => void,
 ): http.Server {
@@ -52,7 +53,7 @@ export function createHttpServer(
 		res.setHeader("X-Frame-Options", "DENY")
 		res.setHeader(
 			"Content-Security-Policy",
-			"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss:;",
+			"default-src 'self'; font-src 'self'; img-src 'self' data: https:; media-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss:;",
 		)
 
 		const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`)
@@ -115,8 +116,8 @@ export function createHttpServer(
 
 			// GET * — 静态文件服务
 			if (req.method === "GET") {
-				// kilocode_change: Try staticPath first, then fall back to assetsPath for icons etc.
-				await serveStaticFile(pathname, staticPath, assetsPath, res, log)
+				// kilocode_change: Try staticPath first, then fall back to assetsPath and webviewAudioPath
+				await serveStaticFile(pathname, staticPath, assetsPath, webviewAudioPath, res, log)
 				return
 			}
 
@@ -199,15 +200,41 @@ function handleAuthRequest(
 	})
 }
 
-// kilocode_change start: Add assetsPath parameter for serving extension icons and other assets
+// kilocode_change start: Add assetsPath and webviewAudioPath parameters for serving extension icons and audio
+/**
+ * 已知的静态资源文件扩展名，这些请求不应回退到 SPA 的 web.html
+ * 如果这些文件找不到，应返回 404 而不是 HTML 页面
+ */
+const STATIC_ASSET_EXTENSIONS = new Set([
+	".ttf",
+	".woff",
+	".woff2",
+	".eot",
+	".svg",
+	".png",
+	".jpg",
+	".jpeg",
+	".gif",
+	".ico",
+	".wav",
+	".mp3",
+	".wasm",
+	".css",
+	".js",
+	".mjs",
+	".map",
+])
+
 /**
  * 提供静态文件服务
- * 先在 staticPath (dist-web) 中查找，找不到时回退到 assetsPath (extension assets/icons)
+ * 先在 staticPath (dist-web) 中查找，找不到时回退到 assetsPath (extension assets) 或 webviewAudioPath (audio)
+ * 对于已知静态资源类型（字体、图片等），找不到时返回 404 而非 SPA 回退
  */
 async function serveStaticFile(
 	pathname: string,
 	staticPath: string,
 	assetsPath: string,
+	webviewAudioPath: string,
 	res: http.ServerResponse,
 	log: (message: string) => void,
 ): Promise<void> {
@@ -230,33 +257,67 @@ async function serveStaticFile(
 		// 文件不在 staticPath 中，继续尝试其他路径
 	}
 
-	// kilocode_change: Try assetsPath for extension icons and other assets
-	// For icon files like /kilo-dark.svg, look in assetsPath/icons/
+	// kilocode_change: Try assetsPath for extension icons, codicon fonts, and other assets
+	// Map URL paths to assetsPath subdirectories:
+	//   /icons/kilo-dark.svg  -> assetsPath/icons/kilo-dark.svg
+	//   /codicons/codicon.ttf -> assetsPath/codicons/codicon.ttf
+	//   /images/foo.png       -> assetsPath/images/foo.png
 	let assetsFilePath = path.join(assetsPath, sanitizedPath)
 	try {
 		const stat = await fs.promises.stat(assetsFilePath)
-		if (stat.isDirectory()) {
-			// Don't serve directories from assets
-		} else {
+		if (!stat.isDirectory()) {
 			await sendFile(assetsFilePath, res, log)
 			return
 		}
 	} catch {
-		// File not found at assetsPath root, try icons/ subdirectory
-		// This handles requests like /kilo-dark.svg which are actually at assetsPath/icons/kilo-dark.svg
-		assetsFilePath = path.join(assetsPath, "icons", sanitizedPath)
+		// File not found at assetsPath with full path, continue
+	}
+
+	// kilocode_change: Fallback for codicon font files.
+	// The Vite-built CSS references /assets/fonts/codicon.ttf, but in the installed extension
+	// the font is at assets/codicons/codicon.ttf (not in dist-web/assets/fonts/).
+	// Map /assets/fonts/codicon.ttf -> assetsPath/codicons/codicon.ttf
+	if (sanitizedPath.startsWith("/assets/fonts/")) {
+		const fontFileName = path.basename(sanitizedPath)
+		const codiconPath = path.join(assetsPath, "codicons", fontFileName)
 		try {
-			const stat = await fs.promises.stat(assetsFilePath)
+			const stat = await fs.promises.stat(codiconPath)
 			if (!stat.isDirectory()) {
-				await sendFile(assetsFilePath, res, log)
+				await sendFile(codiconPath, res, log)
 				return
 			}
 		} catch {
-			// File not in assetsPath/icons/ either, continue to SPA fallback
+			// Font not found in codicons/ either, continue
 		}
 	}
 
+	// kilocode_change: Try webviewAudioPath for audio files (e.g., /audio/notification.wav)
+	if (sanitizedPath.startsWith("/audio/")) {
+		const audioFilePath = path.join(webviewAudioPath, sanitizedPath.replace(/^\/audio\//, ""))
+		try {
+			const stat = await fs.promises.stat(audioFilePath)
+			if (!stat.isDirectory()) {
+				await sendFile(audioFilePath, res, log)
+				return
+			}
+		} catch {
+			// Audio file not found, continue
+		}
+	}
+
+	// kilocode_change: For known static asset types, return 404 instead of SPA fallback.
+	// Returning HTML for missing fonts/images causes browser decoding errors
+	// (e.g., "OTS parsing error: invalid sfntVersion" when codicon.ttf receives HTML).
+	const ext = path.extname(sanitizedPath).toLowerCase()
+	if (STATIC_ASSET_EXTENSIONS.has(ext)) {
+		log(`[WebServer] Static asset not found: ${pathname}`)
+		res.writeHead(404, { "Content-Type": "application/octet-stream" })
+		res.end()
+		return
+	}
+
 	// SPA 回退：返回 web.html（Web 模式 SPA 回退）
+	// 仅用于页面导航请求（无文件扩展名或 .html 扩展名）
 	const spaFilePath = path.join(staticPath, "web.html")
 	try {
 		await sendFile(spaFilePath, res, log)
@@ -292,6 +353,8 @@ async function sendFile(filePath: string, res: http.ServerResponse, log: (messag
 		".ttf": "font/ttf",
 		".eot": "application/vnd.ms-fontobject",
 		".wasm": "application/wasm",
+		".wav": "audio/wav",
+		".mp3": "audio/mpeg",
 	}
 
 	const contentType = contentTypes[ext] || "application/octet-stream"

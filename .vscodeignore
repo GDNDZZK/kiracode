@@ -81,4 +81,5 @@ assets/docs/**
 # Must be at the end of the file to override **/*.map and **/*.ts rules
 !webview-ui/dist-web/**
 !webview-ui/dist-web/assets/**
+!webview-ui/dist-web/assets/fonts/**
 !webview-ui/dist-web/assets/*.map

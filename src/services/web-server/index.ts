@@ -60,16 +60,24 @@ export class WebServerService {
 			const staticPath = this.getStaticPath()
 			// kilocode_change: Determine assets path for serving extension icons
 			const assetsPath = this.getAssetsPath()
+			// kilocode_change: Determine webview audio path for serving audio files
+			const webviewAudioPath = this.getWebviewAudioPath()
 			this.log(`[WebServer] Static path resolved: ${staticPath}`)
 			this.log(`[WebServer] Assets path resolved: ${assetsPath}`)
+			this.log(`[WebServer] Webview audio path resolved: ${webviewAudioPath}`)
 
 			// 创建消息桥接
 			this.bridge = new WebServerBridge(provider)
 			this.bridge.initialize()
 
 			// 创建 HTTP 服务器
-			this.httpServer = createHttpServer(config, staticPath, assetsPath, this.serverSecret, (msg) =>
-				this.log(msg),
+			this.httpServer = createHttpServer(
+				config,
+				staticPath,
+				assetsPath,
+				webviewAudioPath,
+				this.serverSecret,
+				(msg) => this.log(msg),
 			)
 
 			// 创建 WebSocket 服务器
@@ -214,17 +222,34 @@ export class WebServerService {
 
 	// kilocode_change start: Add getAssetsPath for serving extension icons
 	/**
-	 * 获取扩展资源路径（图标等）
-	 * 图标文件位于 src/assets/icons/ 目录
+	 * 获取扩展资源路径（图标、codicon 字体等）
+	 * 在已安装的扩展中，资源位于 extensionPath/assets/ 目录
+	 * （包含 icons/、codicons/、images/ 等子目录）
 	 */
 	private getAssetsPath(): string {
 		const extensionPath = vscode.extensions.getExtension("kiracode.kira-code")?.extensionPath || ""
 		if (extensionPath) {
-			return path.join(extensionPath, "src", "assets")
+			return path.join(extensionPath, "assets")
 		}
 
 		// 开发模式下的回退路径
-		return path.join(__dirname, "..", "src", "assets")
+		return path.join(__dirname, "..", "assets")
+	}
+	// kilocode_change end
+
+	// kilocode_change start: Add getWebviewAudioPath for serving audio files
+	/**
+	 * 获取 webview 音频文件路径
+	 * 音频文件位于 webview-ui/audio/ 目录
+	 */
+	private getWebviewAudioPath(): string {
+		const extensionPath = vscode.extensions.getExtension("kiracode.kira-code")?.extensionPath || ""
+		if (extensionPath) {
+			return path.join(extensionPath, "webview-ui", "audio")
+		}
+
+		// 开发模式下的回退路径
+		return path.join(__dirname, "..", "webview-ui", "audio")
 	}
 	// kilocode_change end
 

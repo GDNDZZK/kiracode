@@ -25,7 +25,14 @@ describe("http-server", () => {
 
 	beforeAll(async () => {
 		serverSecret = generateServerSecret()
-		server = createHttpServer(config, "/nonexistent/path", "/nonexistent/assets", serverSecret, () => {})
+		server = createHttpServer(
+			config,
+			"/nonexistent/path",
+			"/nonexistent/assets",
+			"/nonexistent/audio",
+			serverSecret,
+			() => {},
+		)
 
 		await new Promise<void>((resolve) => {
 			server.listen(0, () => {
@@ -203,7 +210,7 @@ describe("http-server", () => {
 			fs.writeFileSync(path.join(tempDir, "assets", "app.js"), "// app bundle")
 
 			const spaSecret = generateServerSecret()
-			spaServer = createHttpServer(config, tempDir, tempDir, spaSecret, () => {})
+			spaServer = createHttpServer(config, tempDir, tempDir, tempDir, spaSecret, () => {})
 
 			await new Promise<void>((resolve) => {
 				spaServer.listen(0, () => {
@@ -259,6 +266,99 @@ describe("http-server", () => {
 			expect(res.statusCode).toBe(200)
 			expect(res.headers["content-type"]).toContain("text/html")
 			expect(res.body).toContain("Kira Code")
+		})
+	})
+
+	describe("Static asset handling", () => {
+		let assetServer: http.Server
+		let assetPort: number
+		let staticDir: string
+		let assetsDir: string
+
+		beforeAll(async () => {
+			// Create temp directories simulating extension structure
+			staticDir = fs.mkdtempSync(path.join(os.tmpdir(), "web-static-test-"))
+			assetsDir = fs.mkdtempSync(path.join(os.tmpdir(), "web-assets-test-"))
+
+			// Create web.html in static dir
+			fs.writeFileSync(path.join(staticDir, "web.html"), "<!DOCTYPE html><html><body>SPA</body></html>")
+
+			// Create icons directory in assets
+			fs.mkdirSync(path.join(assetsDir, "icons"), { recursive: true })
+			fs.writeFileSync(path.join(assetsDir, "icons", "kilo-dark.svg"), "<svg>icon</svg>")
+
+			// Create codicons directory in assets
+			fs.mkdirSync(path.join(assetsDir, "codicons"), { recursive: true })
+			fs.writeFileSync(path.join(assetsDir, "codicons", "codicon.ttf"), "fake-font-data")
+
+			const assetSecret = generateServerSecret()
+			assetServer = createHttpServer(config, staticDir, assetsDir, staticDir, assetSecret, () => {})
+
+			await new Promise<void>((resolve) => {
+				assetServer.listen(0, () => {
+					const addr = assetServer.address()
+					assetPort = typeof addr === "object" && addr ? addr.port : 32143
+					resolve()
+				})
+			})
+		})
+
+		afterAll(() => {
+			assetServer.close()
+			fs.rmSync(staticDir, { recursive: true, force: true })
+			fs.rmSync(assetsDir, { recursive: true, force: true })
+		})
+
+		function assetGet(
+			pathname: string,
+		): Promise<{ statusCode: number; headers: http.IncomingHttpHeaders; body: string }> {
+			return new Promise((resolve, reject) => {
+				http.get(`http://localhost:${assetPort}${pathname}`, (res) => {
+					let body = ""
+					res.on("data", (chunk) => (body += chunk))
+					res.on("end", () => {
+						resolve({ statusCode: res.statusCode!, headers: res.headers, body })
+					})
+				}).on("error", reject)
+			})
+		}
+
+		it("should serve SVG icons from assetsPath/icons/", async () => {
+			const res = await assetGet("/icons/kilo-dark.svg")
+			expect(res.statusCode).toBe(200)
+			expect(res.headers["content-type"]).toBe("image/svg+xml")
+			expect(res.body).toContain("icon")
+		})
+
+		it("should serve codicon font from assetsPath/codicons/ as fallback for /assets/fonts/", async () => {
+			const res = await assetGet("/assets/fonts/codicon.ttf")
+			expect(res.statusCode).toBe(200)
+			expect(res.headers["content-type"]).toBe("font/ttf")
+			expect(res.body).toBe("fake-font-data")
+		})
+
+		it("should return 404 for missing .ttf files (not HTML SPA fallback)", async () => {
+			const res = await assetGet("/assets/fonts/missing.ttf")
+			expect(res.statusCode).toBe(404)
+			expect(res.headers["content-type"]).toBe("application/octet-stream")
+		})
+
+		it("should return 404 for missing .svg files (not HTML SPA fallback)", async () => {
+			const res = await assetGet("/icons/missing.svg")
+			expect(res.statusCode).toBe(404)
+			expect(res.headers["content-type"]).toBe("application/octet-stream")
+		})
+
+		it("should return 404 for missing .css files (not HTML SPA fallback)", async () => {
+			const res = await assetGet("/assets/missing.css")
+			expect(res.statusCode).toBe(404)
+		})
+
+		it("should still fallback to web.html for paths without static extensions", async () => {
+			const res = await assetGet("/app/history")
+			expect(res.statusCode).toBe(200)
+			expect(res.headers["content-type"]).toContain("text/html")
+			expect(res.body).toContain("SPA")
 		})
 	})
 })
