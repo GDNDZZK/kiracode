@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "增加額度",
-		"lowBalance": "Kira Code 餘額不足",
+		"lowBalance": "Kilo Code 餘額不足",
 		"switchToFreeModel": "改為切換至免費模型"
 	},
 	"memoryWarning": {
@@ -77,10 +77,10 @@
 			"webServer": "Web 存取"
 		},
 		"provider": {
-			"account": "Kira Code 帳戶",
-			"apiKey": "Kira Code API 金鑰",
-			"login": "登入 Kira Code",
-			"logout": "登出 Kira Code",
+			"account": "Kilo Code 帳戶",
+			"apiKey": "Kilo Code API 金鑰",
+			"login": "登入 Kilo Code",
+			"logout": "登出 Kilo Code",
 			"loginForPremiumModels": "登入以存取進階模型與功能",
 			"providerRouting": {
 				"title": "供應商路由",
@@ -373,7 +373,7 @@
 		"shareModesNewBanner": "新功能：建立組織以分享模式"
 	},
 	"deviceAuth": {
-		"title": "登入 Kira Code",
+		"title": "登入 Kilo Code",
 		"step1": "在瀏覽器中開啟下列 URL",
 		"step2": "驗證代碼並在瀏覽器中授權此裝置",
 		"scanQr": "或用手機掃描此 QR Code",

@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Necessites parlar amb nosaltres? Escriu"
 		},
-		"community": "Vols consells o simplement passar l'estona amb altres usuaris de Kira Code? Uneix-te a <redditLink>reddit.com/r/kilocode</redditLink> o <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code està basat en la <kiloCodeLink>versió heretada de Kilo Code</kiloCodeLink>. Repositori: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Contacte i Comunitat",
 		"manageSettings": "Gestionar Configuració",
 		"debugMode": {
 			"label": "Activa el mode de depuració",
 			"description": "Activa el mode de depuració per mostrar botons addicionals a la capçalera de la tasca que permetin veure l'historial de conversa de l'API i els missatges de la UI com a JSON formatejat en fitxers temporals."
+		},
+		"basedOn": {
+			"label": "Basat en",
+			"name": "Kilo Code",
+			"description": "Kira Code està basat en la versió heretada de Kilo Code. Hem fet fork de la versió clàssica perquè preferim la filosofia de disseny original en lloc de les versions més recents."
+		},
+		"webRemote": {
+			"label": "Control Remot Web",
+			"description": "Controla i supervisa el teu agent de programació IA remotament a través d'un navegador web, permetent fluxos de treball flexibles multidispositiu."
 		}
 	},
 	"slashCommands": {
@@ -990,15 +999,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Habilitar generació d'imatges amb IA",
-			"description": "Quan estigui habilitat, Kira Code pot generar imatges a partir de prompts de text. Requereix que es configuri una clau d'API de Kira Code o OpenRouter.",
+			"description": "Quan estigui habilitat, Kilo Code pot generar imatges a partir de prompts de text. Requereix que es configuri una clau d'API de Kilo Code o OpenRouter.",
 			"apiProvider": "Proveïdor d'API",
 			"providerLabel": "Proveïdor",
 			"providerDescription": "Selecciona el proveïdor per a la generació d'imatges.",
 			"openRouterApiKeyLabel": "Clau API d'OpenRouter",
 			"openRouterApiKeyPlaceholder": "Introdueix la teva clau API d'OpenRouter",
-			"kiloCodeApiKeyLabel": "Clau API de Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Introdueix la teva clau API de Kira Code",
-			"kiloCodeApiKeyPaste": "Enganxa la clau API actual de Kira Code",
+			"kiloCodeApiKeyLabel": "Clau API de Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Introdueix la teva clau API de Kilo Code",
+			"kiloCodeApiKeyPaste": "Enganxa la clau API actual de Kilo Code",
 			"getApiKeyText": "Obté la teva clau API de",
 			"modelSelectionLabel": "Model de generació d'imatges",
 			"modelSelectionDescription": "Selecciona el model per a la generació d'imatges",
@@ -1093,8 +1102,8 @@
 		"allModels": "Tots els models"
 	},
 	"footer": {
-		"feedback": "Si teniu qualsevol pregunta o comentari, no dubteu a obrir un issue a <githubLink>github.com/Kilo-Org/kilocode</githubLink> o unir-vos a <redditLink>reddit.com/r/kilocode</redditLink> o <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Per a qüestions financeres, poseu-vos en contacte amb el Suport al Client a <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code està basat en la <kiloCodeLink>versió heretada de Kilo Code</kiloCodeLink>. Repositori: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Visiteu el <githubLink>repositori</githubLink> per suport i discussions.",
 		"telemetry": {
 			"label": "Permetre informes d'errors i ús",
 			"description": "Ajuda a millorar Kira Code enviant dades d'ús i informes d'errors. Mai s'envia codi, prompts o informació personal. Consulta la nostra política de privacitat per a més detalls."

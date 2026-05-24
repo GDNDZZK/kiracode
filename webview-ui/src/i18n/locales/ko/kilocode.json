@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "크레딧 추가",
-		"lowBalance": "Kira Code 잔액이 부족합니다",
+		"lowBalance": "Kilo Code 잔액이 부족합니다",
 		"switchToFreeModel": "무료 모델로 전환"
 	},
 	"pagination": {
@@ -69,10 +69,10 @@
 			"webServer": "웹 접근"
 		},
 		"provider": {
-			"account": "Kira Code 계정",
-			"apiKey": "Kira Code API 키",
-			"login": "Kira Code에 로그인",
-			"logout": "Kira Code에서 로그아웃",
+			"account": "Kilo Code 계정",
+			"apiKey": "Kilo Code API 키",
+			"login": "Kilo Code에 로그인",
+			"logout": "Kilo Code에서 로그아웃",
 			"loginForPremiumModels": "로그인하여 프리미엄 모델 및 기능에 액세스하세요",
 			"providerRouting": {
 				"title": "공급자 라우팅",
@@ -374,7 +374,7 @@
 		"shareModesNewBanner": "신규: 조직을 생성하여 모드 공유하기"
 	},
 	"deviceAuth": {
-		"title": "Kira Code에 로그인",
+		"title": "Kilo Code에 로그인",
 		"step1": "브라우저에서 다음 URL을 여세요",
 		"step2": "코드를 확인하고 브라우저에서 이 기기를 승인하세요",
 		"scanQr": "또는 휴대폰으로 이 QR 코드를 스캔하세요",

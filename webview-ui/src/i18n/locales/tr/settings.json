@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Bizimle konuşmanız mı gerekiyor? Yazın"
 		},
-		"community": "İpuçları mı istiyorsunuz yoksa sadece diğer Kira Code kullanıcılarıyla takılmak mı istiyorsunuz? <redditLink>reddit.com/r/kilocode</redditLink> veya <discordLink>kilo.ai/discord</discordLink>'a katılın",
+		"community": "Kira Code, <kiloCodeLink>Kilo Code'un eski sürümüne</kiloCodeLink> dayanmaktadır. Depo: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "İletişim ve Topluluk",
 		"manageSettings": "Ayarları Yönet",
 		"debugMode": {
 			"label": "Debug modunu etkinleştir",
 			"description": "Görev başlığında API konuşma geçmişini ve UI mesajlarını geçici dosyalarda biçimlendirilmiş JSON olarak görüntülemek için ek düğmeler göstermek üzere debug modunu etkinleştirin."
+		},
+		"basedOn": {
+			"label": "Taban",
+			"name": "Kilo Code",
+			"description": "Kira Code, Kilo Codeun eski sürümüne dayanmaktadır. Yeni sürümler yerine orijinal tasarım felsefesini tercih ettiğimiz için klasik sürümden fork yaptık."
+		},
+		"webRemote": {
+			"label": "Web Uzaktan Kontrol",
+			"description": "AI kodlama aracınızı web tarayıcısı üzerinden uzaktan kontrol edin ve izleyin, esnek çoklu cihaz iş akışları sağlayın."
 		}
 	},
 	"slashCommands": {
@@ -1011,13 +1020,13 @@
 			"providerLabel": "Sağlayıcı",
 			"providerDescription": "Görüntü oluşturma için kullanılacak sağlayıcıyı seçin.",
 			"name": "AI görüntü üretimini etkinleştir",
-			"description": "Etkinleştirildiğinde, Kira Code metin istemlerinden görüntüler üretebilir. Yapılandırılmış bir Kira Code veya OpenRouter API anahtarı gerektirir.",
+			"description": "Etkinleştirildiğinde, Kilo Code metin istemlerinden görüntüler üretebilir. Yapılandırılmış bir Kilo Code veya OpenRouter API anahtarı gerektirir.",
 			"apiProvider": "API Sağlayıcı",
 			"openRouterApiKeyLabel": "OpenRouter API Anahtarı",
 			"openRouterApiKeyPlaceholder": "OpenRouter API anahtarınızı girin",
-			"kiloCodeApiKeyLabel": "Kira Code API Anahtarı",
-			"kiloCodeApiKeyPlaceholder": "Kira Code API anahtarınızı girin",
-			"kiloCodeApiKeyPaste": "Mevcut Kira Code API anahtarını yapıştır",
+			"kiloCodeApiKeyLabel": "Kilo Code API Anahtarı",
+			"kiloCodeApiKeyPlaceholder": "Kilo Code API anahtarınızı girin",
+			"kiloCodeApiKeyPaste": "Mevcut Kilo Code API anahtarını yapıştır",
 			"getApiKeyText": "API anahtarınızı alın",
 			"modelSelectionLabel": "Görüntü Üretim Modeli",
 			"modelSelectionDescription": "Görüntü üretimi için kullanılacak modeli seçin",
@@ -1094,8 +1103,8 @@
 		"allModels": "Tüm modeller"
 	},
 	"footer": {
-		"feedback": "Herhangi bir sorunuz veya geri bildiriminiz varsa, <githubLink>github.com/Kilo-Org/kilocode</githubLink> adresinde bir konu açmaktan veya <redditLink>reddit.com/r/kilocode</redditLink> ya da <discordLink>kilo.ai/discord</discordLink>'a katılmaktan çekinmeyin",
-		"support": "Mali konular için lütfen <supportLink>https://kilo.ai/support</supportLink> adresinden Müşteri Desteği ile iletişime geçin",
+		"feedback": "Kira Code, <kiloCodeLink>Kilo Code'un eski sürümüne</kiloCodeLink> dayanmaktadır. Depo: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Destek ve tartışmalar için <githubLink>depoyu</githubLink> ziyaret edin.",
 		"telemetry": {
 			"label": "Hata ve kullanım raporlamaya izin ver",
 			"description": "Kullanım verileri ve hata raporları göndererek Kira Code'u geliştirmeye yardımcı olun. Hiçbir kod, istem veya kişisel bilgi asla gönderilmez. Daha fazla ayrıntı için gizlilik politikamıza bakın."

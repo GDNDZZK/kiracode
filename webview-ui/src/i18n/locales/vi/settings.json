@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Cần nói chuyện với chúng tôi? Viết"
 		},
-		"community": "Muốn nhận mẹo hoặc chỉ muốn giao lưu với những người dùng Kira Code khác? Tham gia <redditLink>reddit.com/r/kilocode</redditLink> hoặc <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code dựa trên <kiloCodeLink>phiên bản cũ của Kilo Code</kiloCodeLink>. Kho lưu trữ: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Liên Hệ & Cộng Đồng",
 		"manageSettings": "Quản Lý Cài Đặt",
 		"debugMode": {
 			"label": "Bật chế độ debug",
 			"description": "Bật chế độ debug để hiển thị các nút bổ sung trong tiêu đề nhiệm vụ cho phép xem lịch sử hội thoại API và tin nhắn UI dưới dạng JSON được định dạng trong các tệp tạm thời."
+		},
+		"basedOn": {
+			"label": "Dựa trên",
+			"name": "Kilo Code",
+			"description": "Kira Code được dựa trên phiên bản cũ của Kilo Code. Chúng tôi đã fork từ phiên bản cổ điển vì chúng tôi thích triết lý thiết kế gốc hơn các bản phát hành mới hơn."
+		},
+		"webRemote": {
+			"label": "Điều khiển từ xa Web",
+			"description": "Điều khiển và giám sát tác nhân lập trình AI từ xa thông qua trình duyệt web, cho phép quy trình làm việc linh hoạt trên nhiều thiết bị."
 		}
 	},
 	"slashCommands": {
@@ -993,13 +1002,13 @@
 			"providerLabel": "Nhà cung cấp",
 			"providerDescription": "Chọn nhà cung cấp để tạo hình ảnh.",
 			"name": "Bật tạo hình ảnh AI",
-			"description": "Khi được bật, Kira Code có thể tạo hình ảnh từ lời nhắc văn bản. Yêu cầu khóa API Kira Code hoặc OpenRouter được cấu hình.",
+			"description": "Khi được bật, Kilo Code có thể tạo hình ảnh từ lời nhắc văn bản. Yêu cầu khóa API Kilo Code hoặc OpenRouter được cấu hình.",
 			"apiProvider": "Nhà cung cấp API",
 			"openRouterApiKeyLabel": "Khóa API OpenRouter",
 			"openRouterApiKeyPlaceholder": "Nhập khóa API OpenRouter của bạn",
-			"kiloCodeApiKeyLabel": "Khóa API Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Nhập khóa API Kira Code của bạn",
-			"kiloCodeApiKeyPaste": "Dán khóa API Kira Code hiện tại",
+			"kiloCodeApiKeyLabel": "Khóa API Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Nhập khóa API Kilo Code của bạn",
+			"kiloCodeApiKeyPaste": "Dán khóa API Kilo Code hiện tại",
 			"getApiKeyText": "Lấy khóa API của bạn từ",
 			"modelSelectionLabel": "Mô hình tạo hình ảnh",
 			"modelSelectionDescription": "Chọn mô hình để sử dụng cho việc tạo hình ảnh",
@@ -1094,8 +1103,8 @@
 		"allModels": "Tất cả mô hình"
 	},
 	"footer": {
-		"feedback": "Nếu bạn có bất kỳ câu hỏi hoặc phản hồi nào, vui lòng mở một vấn đề tại <githubLink>github.com/Kilo-Org/kilocode</githubLink> hoặc tham gia <redditLink>reddit.com/r/kilocode</redditLink> hoặc <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Đối với các câu hỏi về tài chính, vui lòng liên hệ Hỗ trợ khách hàng tại <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code dựa trên <kiloCodeLink>phiên bản cũ của Kilo Code</kiloCodeLink>. Kho lưu trữ: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Truy cập <githubLink>kho lưu trữ</githubLink> để được hỗ trợ và thảo luận.",
 		"telemetry": {
 			"label": "Cho phép báo cáo lỗi và sử dụng ẩn danh",
 			"description": "Giúp cải thiện Kira Code bằng cách gửi dữ liệu sử dụng ẩn danh và báo cáo lỗi. Không bao giờ gửi mã, lời nhắc hoặc thông tin cá nhân. Xem chính sách bảo mật của chúng tôi để biết thêm chi tiết."

@@ -13,8 +13,7 @@
 		"description": "Wir würden gerne dein Feedback hören, um dir bei allen Problemen zu helfen.",
 		"githubIssues": "Ein Problem auf GitHub melden",
 		"githubDiscussions": "An GitHub-Diskussionen teilnehmen",
-		"discord": "Trete unserer Discord-Community bei",
-		"customerSupport": "Kundensupport"
+		"discord": "Trete unserer Discord-Community bei"
 	},
 	"welcome": "Willkommen, {{name}}! Du hast {{count}} Benachrichtigungen.",
 	"items": {

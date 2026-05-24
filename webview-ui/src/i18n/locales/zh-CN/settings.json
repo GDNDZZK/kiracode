@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "需要联系我们？请发送邮件至"
 		},
-		"community": "想要获取使用技巧或与其他 Kira Code 用户交流？加入 <redditLink>reddit.com/r/kilocode</redditLink> 或 <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code 基于 <kiloCodeLink>Kilo Code 旧版本</kiloCodeLink>。仓库地址：<githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "联系与社区",
 		"manageSettings": "管理设置",
 		"debugMode": {
 			"label": "启用调试模式",
 			"description": "启用调试模式以在任务标题栏显示额外按钮，用于在临时文件中查看 API 对话历史和 UI 消息的格式化 JSON。"
+		},
+		"basedOn": {
+			"label": "基于",
+			"name": "Kilo Code",
+			"description": "Kira Code 基于 Kilo Code 的旧版本。我们从经典版本 fork，因为我们更偏爱原有的设计理念，而非新版本的改动。"
+		},
+		"webRemote": {
+			"label": "Web 远程控制",
+			"description": "通过 Web 浏览器远程控制和监控 AI 编程代理，实现灵活的多设备工作流。"
 		}
 	},
 	"slashCommands": {
@@ -997,13 +1006,13 @@
 			"providerLabel": "提供商",
 			"providerDescription": "选择用于图像生成的提供商。",
 			"name": "启用 AI 图像生成",
-			"description": "启用后，Kira Code 可以从文本提示生成图像。需要配置 Kira Code 或 OpenRouter API 密钥。",
+			"description": "启用后，Kilo Code 可以从文本提示生成图像。需要配置 Kilo Code 或 OpenRouter API 密钥。",
 			"apiProvider": "API 提供商",
 			"openRouterApiKeyLabel": "OpenRouter API 密钥",
 			"openRouterApiKeyPlaceholder": "输入您的 OpenRouter API 密钥",
-			"kiloCodeApiKeyLabel": "Kira Code API 密钥",
-			"kiloCodeApiKeyPlaceholder": "输入您的 Kira Code API 密钥",
-			"kiloCodeApiKeyPaste": "粘贴当前 Kira Code API 密钥",
+			"kiloCodeApiKeyLabel": "Kilo Code API 密钥",
+			"kiloCodeApiKeyPlaceholder": "输入您的 Kilo Code API 密钥",
+			"kiloCodeApiKeyPaste": "粘贴当前 Kilo Code API 密钥",
 			"getApiKeyText": "获取您的 API 密钥",
 			"modelSelectionLabel": "图像生成模型",
 			"modelSelectionDescription": "选择用于图像生成的模型",
@@ -1098,8 +1107,8 @@
 		"allModels": "全部模型"
 	},
 	"footer": {
-		"feedback": "如果您有任何问题或反馈，请随时在 <githubLink>github.com/Kilo-Org/kilocode</githubLink> 上提出问题或加入 <redditLink>reddit.com/r/kilocode</redditLink> 或 <discordLink>kilo.ai/discord</discordLink>",
-		"support": "如有财务问题，请联系客户支持 <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code 基于 <kiloCodeLink>Kilo Code 旧版本</kiloCodeLink>。仓库地址：<githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "访问 <githubLink>仓库</githubLink> 获取支持和讨论。",
 		"telemetry": {
 			"label": "允许错误和使用情况报告",
 			"description": "通过发送使用数据和错误报告帮助改进 Kira Code。绝不会发送代码、提示词或个人信息。详情请查看我们的隐私政策。"

@@ -70,10 +70,19 @@
 		"contactSupport": "ติดต่อฝ่ายสนับสนุน",
 		"contactSupportDesc": "สำหรับคำถามทั่วไป การแก้ไขปัญหา และความช่วยเหลือด้านเทคนิค",
 		"joinCommunity": "เข้าร่วมชุมชน",
-		"joinCommunityDesc": "ต้องการเทคนิคหรือแค่ใช้เวลาร่วมกับผู้ใช้ Kira Code คนอื่นๆ? เข้าร่วม <redditLink>reddit.com/r/kilocode</redditLink> หรือ <discordLink>kilo.ai/discord</discordLink>",
-		"community": "ต้องการเทคนิคหรือแค่ใช้เวลาร่วมกับผู้ใช้ Kira Code คนอื่นๆ? เข้าร่วม <redditLink>reddit.com/r/kilocode</redditLink> หรือ <discordLink>kilo.ai/discord</discordLink>",
+		"joinCommunityDesc": "Kira Code ใช้ <kiloCodeLink>Kilo Code เวอร์ชันเก่า</kiloCodeLink> เป็นฐาน ที่เก็บ: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"community": "Kira Code ใช้ <kiloCodeLink>Kilo Code เวอร์ชันเก่า</kiloCodeLink> เป็นฐาน ที่เก็บ: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "ติดต่อและชุมชน",
-		"manageSettings": "จัดการการตั้งค่า"
+		"manageSettings": "จัดการการตั้งค่า",
+		"basedOn": {
+			"label": "พัฒนาต่อจาก",
+			"name": "Kilo Code",
+			"description": "Kira Code ใช้ Kilo Code เวอร์ชันดั้งเดิมเป็นฐาน เรา fork จากเวอร์ชันคลาสสิกเพราะเราชอบปรัชญาการออกแบบดั้งเดิมมากกว่าเวอร์ชันที่ใหม่กว่า"
+		},
+		"webRemote": {
+			"label": "ควบคุมระยะไกลผ่านเว็บ",
+			"description": "ควบคุมและติดตามเอเจนต์เขียนโค้ด AI ของคุณจากระยะไกลผ่านเว็บเบราว์เซอร์ ช่วยให้เวิร์กโฟลว์หลายอุปกรณ์มีความยืดหยุ่น"
+		}
 	},
 	"slashCommands": {
 		"description": "จัดการคำสั่งแบบ slash ของคุณเพื่อดำเนินการเวิร์กโฟลว์และการกระทำแบบกำหนดเองอย่างรวดเร็ว <DocsLink>เรียนรู้เพิ่มเติม</DocsLink>"
@@ -1089,15 +1098,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "เปิดใช้งานการสร้างภาพด้วย AI",
-			"description": "เมื่อเปิดใส้งาน Kira Code สามารถสร้างภาพจากข้อความ prompt ต้องการ API key ของ Kira Code หรือ OpenRouter",
+			"description": "เมื่อเปิดใส้งาน Kilo Code สามารถสร้างภาพจากข้อความ prompt ต้องการ API key ของ Kilo Code หรือ OpenRouter",
 			"apiProvider": "ผู้ให้บริการ API",
 			"providerLabel": "ผู้ให้บริการ",
 			"providerDescription": "เลือกผู้ให้บริการที่จะใช้สำหรับการสร้างภาพ",
 			"openRouterApiKeyLabel": "OpenRouter API Key",
 			"openRouterApiKeyPlaceholder": "ป้อน OpenRouter API key ของคุณ",
-			"kiloCodeApiKeyLabel": "Kira Code API Key",
-			"kiloCodeApiKeyPlaceholder": "ป้อน Kira Code API key ของคุณ",
-			"kiloCodeApiKeyPaste": "วาง API key ปัจจุบันของ Kira Code",
+			"kiloCodeApiKeyLabel": "Kilo Code API Key",
+			"kiloCodeApiKeyPlaceholder": "ป้อน Kilo Code API key ของคุณ",
+			"kiloCodeApiKeyPaste": "วาง API key ปัจจุบันของ Kilo Code",
 			"getApiKeyText": "รับ API key จาก",
 			"modelSelectionLabel": "โมเดลสร้างภาพ",
 			"modelSelectionDescription": "เลือกโมเดลที่จะใช้สำหรับการสร้างภาพ",
@@ -1200,8 +1209,8 @@
 		"allModels": "โมเดลทั้งหมด"
 	},
 	"footer": {
-		"feedback": "หากคุณมีคำถามหรือข้อเสนอแนะ โปรดเปิด issue ที่ <githubLink>github.com/Kilo-Org/kilocode</githubLink> หรือเข้าร่วม <redditLink>reddit.com/r/kilocode</redditLink> หรือ <discordLink>kilo.ai/discord</discordLink>",
-		"support": "สำหรับคำถามด้านการเงิน โปรดติดต่อฝ่ายสนับสนุนลูกค้าที่ <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code ใช้ <kiloCodeLink>Kilo Code เวอร์ชันเก่า</kiloCodeLink> เป็นฐาน ที่เก็บ: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "เยี่ยมชม <githubLink>ที่เก็บ</githubLink> เพื่อรับการสนับสนุนและการอภิปราย",
 		"telemetry": {
 			"label": "อนุญาตการรายงานข้อผิดพลาดและการใช้งาน",
 			"description": "ช่วยปรับปรุง Kira Code โดยการส่งข้อมูลการใช้งานและรายงานข้อผิดพลาด ไม่มีการส่งโค้ด พรอมต์ หรือข้อมูลส่วนบุคคล ดูนโยบายความเป็นส่วนตัวของเราสำหรับรายละเอียดเพิ่มเติม"

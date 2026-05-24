@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Add Credit",
-		"lowBalance": "Your Kira Code balance is low",
+		"lowBalance": "Your Kilo Code balance is low",
 		"switchToFreeModel": "Switch to Free Model instead"
 	},
 	"memoryWarning": {
@@ -77,10 +77,10 @@
 			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Kira Code Account",
-			"apiKey": "Kira Code API Key",
-			"login": "Log in at Kira Code",
-			"logout": "Log out from Kira Code",
+			"account": "Kilo Code Account",
+			"apiKey": "Kilo Code API Key",
+			"login": "Log in at Kilo Code",
+			"logout": "Log out from Kilo Code",
 			"loginForPremiumModels": "Log in to access premium models & features",
 			"providerRouting": {
 				"title": "Provider Routing",
@@ -330,7 +330,7 @@
 			},
 			"noCredits": {
 				"title": "No credits in your account",
-				"description": "Your Kira Code account has no credits. To use autocomplete, please add credits to your account.",
+				"description": "Your Kilo Code account has no credits. To use autocomplete, please add credits to your account.",
 				"buyCredits": "Buy credits →"
 			},
 			"configureAutocompleteProfile": "Use any model by going to profiles and configuring a Profile of the Profile Type Autocomplete."
@@ -373,7 +373,7 @@
 		"shareModesNewBanner": "New: Share modes by creating an organization"
 	},
 	"deviceAuth": {
-		"title": "Sign in to Kira Code",
+		"title": "Sign in to Kilo Code",
 		"step1": "Open the following URL on your browser",
 		"step2": "Verify the code and authorize this device on your browser",
 		"scanQr": "Or scan this QR code with your phone",

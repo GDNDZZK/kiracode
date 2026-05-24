@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Tambah Kredit",
-		"lowBalance": "Saldo Kira Code kamu rendah",
+		"lowBalance": "Saldo Kilo Code kamu rendah",
 		"switchToFreeModel": "Beralih ke Model Gratis"
 	},
 	"pagination": {
@@ -62,10 +62,10 @@
 			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Akun Kira Code",
-			"apiKey": "API Key Kira Code",
-			"login": "Masuk ke Kira Code",
-			"logout": "Keluar dari Kira Code",
+			"account": "Akun Kilo Code",
+			"apiKey": "API Key Kilo Code",
+			"login": "Masuk ke Kilo Code",
+			"logout": "Keluar dari Kilo Code",
 			"loginForPremiumModels": "Masuk untuk mengakses model dan fitur premium",
 			"providerRouting": {
 				"title": "Perutean Penyedia",
@@ -374,7 +374,7 @@
 		"shareModesNewBanner": "Baru: Bagikan mode dengan membuat organisasi"
 	},
 	"deviceAuth": {
-		"title": "Masuk ke Kira Code",
+		"title": "Masuk ke Kilo Code",
 		"step1": "Buka URL berikut di browser kamu",
 		"step2": "Verifikasi kode dan otorisasi perangkat ini di browser kamu",
 		"scanQr": "Atau pindai kode QR ini dengan ponsel kamu",

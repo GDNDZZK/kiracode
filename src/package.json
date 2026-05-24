@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "kiracode",
-	"version": "5.16.1",
+	"version": "8.0.0",
 	"icon": "assets/icons/logo-outline-black.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
@@ -21,7 +21,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Kilo-Org/kilocode"
+		"url": "https://github.com/GDNDZZK/kiracode"
 	},
 	"homepage": "https://kilo.ai",
 	"categories": [
@@ -117,8 +117,8 @@
 				{
 					"id": "kira-code-ActivityBar",
 					"title": "%views.activitybar.title%",
-					"icon": "assets/icons/kilo.png",
-					"darkIcon": "assets/icons/kilo-dark.png"
+					"icon": "assets/icons/kilo-light.svg",
+					"darkIcon": "assets/icons/kilo-white.svg"
 				}
 			]
 		},
@@ -128,8 +128,8 @@
 					"type": "webview",
 					"id": "kira-code.SidebarProvider",
 					"name": "%views.sidebar.name%",
-					"icon": "assets/icons/kilo.png",
-					"darkIcon": "assets/icons/kilo-dark.png"
+					"icon": "assets/icons/kilo-light.svg",
+					"darkIcon": "assets/icons/kilo-white.svg"
 				}
 			]
 		},

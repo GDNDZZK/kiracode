@@ -1,6 +1,6 @@
 {
 	"extension.displayName": "Kira Code: AI Coding Agent, Copilot, and Autocomplete",
-	"extension.description": "Open Source AI coding agent that generates code from natural language, automates tasks, and runs terminal commands. Features inline autocomplete, browser automation, automated refactoring, and custom modes for planning, coding, and debugging. Supports 500+ AI models including Claude (Anthropic), Gemini, Grok, GPT, Codex and GLM.",
+	"extension.description": "Based on the legacy version of Kilo Code. An open-source AI coding agent that generates code from natural language, automates tasks, and runs terminal commands. Features web remote control, inline autocomplete, browser automation, automated refactoring, and custom modes for planning, coding, and debugging. Supports 500+ AI models including Claude (Anthropic), Gemini, Grok, GPT, Codex and GLM.",
 	"views.contextMenu.label": "Kira Code",
 	"views.terminalMenu.label": "Kira Code",
 	"views.activitybar.title": "Kira Code",
@@ -29,7 +29,7 @@
 	"command.acceptInput.title": "Accept Input/Suggestion",
 	"command.generateCommitMessage.title": "Generate Commit Message with Kira",
 	"command.profile.title": "Profile",
-	"configuration.title": "Kilo Code",
+	"configuration.title": "Kira Code",
 	"command.toggleAutoApprove.title": "Toggle Auto-Approve",
 	"commands.allowedCommands.description": "Commands that can be auto-executed when 'Always approve execute operations' is enabled",
 	"commands.deniedCommands.description": "Command prefixes that will be automatically denied without asking for approval. In case of conflicts with allowed commands, the longest prefix match takes precedence. Add * to deny all commands.",

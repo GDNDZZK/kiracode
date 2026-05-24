@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Dodaj kredyt",
-		"lowBalance": "Twój stan konta Kira Code jest niski",
+		"lowBalance": "Twój stan konta Kilo Code jest niski",
 		"switchToFreeModel": "Przełącz na darmowy model"
 	},
 	"pagination": {
@@ -62,10 +62,10 @@
 			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Konto Kira Code",
-			"apiKey": "Klucz API Kira Code",
-			"login": "Zaloguj się do Kira Code",
-			"logout": "Wyloguj się z Kira Code",
+			"account": "Konto Kilo Code",
+			"apiKey": "Klucz API Kilo Code",
+			"login": "Zaloguj się do Kilo Code",
+			"logout": "Wyloguj się z Kilo Code",
 			"loginForPremiumModels": "Zaloguj się, aby uzyskać dostęp do modeli i funkcji premium",
 			"providerRouting": {
 				"title": "Routing dostawców",
@@ -375,7 +375,7 @@
 		"shareModesNewBanner": "Nowość: Udostępniaj tryby tworząc organizację"
 	},
 	"deviceAuth": {
-		"title": "Zaloguj się do Kira Code",
+		"title": "Zaloguj się do Kilo Code",
 		"step1": "Otwórz następujący adres URL w przeglądarce",
 		"step2": "Zweryfikuj kod i autoryzuj to urządzenie w przeglądarce",
 		"scanQr": "Lub zeskanuj ten kod QR telefonem",

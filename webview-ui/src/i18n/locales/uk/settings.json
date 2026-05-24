@@ -55,7 +55,7 @@
 		"contactSupport": "Зв'язатися зі службою підтримки",
 		"contactSupportDesc": "Потребуєш допомоги? Зв'яжися з нашою службою підтримки клієнтів для отримання персоналізованої допомоги.",
 		"joinCommunity": "Приєднатися до спільноти",
-		"joinCommunityDesc": "Зв'яжись з іншими користувачами Kira Code, поділися порадами і отримай допомогу від спільноти.",
+		"joinCommunityDesc": "Kira Code базується на <kiloCodeLink>застарілій версії Kilo Code</kiloCodeLink>. Репозиторій: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Контакти та спільнота",
 		"manageSettings": "Керувати налаштуваннями",
 		"bugReport": {
@@ -73,7 +73,16 @@
 		"contact": {
 			"label": "Потрібно поговорити з нами? Напиши"
 		},
-		"community": "Хочеш отримати поради або просто поспілкуватися з іншими користувачами Roo Code? Приєднуйся до <redditLink>reddit.com/r/kilocode</redditLink> або <discordLink>kilo.ai/discord</discordLink>"
+		"community": "Kira Code базується на <kiloCodeLink>застарілій версії Kilo Code</kiloCodeLink>. Репозиторій: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"basedOn": {
+			"label": "Оснований на",
+			"name": "Kilo Code",
+			"description": "Kira Code базується на застарілій версії Kilo Code. Ми зробили форк класичної версії, оскільки віддаємо перевагу оригінальній філософії дизайну перед новішими випусками."
+		},
+		"webRemote": {
+			"label": "Веб-віддалене керування",
+			"description": "Керуйте та відстежуйте вашого ІІ-агента програмування віддалено через веб-браузер, забезпечуючи гнучкі робочі процеси на кількох пристроях."
+		}
 	},
 	"slashCommands": {
 		"description": "Керуйте своїми slash командами для швидкого виконання власних робочих процесів та дій. <DocsLink>Дізнатися більше</DocsLink>"
@@ -1105,15 +1114,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Увімкнути генерацію зображень ШІ",
-			"description": "Коли увімкнено, Kira Code може генерувати зображення з текстових запитів. Потребує Kira Code або OpenRouter API ключ.",
+			"description": "Коли увімкнено, Kilo Code може генерувати зображення з текстових запитів. Потребує Kilo Code або OpenRouter API ключ.",
 			"apiProvider": "Провайдер API",
 			"providerLabel": "Провайдер",
 			"providerDescription": "Вибери провайдера для генерації зображень.",
 			"openRouterApiKeyLabel": "OpenRouter API Key",
 			"openRouterApiKeyPlaceholder": "Введіть свій OpenRouter API ключ",
-			"kiloCodeApiKeyLabel": "Kira Code API ключ",
-			"kiloCodeApiKeyPlaceholder": "Введіть свій Kira Code API ключ",
-			"kiloCodeApiKeyPaste": "Вставити поточний API ключ Kira Code",
+			"kiloCodeApiKeyLabel": "Kilo Code API ключ",
+			"kiloCodeApiKeyPlaceholder": "Введіть свій Kilo Code API ключ",
+			"kiloCodeApiKeyPaste": "Вставити поточний API ключ Kilo Code",
 			"getApiKeyText": "Отримайте API ключ з",
 			"modelSelectionLabel": "Модель генерації зображень",
 			"modelSelectionDescription": "Виберіть модель для використання при генерації зображень",
@@ -1214,8 +1223,8 @@
 		"allModels": "Усі моделі"
 	},
 	"footer": {
-		"feedback": "Якщо у тебе є питання або відгуки, не соромся відкрити issue на <githubLink>github.com/Kilo-Org/kilocode</githubLink> або приєднатися до <redditLink>reddit.com/r/kilocode</redditLink> або <discordLink>kilo.ai/discord</discordLink>.",
-		"support": "З фінансових питань звертайся до служби підтримки клієнтів за адресою <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code базується на <kiloCodeLink>застарілій версії Kilo Code</kiloCodeLink>. Репозиторій: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Відвідайте <githubLink>репозиторій</githubLink> для підтримки та обговорень.",
 		"telemetry": {
 			"label": "Дозволити звітування про помилки та використання",
 			"description": "Допоможи покращити Kira Code, надсилаючи дані про використання та звіти про помилки. Жоден код, підказки або особиста інформація ніколи не надсилаються. Дивись нашу політику конфіденційності для отримання додаткової інформації."

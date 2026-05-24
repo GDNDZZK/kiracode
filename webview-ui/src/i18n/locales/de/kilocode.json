@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Guthaben hinzufügen",
-		"lowBalance": "Dein Kira Code Guthaben ist niedrig",
+		"lowBalance": "Dein Kilo Code Guthaben ist niedrig",
 		"switchToFreeModel": "Wechsle stattdessen zu einem kostenlosen Modell"
 	},
 	"pagination": {
@@ -69,10 +69,10 @@
 			"webServer": "Web-Zugriff"
 		},
 		"provider": {
-			"account": "Kira Code Konto",
-			"apiKey": "Kira Code API-Schlüssel",
-			"login": "Bei Kira Code anmelden",
-			"logout": "Von Kira Code abmelden",
+			"account": "Kilo Code Konto",
+			"apiKey": "Kilo Code API-Schlüssel",
+			"login": "Bei Kilo Code anmelden",
+			"logout": "Von Kilo Code abmelden",
 			"loginForPremiumModels": "Melde dich an, um auf Premium-Modelle und -Funktionen zuzugreifen",
 			"providerRouting": {
 				"title": "Anbieter-Routing",
@@ -374,7 +374,7 @@
 		"shareModesNewBanner": "Neu: Modi teilen durch Erstellen einer Organisation"
 	},
 	"deviceAuth": {
-		"title": "Bei Kira Code anmelden",
+		"title": "Bei Kilo Code anmelden",
 		"step1": "Öffne die folgende URL in deinem Browser",
 		"step2": "Überprüfe den Code und autorisiere dieses Gerät in deinem Browser",
 		"scanQr": "Oder scanne diesen QR-Code mit deinem Handy",

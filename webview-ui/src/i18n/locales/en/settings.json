@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Need to talk to us? Write"
 		},
-		"community": "Want tips or to just hang out with other Kira Code users? Join <redditLink>reddit.com/r/kilocode</redditLink> or <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code is based on the <kiloCodeLink>legacy version of Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Contact & Community",
 		"manageSettings": "Manage Settings",
 		"debugMode": {
 			"label": "Enable debug mode",
 			"description": "Enable debug mode to show additional buttons in the task header for viewing API conversation history and UI messages as prettified JSON in temporary files."
+		},
+		"basedOn": {
+			"label": "Based on",
+			"name": "Kilo Code",
+			"description": "Kira Code is based on the legacy version of Kilo Code. We forked from the classic version because we prefer the original design philosophy over the newer releases."
+		},
+		"webRemote": {
+			"label": "Web Remote Control",
+			"description": "Control and monitor your AI coding agent remotely through a web browser, enabling flexible multi-device workflows."
 		}
 	},
 	"slashCommands": {
@@ -1051,15 +1060,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Enable AI image generation",
-			"description": "When enabled, Kira Code can generate images from text prompts. Requires a Kira Code or OpenRouter API key to be configured.",
+			"description": "When enabled, Kilo Code can generate images from text prompts. Requires a Kilo Code or OpenRouter API key to be configured.",
 			"apiProvider": "API Provider",
 			"providerLabel": "Provider",
 			"providerDescription": "Select which provider to use for image generation.",
 			"openRouterApiKeyLabel": "OpenRouter API Key",
 			"openRouterApiKeyPlaceholder": "Enter your OpenRouter API key",
-			"kiloCodeApiKeyLabel": "Kira Code API Key",
-			"kiloCodeApiKeyPlaceholder": "Enter your Kira Code API key",
-			"kiloCodeApiKeyPaste": "Paste current Kira Code API Key",
+			"kiloCodeApiKeyLabel": "Kilo Code API Key",
+			"kiloCodeApiKeyPlaceholder": "Enter your Kilo Code API key",
+			"kiloCodeApiKeyPaste": "Paste current Kilo Code API Key",
 			"getApiKeyText": "Get your API key from",
 			"modelSelectionLabel": "Image Generation Model",
 			"modelSelectionDescription": "Select the model to use for image generation",
@@ -1128,8 +1137,8 @@
 		"allModels": "All models"
 	},
 	"footer": {
-		"feedback": "If you have any questions or feedback, feel free to open an issue at <githubLink>github.com/Kilo-Org/kilocode</githubLink> or join <redditLink>reddit.com/r/kilocode</redditLink> or <discordLink>kilo.ai/discord</discordLink>.",
-		"support": "For financial questions, please contact Customer Support at <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code is based on the <kiloCodeLink>legacy version of Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Visit the <githubLink>repository</githubLink> for support and discussions.",
 		"telemetry": {
 			"label": "Allow error and usage reporting",
 			"description": "Help improve Kira Code by sending usage data and error reports. No code, prompts, or personal information is ever sent. See our privacy policy for more details."

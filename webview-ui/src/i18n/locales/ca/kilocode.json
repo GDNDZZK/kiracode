@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Afegir crèdit",
-		"lowBalance": "El teu saldo de Kira Code és baix",
+		"lowBalance": "El teu saldo de Kilo Code és baix",
 		"switchToFreeModel": "Canvia a un model gratuït"
 	},
 	"pagination": {
@@ -62,10 +62,10 @@
 			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Compte de Kira Code",
-			"apiKey": "Clau API de Kira Code",
-			"login": "Iniciar sessió a Kira Code",
-			"logout": "Tancar sessió de Kira Code",
+			"account": "Compte de Kilo Code",
+			"apiKey": "Clau API de Kilo Code",
+			"login": "Iniciar sessió a Kilo Code",
+			"logout": "Tancar sessió de Kilo Code",
 			"loginForPremiumModels": "Inicia sessió per accedir a models i funcions premium",
 			"providerRouting": {
 				"title": "Encaminament de proveïdors",
@@ -311,7 +311,7 @@
 			},
 			"noCredits": {
 				"title": "No hi ha crèdits al teu compte",
-				"description": "El teu compte de Kira Code no té crèdits. Per utilitzar l'autocompletat, si us plau afegeix crèdits al teu compte.",
+				"description": "El teu compte de Kilo Code no té crèdits. Per utilitzar l'autocompletat, si us plau afegeix crèdits al teu compte.",
 				"buyCredits": "Comprar crèdits →"
 			}
 		}
@@ -375,7 +375,7 @@
 		"shareModesNewBanner": "Nou: Comparteix modes creant una organització"
 	},
 	"deviceAuth": {
-		"title": "Inicia sessió a Kira Code",
+		"title": "Inicia sessió a Kilo Code",
 		"step1": "Obre la següent URL al teu navegador",
 		"step2": "Verifica el codi i autoritza aquest dispositiu al teu navegador",
 		"scanQr": "O escaneja aquest codi QR amb el teu telèfon",

@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "شحن الرصيد",
-		"lowBalance": "رصيدك في Kira Code منخفض",
+		"lowBalance": "رصيدك في Kilo Code منخفض",
 		"switchToFreeModel": "التبديل إلى نموذج مجاني بدلاً من ذلك"
 	},
 	"memoryWarning": {
@@ -71,10 +71,10 @@
 			"scannerMaxBatchRetriesDescription": "الحد الأقصى لعدد المرات التي يتم فيها إعادة محاولة دفعة فاشلة أثناء فحص الدليل. القيم الأعلى تزيد من المرونة ضد الأخطاء المؤقتة لكنها قد تبطئ الفهرسة إذا استمرت الأخطاء. القيم الأقل تفشل بشكل أسرع لكنها قد تتخطى المحتوى عند حدوث مشاكل مؤقتة."
 		},
 		"provider": {
-			"account": "حساب Kira Code",
-			"apiKey": "مفتاح Kira Code API",
-			"login": "سجّل دخولك في Kira Code",
-			"logout": "تسجيل الخروج من Kira Code",
+			"account": "حساب Kilo Code",
+			"apiKey": "مفتاح Kilo Code API",
+			"login": "سجّل دخولك في Kilo Code",
+			"logout": "تسجيل الخروج من Kilo Code",
 			"loginForPremiumModels": "سجّل دخولك للوصول إلى النماذج والميزات المميزة",
 			"providerRouting": {
 				"title": "توجيه المزود",
@@ -373,7 +373,7 @@
 		"shareModesNewBanner": "جديد: مشاركة الأوضاع عن طريق إنشاء منظمة"
 	},
 	"deviceAuth": {
-		"title": "تسجيل الدخول إلى Kira Code",
+		"title": "تسجيل الدخول إلى Kilo Code",
 		"step1": "افتح الرابط التالي في متصفحك",
 		"step2": "تحقق من الرمز وصرّح لهذا الجهاز في متصفحك",
 		"scanQr": "أو امسح رمز QR هذا بهاتفك",

@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Perlu bicara dengan kami? Tulis"
 		},
-		"community": "Ingin tips atau hanya nongkrong dengan pengguna Kira Code lainnya? Bergabunglah dengan <redditLink>reddit.com/r/kilocode</redditLink> atau <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code didasarkan pada <kiloCodeLink>versi lama Kilo Code</kiloCodeLink>. Repositori: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Kontak & Komunitas",
 		"manageSettings": "Kelola Pengaturan",
 		"debugMode": {
 			"label": "Aktifkan mode debug",
 			"description": "Aktifkan mode debug untuk menampilkan tombol tambahan di header tugas yang memungkinkan melihat riwayat percakapan API dan pesan UI sebagai JSON yang diformat dalam file sementara."
+		},
+		"basedOn": {
+			"label": "Berdasarkan",
+			"name": "Kilo Code",
+			"description": "Kira Code didasarkan pada versi lama Kilo Code. Kami melakukan fork dari versi klasik karena kami lebih menyukai filosofi desain asli daripada rilis yang lebih baru."
+		},
+		"webRemote": {
+			"label": "Kontrol Jarak Jauh Web",
+			"description": "Kontrol dan pantau agen pemrograman AI Anda dari jarak jauh melalui browser web, memungkinkan alur kerja multi-perangkat yang fleksibel."
 		}
 	},
 	"slashCommands": {
@@ -1030,15 +1039,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Aktifkan pembuatan gambar AI",
-			"description": "Ketika diaktifkan, Kira Code dapat menghasilkan gambar dari prompt teks. Memerlukan kunci API Kira Code atau OpenRouter yang dikonfigurasi.",
+			"description": "Ketika diaktifkan, Kilo Code dapat menghasilkan gambar dari prompt teks. Memerlukan kunci API Kilo Code atau OpenRouter yang dikonfigurasi.",
 			"apiProvider": "Penyedia API",
 			"providerLabel": "Penyedia",
 			"providerDescription": "Pilih penyedia untuk menghasilkan gambar.",
 			"openRouterApiKeyLabel": "Kunci API OpenRouter",
 			"openRouterApiKeyPlaceholder": "Masukkan kunci API OpenRouter Anda",
-			"kiloCodeApiKeyLabel": "Kunci API Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Masukkan kunci API Kira Code Anda",
-			"kiloCodeApiKeyPaste": "Tempel kunci API Kira Code saat ini",
+			"kiloCodeApiKeyLabel": "Kunci API Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Masukkan kunci API Kilo Code Anda",
+			"kiloCodeApiKeyPaste": "Tempel kunci API Kilo Code saat ini",
 			"getApiKeyText": "Dapatkan kunci API Anda dari",
 			"modelSelectionLabel": "Model Pembuatan Gambar",
 			"modelSelectionDescription": "Pilih model untuk pembuatan gambar",
@@ -1115,8 +1124,8 @@
 		"allModels": "Semua model"
 	},
 	"footer": {
-		"feedback": "Jika kamu punya pertanyaan atau feedback, jangan ragu untuk membuka issue di <githubLink>github.com/Kilo-Org/kilocode</githubLink> atau bergabung <redditLink>reddit.com/r/kilocode</redditLink> atau <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Untuk pertanyaan keuangan, silakan hubungi Customer Support di <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code didasarkan pada <kiloCodeLink>versi lama Kilo Code</kiloCodeLink>. Repositori: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Kunjungi <githubLink>repositori</githubLink> untuk dukungan dan diskusi.",
 		"telemetry": {
 			"label": "Izinkan pelaporan error dan penggunaan",
 			"description": "Bantu tingkatkan Kira Code dengan mengirim data penggunaan dan laporan error. Tidak ada kode, prompt, atau informasi pribadi yang pernah dikirim. Lihat kebijakan privasi kami untuk detail lebih lanjut."

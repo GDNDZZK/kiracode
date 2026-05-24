@@ -6,7 +6,7 @@
    fill="none"
    version="1.1"
    id="svg1"
-   sodipodi:docname="Logo_Outline_-_Black2.svg"
+   sodipodi:docname="Logo_Outline_-_White.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -16,7 +16,7 @@
      id="defs1" />
   <sodipodi:namedview
      id="namedview1"
-     pagecolor="#ffffff"
+     pagecolor="#000000"
      bordercolor="#000000"
      borderopacity="0.25"
      inkscape:showpageshadow="2"
@@ -37,7 +37,7 @@
      id="layer1"
      inkscape:label="bg">
     <rect
-       style="fill:#ffffff"
+       style="fill:#000000"
        id="rect1"
        width="200.20981"
        height="199.86815"
@@ -46,11 +46,11 @@
   </g>
   <path
      d="M 0.276367,0.210815 V 200.97972 H 201.04472 V 0.210815 Z M 186.17379,186.10778 H 15.148143 V 15.082543 H 186.17379 Z"
-     fill="#000000"
+     fill="#ffffff"
      id="path1"
      style="stroke-width:1.00385" />
   <path
      d="M 42.94,66.38 L 23.70,100.58 L 42.94,134.78 L 53.63,124.01 L 36.53,100.58 L 53.63,77.15 Z M 62.18,36.46 L 81.41,36.46 L 81.41,164.71 L 62.18,164.71 Z M 81.41,100.58 L 130.58,36.46 L 149.81,36.46 L 149.81,55.71 L 98.51,100.58 Z M 81.41,100.58 L 130.58,164.71 L 149.81,164.71 L 149.81,145.46 L 98.51,100.58 Z M 156.23,66.38 L 175.46,100.58 L 156.23,134.78 L 145.54,124.01 L 162.64,100.58 L 145.54,77.15 Z M 173.33,19.36 L 175.46,30.04 L 184.01,32.18 L 175.46,34.31 L 173.33,45.01 L 171.19,34.31 L 162.64,32.18 L 171.19,30.04 Z M 25.84,147.61 L 27.55,154.01 L 34.39,156.16 L 27.55,158.31 L 25.84,164.71 L 24.13,158.31 L 17.29,156.16 L 24.13,154.01 Z"
-     fill="#000000"
+     fill="#ffffff"
      id="path2" />
 </svg>

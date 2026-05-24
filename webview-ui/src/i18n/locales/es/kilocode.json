@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Añadir Crédito",
-		"lowBalance": "Tu saldo de Kira Code es bajo",
+		"lowBalance": "Tu saldo de Kilo Code es bajo",
 		"switchToFreeModel": "Cambiar a un modelo gratuito"
 	},
 	"pagination": {
@@ -62,10 +62,10 @@
 			"webServer": "Acceso Web"
 		},
 		"provider": {
-			"account": "Cuenta de Kira Code",
-			"apiKey": "Clave API de Kira Code",
-			"login": "Iniciar sesión en Kira Code",
-			"logout": "Cerrar sesión de Kira Code",
+			"account": "Cuenta de Kilo Code",
+			"apiKey": "Clave API de Kilo Code",
+			"login": "Iniciar sesión en Kilo Code",
+			"logout": "Cerrar sesión de Kilo Code",
 			"loginForPremiumModels": "Inicia sesión para acceder a modelos y funciones premium",
 			"providerRouting": {
 				"title": "Enrutamiento de proveedores",
@@ -316,7 +316,7 @@
 			},
 			"noCredits": {
 				"title": "No hay créditos en tu cuenta",
-				"description": "Tu cuenta de Kira Code no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.",
+				"description": "Tu cuenta de Kilo Code no tiene créditos. Para usar el autocompletado, por favor añade créditos a tu cuenta.",
 				"buyCredits": "Comprar créditos →"
 			},
 			"configureAutocompleteProfile": "Usa cualquier modelo yendo a perfiles y configurando un Perfil del Tipo de Perfil Autocompletado."
@@ -374,7 +374,7 @@
 		"shareModesNewBanner": "Nuevo: Comparte modos creando una organización"
 	},
 	"deviceAuth": {
-		"title": "Iniciar sesión en Kira Code",
+		"title": "Iniciar sesión en Kilo Code",
 		"step1": "Abre la siguiente URL en tu navegador",
 		"step2": "Verifica el código y autoriza este dispositivo en tu navegador",
 		"scanQr": "O escanea este código QR con tu teléfono",

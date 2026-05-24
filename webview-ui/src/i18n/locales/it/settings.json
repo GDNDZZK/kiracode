@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Hai bisogno di parlarci? Scrivi"
 		},
-		"community": "Vuoi consigli o semplicemente uscire con altri utenti di Roo Code? Unisciti a <redditLink>reddit.com/r/kilocode</redditLink> o <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code è basato sulla <kiloCodeLink>versione legacy di Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Contatti e Comunità",
 		"manageSettings": "Gestisci Impostazioni",
 		"debugMode": {
 			"label": "Abilita modalità debug",
 			"description": "Abilita la modalità debug per mostrare pulsanti aggiuntivi nell'intestazione dell'attività che consentano di visualizzare la cronologia delle conversazioni API e i messaggi dell'interfaccia utente come JSON formattato in file temporanei."
+		},
+		"basedOn": {
+			"label": "Basato su",
+			"name": "Kilo Code",
+			"description": "Kira Code è basato sulla versione legacy di Kilo Code. Abbiamo fatto fork dalla versione classica perché preferiamo la filosofia di design originale rispetto alle versioni più recenti."
+		},
+		"webRemote": {
+			"label": "Controllo Remoto Web",
+			"description": "Controlla e monitora il tuo agente di programmazione AI da remoto tramite un browser web, abilitando flussi di lavoro flessibili multi-dispositivo."
 		}
 	},
 	"slashCommands": {
@@ -998,13 +1007,13 @@
 			"providerLabel": "Provider",
 			"providerDescription": "Seleziona il provider per la generazione di immagini.",
 			"name": "Abilita generazione immagini AI",
-			"description": "Quando abilitato, Kira Code può generare immagini da prompt di testo. Richiede una chiave API Kira Code o OpenRouter configurata.",
+			"description": "Quando abilitato, Kilo Code può generare immagini da prompt di testo. Richiede una chiave API Kilo Code o OpenRouter configurata.",
 			"apiProvider": "Fornitore API",
 			"openRouterApiKeyLabel": "Chiave API OpenRouter",
 			"openRouterApiKeyPlaceholder": "Inserisci la tua chiave API OpenRouter",
-			"kiloCodeApiKeyLabel": "Chiave API Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Inserisci la tua chiave API Kira Code",
-			"kiloCodeApiKeyPaste": "Incolla la chiave API Kira Code corrente",
+			"kiloCodeApiKeyLabel": "Chiave API Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Inserisci la tua chiave API Kilo Code",
+			"kiloCodeApiKeyPaste": "Incolla la chiave API Kilo Code corrente",
 			"getApiKeyText": "Ottieni la tua chiave API da",
 			"modelSelectionLabel": "Modello di generazione immagini",
 			"modelSelectionDescription": "Seleziona il modello per la generazione di immagini",
@@ -1099,8 +1108,8 @@
 		"allModels": "Tutti i modelli"
 	},
 	"footer": {
-		"feedback": "Se hai domande o feedback, sentiti libero di aprire un issue su <githubLink>github.com/Kilo-Org/kilocode</githubLink> o unirti a <redditLink>reddit.com/r/kilocode</redditLink> o <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Per domande finanziarie, contatta il Supporto Clienti a <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code è basato sulla <kiloCodeLink>versione legacy di Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Visita il <githubLink>repository</githubLink> per supporto e discussioni.",
 		"telemetry": {
 			"label": "Consenti segnalazioni di errori e utilizzo",
 			"description": "Aiuta a migliorare Kira Code inviando dati di utilizzo e segnalazioni di errori. Non vengono mai inviati codice, prompt o informazioni personali. Consulta la nostra politica sulla privacy per maggiori dettagli."

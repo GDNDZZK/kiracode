@@ -66,13 +66,22 @@
 		"contactSupport": "Kontaktovat podporu",
 		"contactSupportDesc": "Získat pomoc s technickými problémy nebo dotazy k účtu",
 		"joinCommunity": "Připojit se ke komunitě",
-		"joinCommunityDesc": "Připoj se k ostatním uživatelům pro tipy a diskuse",
-		"community": "Chceš tipy nebo si jen popovídat s ostatními uživateli Kira Code? Připoj se na <redditLink>reddit.com/r/kilocode</redditLink> nebo <discordLink>kilo.ai/discord</discordLink>",
+		"joinCommunityDesc": "Kira Code je založen na <kiloCodeLink>starší verzi Kilo Code</kiloCodeLink>. Repozitář: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"community": "Kira Code je založen na <kiloCodeLink>starší verzi Kilo Code</kiloCodeLink>. Repozitář: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Kontakt a komunita",
 		"manageSettings": "Spravovat nastavení",
 		"debugMode": {
 			"label": "Povolit režim ladění",
 			"description": "Povolit režim ladění pro zobrazení dalších tlačítek v záhlaví úkolu pro zobrazení historie konverzace API a zpráv UI jako zpřehledněného JSON v dočasných souborech."
+		},
+		"basedOn": {
+			"label": "Založeno na",
+			"name": "Kilo Code",
+			"description": "Kira Code je založen na starší verzi Kilo Code. Vytvořili jsme fork z klasické verze, protože preferujeme původní designovou filozofii před novějšími verzemi."
+		},
+		"webRemote": {
+			"label": "Webové dálkové ovládání",
+			"description": "Ovládejte a monitorujte svého AI programovacího agenta na dálku přes webový prohlížeč a umožněte flexibilní multiplatformní pracovní postupy."
 		}
 	},
 	"slashCommands": {
@@ -1104,15 +1113,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Povolit AI generování obrázků",
-			"description": "Když je povoleno, Kira Code může generovat obrázky z textových podnětů. Vyžaduje Kira Code nebo OpenRouter API klíč.",
+			"description": "Když je povoleno, Kilo Code může generovat obrázky z textových podnětů. Vyžaduje Kilo Code nebo OpenRouter API klíč.",
 			"apiProvider": "Poskytovatel API",
 			"providerLabel": "Poskytovatel",
 			"providerDescription": "Vyberte poskytovatele pro generování obrázků.",
 			"openRouterApiKeyLabel": "OpenRouter API Key",
 			"openRouterApiKeyPlaceholder": "Zadejte svůj OpenRouter API klíč",
-			"kiloCodeApiKeyLabel": "Kira Code API klíč",
-			"kiloCodeApiKeyPlaceholder": "Zadejte svůj Kira Code API klíč",
-			"kiloCodeApiKeyPaste": "Vložte aktuální Kira Code API klíč",
+			"kiloCodeApiKeyLabel": "Kilo Code API klíč",
+			"kiloCodeApiKeyPlaceholder": "Zadejte svůj Kilo Code API klíč",
+			"kiloCodeApiKeyPaste": "Vložte aktuální Kilo Code API klíč",
 			"getApiKeyText": "Získejte API klíč z",
 			"modelSelectionLabel": "Model pro generování obrázků",
 			"modelSelectionDescription": "Vyberte model pro použití při generování obrázků",
@@ -1191,8 +1200,8 @@
 		"allModels": "Všechny modely"
 	},
 	"footer": {
-		"feedback": "Pokud máte nějaké dotazy nebo zpětnou vazbu, neváhejte otevřít problém na <githubLink>github.com/Kilo-Org/kilocode</githubLink> nebo se připojte k <redditLink>reddit.com/r/kilocode</redditLink> nebo <discordLink>kilo.ai/discord</discordLink>.",
-		"support": "Pro finanční dotazy kontaktujte prosím zákaznickou podporu na <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code je založen na <kiloCodeLink>starší verzi Kilo Code</kiloCodeLink>. Repozitář: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Navštivte <githubLink>repozitář</githubLink> pro podporu a diskuse.",
 		"telemetry": {
 			"label": "Povolit hlášení chyb a používání",
 			"description": "Pomozte vylepšit Kira Code odesíláním dat o používání a hlášení chyb. Nikdy se neodesílá žádný kód, výzvy ani osobní informace. Další podrobnosti najdete v našich zásadách ochrany osobních údajů."

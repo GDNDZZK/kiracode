@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "添加额度",
-		"lowBalance": "你的 Kira Code 余额不足",
+		"lowBalance": "你的 Kilo Code 余额不足",
 		"switchToFreeModel": "切换到免费模型"
 	},
 	"pagination": {
@@ -82,10 +82,10 @@
 			"testMessage": "这是来自 Kira Code 的测试通知。"
 		},
 		"provider": {
-			"account": "Kira Code 账号",
-			"apiKey": "Kira Code API 密钥",
-			"login": "登录 Kira Code",
-			"logout": "退出 Kira Code",
+			"account": "Kilo Code 账号",
+			"apiKey": "Kilo Code API 密钥",
+			"login": "登录 Kilo Code",
+			"logout": "退出 Kilo Code",
 			"loginForPremiumModels": "登录以访问高级模型和功能",
 			"providerRouting": {
 				"title": "提供商路由",
@@ -325,7 +325,7 @@
 			},
 			"noCredits": {
 				"title": "您的账户没有额度",
-				"description": "您的 Kira Code 账户没有额度。要使用自动补全，请为您的账户充值。",
+				"description": "您的 Kilo Code 账户没有额度。要使用自动补全，请为您的账户充值。",
 				"buyCredits": "购买额度 →"
 			}
 		}
@@ -375,7 +375,7 @@
 		"shareModesNewBanner": "新功能：通过创建组织来共享模式"
 	},
 	"deviceAuth": {
-		"title": "登录 Kira Code",
+		"title": "登录 Kilo Code",
 		"step1": "在浏览器中打开以下 URL",
 		"step2": "验证代码并在浏览器中授权此设备",
 		"scanQr": "或用手机扫描此二维码",

@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Moet je met ons praten? Schrijf"
 		},
-		"community": "Wil je tips of gewoon even hangen met andere Kira Code-gebruikers? Sluit je aan bij <redditLink>reddit.com/r/kilocode</redditLink> of <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code is gebaseerd op de <kiloCodeLink>legacy-versie van Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Contact & Gemeenschap",
 		"manageSettings": "Instellingen Beheren",
 		"debugMode": {
 			"label": "Debugmodus inschakelen",
 			"description": "Schakel de debugmodus in om extra knoppen in de taakkoptekst te tonen voor het bekijken van API-gesprekgeschiedenis en UI-berichten als opgemaakte JSON in tijdelijke bestanden."
+		},
+		"basedOn": {
+			"label": "Gebaseerd op",
+			"name": "Kilo Code",
+			"description": "Kira Code is gebaseerd op de legacy-versie van Kilo Code. We hebben de klassieke versie geforkt omdat we de oorspronkelijke ontwerpfilosofie verkiezen boven de nieuwere releases."
+		},
+		"webRemote": {
+			"label": "Web Remote Control",
+			"description": "Bedien en monitor je AI-programmeeragent op afstand via een webbrowser en schakel flexibele multi-device workflows in."
 		}
 	},
 	"slashCommands": {
@@ -1011,13 +1020,13 @@
 			"providerLabel": "Provider",
 			"providerDescription": "Selecteer de provider voor het genereren van afbeeldingen.",
 			"name": "AI-afbeeldingsgeneratie inschakelen",
-			"description": "Wanneer ingeschakeld, kan Kira Code afbeeldingen genereren van tekstprompts. Vereist een geconfigureerde Kira Code of OpenRouter API-sleutel.",
+			"description": "Wanneer ingeschakeld, kan Kilo Code afbeeldingen genereren van tekstprompts. Vereist een geconfigureerde Kilo Code of OpenRouter API-sleutel.",
 			"apiProvider": "API-provider",
 			"openRouterApiKeyLabel": "OpenRouter API-sleutel",
 			"openRouterApiKeyPlaceholder": "Voer je OpenRouter API-sleutel in",
-			"kiloCodeApiKeyLabel": "Kira Code API-sleutel",
-			"kiloCodeApiKeyPlaceholder": "Voer je Kira Code API-sleutel in",
-			"kiloCodeApiKeyPaste": "Plak huidige Kira Code API-sleutel",
+			"kiloCodeApiKeyLabel": "Kilo Code API-sleutel",
+			"kiloCodeApiKeyPlaceholder": "Voer je Kilo Code API-sleutel in",
+			"kiloCodeApiKeyPaste": "Plak huidige Kilo Code API-sleutel",
 			"getApiKeyText": "Haal je API-sleutel op van",
 			"modelSelectionLabel": "Afbeeldingsgeneratiemodel",
 			"modelSelectionDescription": "Selecteer het model voor afbeeldingsgeneratie",
@@ -1094,8 +1103,8 @@
 		"allModels": "Alle modellen"
 	},
 	"footer": {
-		"feedback": "Heb je vragen of feedback? Open gerust een issue op <githubLink>github.com/Kilo-Org/kilocode</githubLink> of sluit je aan bij <redditLink>reddit.com/r/kilocode</redditLink> of <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Voor financiële vragen kunt u contact opnemen met de klantenservice via <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code is gebaseerd op de <kiloCodeLink>legacy-versie van Kilo Code</kiloCodeLink>. Repository: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Bezoek de <githubLink>repository</githubLink> voor ondersteuning en discussies.",
 		"telemetry": {
 			"label": "Fout- en gebruiksrapportage toestaan",
 			"description": "Help Kira Code te verbeteren door gebruiksgegevens en foutmeldingen te verzenden. Er worden nooit code, prompts of persoonlijke gegevens verzonden. Zie ons privacybeleid voor meer informatie."

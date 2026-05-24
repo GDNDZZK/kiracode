@@ -13,8 +13,7 @@
 		"description": "Kami ingin mendengar feedback kamu atau membantu dengan masalah yang kamu alami.",
 		"githubIssues": "Laporkan masalah di GitHub",
 		"githubDiscussions": "Bergabung dengan diskusi GitHub",
-		"discord": "Bergabung dengan komunitas Discord kami",
-		"customerSupport": "Dukungan Pelanggan"
+		"discord": "Bergabung dengan komunitas Discord kami"
 	},
 	"welcome": "Selamat datang, {{name}}! Kamu punya {{count}} notifikasi.",
 	"items": {

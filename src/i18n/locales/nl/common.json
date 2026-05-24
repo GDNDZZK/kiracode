@@ -13,8 +13,7 @@
 		"description": "We horen graag uw feedback of helpen u graag met eventuele problemen die u ondervindt.",
 		"githubIssues": "Meld een probleem op GitHub",
 		"githubDiscussions": "Neem deel aan GitHub-discussies",
-		"discord": "Word lid van onze Discord-community",
-		"customerSupport": "Klantenservice"
+		"discord": "Word lid van onze Discord-community"
 	},
 	"welcome": "Welkom, {{name}}! Je hebt {{count}} meldingen.",
 	"items": {

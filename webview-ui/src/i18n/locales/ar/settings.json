@@ -63,16 +63,25 @@
 		"contact": {
 			"label": "تحتاج تتواصل معنا؟ راسلنا"
 		},
-		"community": "تبي نصائح أو تتسولف مع مستخدمين آخرين؟ انضم لـ <redditLink>reddit.com/r/kilocode</redditLink> أو <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactSupport": "تواصل مع الدعم",
 		"contactSupportDesc": "احصل على مساعدة من فريق دعم العملاء",
 		"joinCommunity": "انضم للمجتمع",
-		"joinCommunityDesc": "تواصل مع مستخدمين آخرين وشارك الأفكار",
+		"joinCommunityDesc": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "التواصل والمجتمع",
 		"manageSettings": "إدارة الإعدادات",
 		"debugMode": {
 			"label": "تفعيل وضع التصحيح",
 			"description": "فعّل وضع التصحيح لإظهار أزرار إضافية في رأس المهمة لعرض سجل محادثات API ورسائل UI كملفات JSON منسقة مؤقتة."
+		},
+		"basedOn": {
+			"label": "مبني على",
+			"name": "Kilo Code",
+			"description": "Kira Code مبني على الإصدار القديم من Kilo Code. قمنا بعمل fork من الإصدار الكلاسيكي لأننا نفضل فلسفة التصميم الأصلية على الإصدارات الأحدث."
+		},
+		"webRemote": {
+			"label": "التحكم عن بعد عبر الويب",
+			"description": "تحكم ومراقبة وكيل البرمجة الذكي الخاص بك عن بعد عبر متصفح الويب، مما يتيح سير عمل مرن عبر أجهزة متعددة."
 		}
 	},
 	"slashCommands": {
@@ -1123,15 +1132,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "تمكين إنشاء صور بالذكاء الاصطناعي",
-			"description": "عند التفعيل، يمكن لـ Kira Code إنشاء صور من النصوص. يتطلب مفتاح Kira Code أو OpenRouter API.",
+			"description": "عند التفعيل، يمكن لـ Kilo Code إنشاء صور من النصوص. يتطلب مفتاح Kilo Code أو OpenRouter API.",
 			"apiProvider": "مزود API",
 			"providerLabel": "المزوّد",
 			"providerDescription": "اختر المزوّد المراد استخدامه لإنشاء الصور.",
 			"openRouterApiKeyLabel": "مفتاح OpenRouter API",
 			"openRouterApiKeyPlaceholder": "أدخل مفتاح OpenRouter API",
-			"kiloCodeApiKeyLabel": "مفتاح Kira Code API",
-			"kiloCodeApiKeyPlaceholder": "أدخل مفتاح Kira Code API",
-			"kiloCodeApiKeyPaste": "لصق مفتاح Kira Code API الحالي",
+			"kiloCodeApiKeyLabel": "مفتاح Kilo Code API",
+			"kiloCodeApiKeyPlaceholder": "أدخل مفتاح Kilo Code API",
+			"kiloCodeApiKeyPaste": "لصق مفتاح Kilo Code API الحالي",
 			"getApiKeyText": "احصل على مفتاحك من",
 			"modelSelectionLabel": "نموذج إنشاء الصور",
 			"modelSelectionDescription": "اختر النموذج المراد استخدامه لإنشاء الصور",
@@ -1214,8 +1223,8 @@
 		"allModels": "جميع النماذج"
 	},
 	"footer": {
-		"feedback": "عندك سؤال أو ملاحظة؟ افتح تذكرة في <githubLink>github.com/Kilo-Org/kilocode</githubLink> أو انضم لـ <redditLink>r/kilocode</redditLink> أو <discordLink>kilo.ai/discord</discordLink>.",
-		"support": "للاستفسارات المالية: <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "قم بزيارة <githubLink>المستودع</githubLink> للحصول على الدعم والمناقشات.",
 		"telemetry": {
 			"label": "السماح بتقارير الأخطاء والاستخدام",
 			"description": "ساعد في تحسين Kira Code بإرسال بيانات الاستخدام وتقارير الأخطاء. لا يتم إرسال أي كود أو مطالبات أو معلومات شخصية أبداً. راجع سياسة الخصوصية لمزيد من التفاصيل."

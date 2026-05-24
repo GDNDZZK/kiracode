@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "お問い合わせが必要ですか？メールを送信"
 		},
-		"community": "ヒントが欲しいですか、または他のKira Codeユーザーと交流したいですか？<redditLink>reddit.com/r/kilocode</redditLink>または<discordLink>kilo.ai/discord</discordLink>に参加してください",
+		"community": "Kira Code は <kiloCodeLink>Kilo Code の旧バージョン</kiloCodeLink> をベースにしています。リポジトリ：<githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "お問い合わせとコミュニティ",
 		"manageSettings": "設定を管理",
 		"debugMode": {
 			"label": "デバッグモードを有効にする",
 			"description": "デバッグモードを有効にすると、タスクヘッダーにAPI会話履歴とUIメッセージをフォーマットされたJSONとして一時ファイルで表示するための追加ボタンが表示されます。"
+		},
+		"basedOn": {
+			"label": "ベース",
+			"name": "Kilo Code",
+			"description": "Kira CodeはKilo Codeの旧バージョンをベースにしています。新しいリリースよりも元のデザイン哲学を好むため、クラシックバージョンからフォークしました。"
+		},
+		"webRemote": {
+			"label": "Web リモートコントロール",
+			"description": "Web ブラウザを介して AI プログラミングエージェントをリモートで制御・監視し、柔軟なマルチデバイスワークフローを実現します。"
 		}
 	},
 	"slashCommands": {
@@ -998,13 +1007,13 @@
 			"providerLabel": "プロバイダー",
 			"providerDescription": "画像生成に使用するプロバイダーを選択",
 			"name": "AI画像生成を有効にする",
-			"description": "有効にすると、Kira Codeはテキストプロンプトから画像を生成できます。Kira Code または OpenRouter API キーの設定が必要です。",
+			"description": "有効にすると、Kilo Codeはテキストプロンプトから画像を生成できます。Kilo Code または OpenRouter API キーの設定が必要です。",
 			"apiProvider": "APIプロバイダー",
 			"openRouterApiKeyLabel": "OpenRouter APIキー",
 			"openRouterApiKeyPlaceholder": "OpenRouter APIキーを入力してください",
-			"kiloCodeApiKeyLabel": "Kira Code APIキー",
-			"kiloCodeApiKeyPlaceholder": "Kira Code APIキーを入力してください",
-			"kiloCodeApiKeyPaste": "現在の Kira Code API キーを貼り付け",
+			"kiloCodeApiKeyLabel": "Kilo Code APIキー",
+			"kiloCodeApiKeyPlaceholder": "Kilo Code APIキーを入力してください",
+			"kiloCodeApiKeyPaste": "現在の Kilo Code API キーを貼り付け",
 			"getApiKeyText": "APIキーを取得する場所",
 			"modelSelectionLabel": "画像生成モデル",
 			"modelSelectionDescription": "画像生成に使用するモデルを選択",
@@ -1099,8 +1108,8 @@
 		"allModels": "すべてのモデル"
 	},
 	"footer": {
-		"feedback": "質問やフィードバックがある場合は、<githubLink>github.com/Kilo-Org/kilocode</githubLink>で問題を開くか、<redditLink>reddit.com/r/kilocode</redditLink>や<discordLink>kilo.ai/discord</discordLink>に参加してください",
-		"support": "財務に関するご質問は、<supportLink>https://kilo.ai/support</supportLink>のカスタマーサポートまでお問い合わせください",
+		"feedback": "Kira Code は <kiloCodeLink>Kilo Code の旧バージョン</kiloCodeLink> をベースにしています。リポジトリ：<githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "サポートとディスカッションについては<githubLink>リポジトリ</githubLink>をご覧ください。",
 		"telemetry": {
 			"label": "匿名のエラーと使用状況レポートを許可",
 			"description": "匿名の使用データとエラーレポートを送信してKira Codeの改善にご協力ください。コード、プロンプト、個人情報が送信されることはありません。詳細については、プライバシーポリシーをご覧ください。"

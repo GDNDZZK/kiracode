@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Besoin de nous parler ? Écrivez"
 		},
-		"community": "Vous voulez des conseils ou simplement discuter avec d'autres utilisateurs de Kira Code ? Rejoignez <redditLink>reddit.com/r/kilocode</redditLink> ou <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code est basé sur la <kiloCodeLink>version héritée de Kilo Code</kiloCodeLink>. Dépôt : <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Contact et Communauté",
 		"manageSettings": "Gérer les Paramètres",
 		"debugMode": {
 			"label": "Activer le mode debug",
 			"description": "Active le mode debug pour afficher des boutons supplémentaires dans l'en-tête de la tâche permettant de consulter l'historique de conversation de l'API et les messages de l'interface utilisateur au format JSON dans des fichiers temporaires."
+		},
+		"basedOn": {
+			"label": "Basé sur",
+			"name": "Kilo Code",
+			"description": "Kira Code est basé sur la version héritée de Kilo Code. Nous avons forké à partir de la version classique car nous préférons la philosophie de conception originale aux versions plus récentes."
+		},
+		"webRemote": {
+			"label": "Contrôle à Distance Web",
+			"description": "Contrôlez et surveillez votre agent de programmation IA à distance via un navigateur Web, permettant des flux de travail flexibles multi-appareils."
 		}
 	},
 	"slashCommands": {
@@ -1008,15 +1017,15 @@
 		},
 		"IMAGE_GENERATION": {
 			"name": "Activer la génération d'images IA",
-			"description": "Lorsqu'activé, Kira Code peut générer des images à partir de prompts textuels. Nécessite qu'une clé API Kira Code ou OpenRouter soit configurée.",
+			"description": "Lorsqu'activé, Kilo Code peut générer des images à partir de prompts textuels. Nécessite qu'une clé API Kilo Code ou OpenRouter soit configurée.",
 			"apiProvider": "Fournisseur d'API",
 			"providerLabel": "Fournisseur",
 			"providerDescription": "Sélectionnez le fournisseur pour la génération d'images.",
 			"openRouterApiKeyLabel": "Clé API OpenRouter",
 			"openRouterApiKeyPlaceholder": "Entrez votre clé API OpenRouter",
-			"kiloCodeApiKeyLabel": "Clé API Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Entrez votre clé API Kira Code",
-			"kiloCodeApiKeyPaste": "Coller la clé API Kira Code actuelle",
+			"kiloCodeApiKeyLabel": "Clé API Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Entrez votre clé API Kilo Code",
+			"kiloCodeApiKeyPaste": "Coller la clé API Kilo Code actuelle",
 			"getApiKeyText": "Obtenez votre clé API depuis",
 			"modelSelectionLabel": "Modèle de génération d'images",
 			"modelSelectionDescription": "Sélectionnez le modèle pour la génération d'images",
@@ -1037,7 +1046,7 @@
 		},
 		"SPEECH_TO_TEXT": {
 			"name": "Reconnaissance vocale (STT)",
-			"description": "Lorsque cette option est activée, Kira Code peut transcrire votre voix en texte en utilisant le modèle Whisper d'OpenAI. Cliquez sur le bouton microphone dans le chat pour commencer l'enregistrement. Nécessite l'installation de FFmpeg et un fournisseur d'API OpenAI configuré."
+			"description": "Lorsque cette option est activée, Kilo Code peut transcrire votre voix en texte en utilisant le modèle Whisper d'OpenAI. Cliquez sur le bouton microphone dans le chat pour commencer l'enregistrement. Nécessite l'installation de FFmpeg et un fournisseur d'API OpenAI configuré."
 		},
 		"CUSTOM_TOOLS": {
 			"name": "Activer les outils personnalisés",
@@ -1093,8 +1102,8 @@
 		"allModels": "Tous les modèles"
 	},
 	"footer": {
-		"feedback": "Si vous avez des questions ou des commentaires, n'hésitez pas à ouvrir un problème sur <githubLink>github.com/Kilo-Org/kilocode</githubLink> ou à rejoindre <redditLink>reddit.com/r/kilocode</redditLink> ou <discordLink>kilo.ai/discord</discordLink>",
-		"support": "Pour les questions financières, veuillez contacter le Support Client à <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code est basé sur la <kiloCodeLink>version héritée de Kilo Code</kiloCodeLink>. Dépôt : <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Visitez le <githubLink>dépôt</githubLink> pour le support et les discussions.",
 		"telemetry": {
 			"label": "Autoriser les rapports d'erreurs et d'utilisation",
 			"description": "Aide à améliorer Kira Code en envoyant des données d'utilisation et des rapports d'erreurs. Aucun code, prompt ou information personnelle n'est jamais envoyé. Consulte notre politique de confidentialité pour plus de détails."

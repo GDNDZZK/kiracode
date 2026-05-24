@@ -63,12 +63,21 @@
 		"contact": {
 			"label": "Нужно с нами связаться? Напишите"
 		},
-		"community": "Хотите получить советы или просто пообщаться с другими пользователями Kira Code? Присоединяйтесь к <redditLink>reddit.com/r/kilocode</redditLink> или <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code основан на <kiloCodeLink>устаревшей версии Kilo Code</kiloCodeLink>. Репозиторий: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "Контакты и Сообщество",
 		"manageSettings": "Управление Настройками",
 		"debugMode": {
 			"label": "Включить режим отладки",
 			"description": "Включите режим отладки для отображения дополнительных кнопок в заголовке задачи для просмотра истории разговоров API и сообщений UI в виде форматированного JSON во временных файлах."
+		},
+		"basedOn": {
+			"label": "Основан на",
+			"name": "Kilo Code",
+			"description": "Kira Code основан на устаревшей версии Kilo Code. Мы сделали форк классической версии, потому что предпочитаем оригинальную философию дизайна новым выпускам."
+		},
+		"webRemote": {
+			"label": "Веб-удалённое управление",
+			"description": "Управляйте и отслеживайте вашего ИИ-агента программирования удалённо через веб-браузер, обеспечивая гибкие рабочие процессы на нескольких устройствах."
 		}
 	},
 	"slashCommands": {
@@ -1011,13 +1020,13 @@
 			"providerLabel": "Провайдер",
 			"providerDescription": "Выберите провайдера для генерации изображений.",
 			"name": "Включить генерацию изображений ИИ",
-			"description": "Когда включено, Kira Code может генерировать изображения из текстовых запросов. Требует настроенный API-ключ Kira Code или OpenRouter.",
+			"description": "Когда включено, Kilo Code может генерировать изображения из текстовых запросов. Требует настроенный API-ключ Kilo Code или OpenRouter.",
 			"apiProvider": "Провайдер API",
 			"openRouterApiKeyLabel": "API-ключ OpenRouter",
 			"openRouterApiKeyPlaceholder": "Введите ваш API-ключ OpenRouter",
-			"kiloCodeApiKeyLabel": "API-ключ Kira Code",
-			"kiloCodeApiKeyPlaceholder": "Введите ваш API-ключ Kira Code",
-			"kiloCodeApiKeyPaste": "Вставить текущий API-ключ Kira Code",
+			"kiloCodeApiKeyLabel": "API-ключ Kilo Code",
+			"kiloCodeApiKeyPlaceholder": "Введите ваш API-ключ Kilo Code",
+			"kiloCodeApiKeyPaste": "Вставить текущий API-ключ Kilo Code",
 			"getApiKeyText": "Получите ваш API-ключ от",
 			"modelSelectionLabel": "Модель генерации изображений",
 			"modelSelectionDescription": "Выберите модель для генерации изображений",
@@ -1094,8 +1103,8 @@
 		"allModels": "Все модели"
 	},
 	"footer": {
-		"feedback": "Если у вас есть вопросы или предложения, откройте issue на <githubLink>github.com/Kilo-Org/kilocode</githubLink> или присоединяйтесь к <redditLink>reddit.com/r/kilocode</redditLink> или <discordLink>kilo.ai/discord</discordLink>",
-		"support": "По финансовым вопросам обращайтесь в службу поддержки по адресу <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code основан на <kiloCodeLink>устаревшей версии Kilo Code</kiloCodeLink>. Репозиторий: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "Посетите <githubLink>репозиторий</githubLink> для поддержки и обсуждений.",
 		"telemetry": {
 			"label": "Разрешить отправку ошибок и статистики использования",
 			"description": "Помогите улучшить Kira Code, отправляя данные об ошибках и использовании. Код, подсказки и личная информация не отправляются. Подробнее — в политике конфиденциальности."

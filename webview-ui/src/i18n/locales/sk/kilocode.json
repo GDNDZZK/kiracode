@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Pridať kredit",
-		"lowBalance": "Tvoj Kira Code zostatok je nízky",
+		"lowBalance": "Tvoj Kilo Code zostatok je nízky",
 		"switchToFreeModel": "Prepnúť na bezplatný model"
 	},
 	"pagination": {
@@ -69,10 +69,10 @@
 			"webServer": "Web Access"
 		},
 		"provider": {
-			"account": "Účet Kira Code",
-			"apiKey": "Kira Code API Key",
-			"login": "Prihlásiť sa do Kira Code",
-			"logout": "Odhlásiť sa z Kira Code",
+			"account": "Účet Kilo Code",
+			"apiKey": "Kilo Code API Key",
+			"login": "Prihlásiť sa do Kilo Code",
+			"logout": "Odhlásiť sa z Kilo Code",
 			"loginForPremiumModels": "Prihlás sa pre prístup k prémiovým modelom a funkciám",
 			"providerRouting": {
 				"title": "Smerovanie poskytovateľov",
@@ -379,7 +379,7 @@
 		"shareModesNewBanner": "Novinka: Zdieľajte režimy vytvorením organizácie"
 	},
 	"deviceAuth": {
-		"title": "Prihlásiť sa do Kira Code",
+		"title": "Prihlásiť sa do Kilo Code",
 		"step1": "Otvori nasledujúcu URL vo svojom prehliadači",
 		"step2": "Over kód a autorizuj toto zariadenie vo svojom prehliadači",
 		"scanQr": "Alebo naskenuj tento QR kód svojím telefónom",

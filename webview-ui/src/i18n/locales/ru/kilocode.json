@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Добавить кредит",
-		"lowBalance": "Твой баланс Kira Code низкий",
+		"lowBalance": "Твой баланс Kilo Code низкий",
 		"switchToFreeModel": "Переключиться на бесплатную модель"
 	},
 	"pagination": {
@@ -69,10 +69,10 @@
 			"webServer": "Веб-доступ"
 		},
 		"provider": {
-			"account": "Аккаунт Kira Code",
-			"apiKey": "API-ключ Kira Code",
-			"login": "Войти в Kira Code",
-			"logout": "Выйти из Kira Code",
+			"account": "Аккаунт Kilo Code",
+			"apiKey": "API-ключ Kilo Code",
+			"login": "Войти в Kilo Code",
+			"logout": "Выйти из Kilo Code",
 			"loginForPremiumModels": "Войдите, чтобы получить доступ к премиум моделям и функциям",
 			"providerRouting": {
 				"title": "Маршрутизация провайдеров",
@@ -318,7 +318,7 @@
 			},
 			"noCredits": {
 				"title": "На вашем счете нет кредитов",
-				"description": "На вашем счете Kira Code нет кредитов. Чтобы использовать автодополнение, пополните счет.",
+				"description": "На вашем счете Kilo Code нет кредитов. Чтобы использовать автодополнение, пополните счет.",
 				"buyCredits": "Купить кредиты →"
 			}
 		}
@@ -375,7 +375,7 @@
 		"shareModesNewBanner": "Новое: Делитесь режимами путем создания организации"
 	},
 	"deviceAuth": {
-		"title": "Войти в Kira Code",
+		"title": "Войти в Kilo Code",
 		"step1": "Открой следующий URL в своем браузере",
 		"step2": "Проверь код и авторизуй это устройство в своем браузере",
 		"scanQr": "Или отсканируй этот QR-код своим телефоном",

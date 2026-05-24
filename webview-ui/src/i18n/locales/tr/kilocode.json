@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Kredi Ekle",
-		"lowBalance": "Kira Code bakiyen düşük",
+		"lowBalance": "Kilo Code bakiyen düşük",
 		"switchToFreeModel": "Ücretsiz modele geç"
 	},
 	"pagination": {
@@ -74,10 +74,10 @@
 			"scannerMaxBatchRetriesDescription": "Dizin taraması sırasında başarısız bir toplu işlemi yeniden deneme sayısının üst sınırı. Daha yüksek değerler geçici hatalara karşı dayanıklılığı artırır ancak hatalar devam ederse indekslemeyi yavaşlatabilir. Daha düşük değerler daha hızlı başarısız olur ancak geçici sorunlarda içeriği atlayabilir."
 		},
 		"provider": {
-			"account": "Kira Code Hesabı",
-			"apiKey": "Kira Code API Anahtarı",
-			"login": "Kira Code'a giriş yap",
-			"logout": "Kira Code'dan çıkış yap",
+			"account": "Kilo Code Hesabı",
+			"apiKey": "Kilo Code API Anahtarı",
+			"login": "Kilo Code'a giriş yap",
+			"logout": "Kilo Code'dan çıkış yap",
 			"loginForPremiumModels": "Premium modellere ve özelliklere erişmek için giriş yap",
 			"providerRouting": {
 				"title": "Sağlayıcı Yönlendirme",
@@ -374,7 +374,7 @@
 		"shareModesNewBanner": "Yeni: Bir organizasyon oluşturarak modları paylaşın"
 	},
 	"deviceAuth": {
-		"title": "Kira Code'a giriş yap",
+		"title": "Kilo Code'a giriş yap",
 		"step1": "Tarayıcında aşağıdaki URL'yi aç",
 		"step2": "Kodu doğrula ve bu cihazı tarayıcında yetkilendir",
 		"scanQr": "Veya bu QR kodunu telefonunla tara",

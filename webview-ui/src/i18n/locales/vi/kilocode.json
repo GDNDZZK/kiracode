@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Thêm tín dụng",
-		"lowBalance": "Số dư Kira Code của bạn thấp",
+		"lowBalance": "Số dư Kilo Code của bạn thấp",
 		"switchToFreeModel": "Chuyển sang mô hình miễn phí"
 	},
 	"pagination": {
@@ -81,10 +81,10 @@
 			"scannerMaxBatchRetriesDescription": "Số lần tối đa thử lại một lô thất bại trong quá trình quét thư mục. Giá trị cao hơn tăng khả năng phục hồi trước các lỗi tạm thời nhưng có thể làm chậm lập chỉ mục nếu lỗi vẫn tồn tại. Giá trị thấp hơn thất bại nhanh hơn nhưng có thể bỏ qua nội dung khi gặp vấn đề tạm thời."
 		},
 		"provider": {
-			"account": "Tài khoản Kira Code",
-			"apiKey": "Khóa API Kira Code",
-			"login": "Đăng nhập vào Kira Code",
-			"logout": "Đăng xuất khỏi Kira Code",
+			"account": "Tài khoản Kilo Code",
+			"apiKey": "Khóa API Kilo Code",
+			"login": "Đăng nhập vào Kilo Code",
+			"logout": "Đăng xuất khỏi Kilo Code",
 			"loginForPremiumModels": "Đăng nhập để truy cập các mô hình và tính năng premium",
 			"providerRouting": {
 				"title": "Định tuyến nhà cung cấp",
@@ -375,7 +375,7 @@
 		"shareModesNewBanner": "Mới: Chia sẻ chế độ bằng cách tạo một tổ chức"
 	},
 	"deviceAuth": {
-		"title": "Đăng nhập vào Kira Code",
+		"title": "Đăng nhập vào Kilo Code",
 		"step1": "Mở URL sau trên trình duyệt của bạn",
 		"step2": "Xác minh mã và ủy quyền thiết bị này trên trình duyệt của bạn",
 		"scanQr": "Hoặc quét mã QR này bằng điện thoại của bạn",

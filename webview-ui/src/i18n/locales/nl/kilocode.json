@@ -26,7 +26,7 @@
 	},
 	"lowCreditWarning": {
 		"addCredit": "Krediet toevoegen",
-		"lowBalance": "Je Kira Code-saldo is laag",
+		"lowBalance": "Je Kilo Code-saldo is laag",
 		"switchToFreeModel": "Schakel over naar een gratis model"
 	},
 	"pagination": {
@@ -69,10 +69,10 @@
 			"webServer": "Webtoegang"
 		},
 		"provider": {
-			"account": "Kira Code Account",
-			"apiKey": "Kira Code API-sleutel",
-			"login": "Inloggen bij Kira Code",
-			"logout": "Uitloggen bij Kira Code",
+			"account": "Kilo Code Account",
+			"apiKey": "Kilo Code API-sleutel",
+			"login": "Inloggen bij Kilo Code",
+			"logout": "Uitloggen bij Kilo Code",
 			"loginForPremiumModels": "Log in voor toegang tot premium modellen en functies",
 			"providerRouting": {
 				"title": "Provider Routing",
@@ -321,7 +321,7 @@
 			},
 			"noCredits": {
 				"title": "Geen tegoed op je account",
-				"description": "Je Kira Code-account heeft geen tegoed. Om autocomplete te gebruiken, voeg tegoed toe aan je account.",
+				"description": "Je Kilo Code-account heeft geen tegoed. Om autocomplete te gebruiken, voeg tegoed toe aan je account.",
 				"buyCredits": "Tegoed kopen →"
 			},
 			"keybindingNotFound": "niet gevonden",
@@ -373,7 +373,7 @@
 		"shareModesNewBanner": "Nieuw: Deel modi door een organisatie aan te maken"
 	},
 	"deviceAuth": {
-		"title": "Inloggen bij Kira Code",
+		"title": "Inloggen bij Kilo Code",
 		"step1": "Open de volgende URL in je browser",
 		"step2": "Verifieer de code en autoriseer dit apparaat in je browser",
 		"scanQr": "Of scan deze QR-code met je telefoon",
