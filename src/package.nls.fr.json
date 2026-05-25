@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: Agent de Codage IA, Copilot et Autocomplétion",
+	"extension.displayName": "Kira Code: Agent IA pour le Codage et l'Accès Web à Distance",
 	"extension.description": "Basé sur la version classique de Kilo Code. Agent de codage IA Open Source qui génère du code à partir du langage naturel, automatise les tâches et exécute des commandes de terminal. Comprend le contrôle à distance web, l'autocomplétion en ligne, l'automatisation du navigateur, le refactoring automatique et des modes personnalisés pour la planification, le codage et le débogage. Compatible avec plus de 500 modèles d'IA dont Claude (Anthropic), Gemini, Grok, GPT, Codex et GLM.",
 	"command.newTask.title": "Nouvelle Tâche",
 	"command.explainCode.title": "Expliquer le Code",

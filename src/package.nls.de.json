@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: KI-Codierungs-Agent, Copilot und Autovervollständigung",
+	"extension.displayName": "Kira Code: KI-Agent für Codierung und Web-Fernzugriff",
 	"extension.description": "Basierend auf der klassischen Version von Kilo Code. Open-Source-KI-Codierungs-Agent, der Code aus natürlicher Sprache generiert, Aufgaben automatisiert und Terminal-Befehle ausführt. Mit Web-Fernsteuerung, Inline-Autovervollständigung, Browser-Automatisierung, automatischem Refactoring und benutzerdefinierten Modi für Planung, Codierung und Debugging. Unterstützt über 500 KI-Modelle einschließlich Claude (Anthropic), Gemini, Grok, GPT, Codex und GLM.",
 	"command.newTask.title": "Neue Aufgabe",
 	"command.explainCode.title": "Code Erklären",

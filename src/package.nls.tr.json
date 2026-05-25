@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: AI Kodlama Ajanı, Copilot ve Otomatik Tamamlama",
+	"extension.displayName": "Kira Code: Kodlama ve Web Uzaktan Erişim için AI Ajanı",
 	"extension.description": "Kilo Code klasik sürümü temel alınarak geliştirilmiştir. Doğal dilden kod üreten, görevleri otomatikleştiren ve terminal komutlarını çalıştıran açık kaynaklı AI kodlama ajanı. Web uzaktan kontrol, satır içi otomatik tamamlama, tarayıcı otomasyonu, otomatik yeniden düzenleme ve planlama, kodlama ve hata ayıklama için özel modlar içerir. Claude (Anthropic), Gemini, Grok, GPT, Codex ve GLM dahil 500'den fazla AI modelini destekler.",
 	"command.newTask.title": "Yeni Görev",
 	"command.explainCode.title": "Kodu Açıkla",
