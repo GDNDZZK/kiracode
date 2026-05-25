@@ -1,5 +1,41 @@
 # kilo-code
 
+<!-- kilocode_change start -->
+
+## 8.0.0
+
+### Minor Changes
+
+- Add web access feature: enable browser-based access to Kira Code with token authentication, WebSocket communication, and multi-language support
+
+- Improved Web Server settings UI with separate start/stop controls and always-editable port/token fields
+
+### Patch Changes
+
+- Fix SPA crash on WebSocket authentication due to double-wrapped message format
+
+- Fix /app route 404: correct extension ID and include dist-web in VSIX package
+
+- Fix web authentication flow: pass sessionToken from login page to SPA via URL params and localStorage
+
+- Fix codicon font loading, SVG icon 404 errors, and mobile history display in web mode
+
+- Fix Web Server access token not persisting and errors not showing in settings UI
+
+- Fix web server SPA routing (404 on /app) and update login page branding to "Kira Code"
+
+- Fix web SPA icons not displaying and task history instability
+
+- Fix multiple Web SPA issues: message transmission, CSS variable fallbacks, and icon serving
+
+- Fix Web Server settings section showing raw translation keys instead of translated text
+
+- Fix WebSocket authentication failure (code=4001) by using req.url instead of ws.url to extract sessionToken from query parameters
+
+- Integrate `build:web` into the `pnpm build` pipeline so web static assets are built automatically
+
+<!-- kilocode_change end -->
+
 ## 5.16.1
 
 ### Patch Changes

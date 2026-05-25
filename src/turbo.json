@@ -3,7 +3,7 @@
 	"extends": ["//"],
 	"tasks": {
 		"bundle": {
-			"dependsOn": ["^build", "@roo-code/vscode-webview#build"],
+			"dependsOn": ["^build", "@roo-code/vscode-webview#build", "@roo-code/vscode-webview#build:web"], // kilocode_change
 			"outputs": ["dist/**"]
 		},
 		"vsix:clean": {
