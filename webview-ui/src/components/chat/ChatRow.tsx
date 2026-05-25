@@ -1923,7 +1923,7 @@ export const ChatRowContent = ({
 										marginBottom: "-1.5px",
 									}}></span>
 								<span style={{ color: normalColor, fontWeight: "bold" }}>
-									KiloCode wants to create a Github issue:
+									KiraCode wants to create a Github issue:
 								</span>
 							</div>
 							<ReportBugPreview data={message.text || ""} />

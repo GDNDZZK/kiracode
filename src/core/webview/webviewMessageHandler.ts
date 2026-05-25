@@ -114,7 +114,7 @@ import { SessionManager } from "../../shared/kilocode/cli-sessions/core/SessionM
 import { getEffectiveTelemetrySetting } from "../kilocode/wrapper"
 
 async function switchToPreRelease() {
-	await vscode.commands.executeCommand("workbench.extensions.installExtension", "kilocode.kilo-code", {
+	await vscode.commands.executeCommand("workbench.extensions.installExtension", "kiracode.kira-code", {
 		installPreReleaseVersion: true,
 	})
 	vscode.window.showInformationMessage(
@@ -1766,7 +1766,7 @@ export const webviewMessageHandler = async (
 			break
 		// kilocode_change begin
 		case "openGlobalKeybindings":
-			vscode.commands.executeCommand("workbench.action.openGlobalKeybindings", message.text ?? "kilo-code.")
+			vscode.commands.executeCommand("workbench.action.openGlobalKeybindings", message.text ?? "kira-code.")
 			break
 		case "showSystemNotification":
 			const isSystemNotificationsEnabled = getGlobalState("systemNotificationsEnabled") ?? true
@@ -2104,7 +2104,7 @@ export const webviewMessageHandler = async (
 			const validatedSettings = autocompleteServiceSettingsSchema.parse(message.values)
 			await updateGlobalState("ghostServiceSettings", validatedSettings)
 			await provider.postStateToWebview()
-			vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+			vscode.commands.executeCommand("kira-code.autocomplete.reload")
 			break
 		case "snoozeAutocomplete":
 			if (typeof message.value === "number" && message.value > 0) {
@@ -2234,22 +2234,18 @@ export const webviewMessageHandler = async (
 		case "showFeedbackOptions": {
 			const githubIssuesText = t("common:feedback.githubIssues")
 			const discordText = t("common:feedback.discord")
-			const customerSupport = t("common:feedback.customerSupport")
 
 			const answer = await vscode.window.showInformationMessage(
 				t("common:feedback.description"),
 				{ modal: true },
 				githubIssuesText,
 				discordText,
-				customerSupport,
 			)
 
 			if (answer === githubIssuesText) {
-				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/Kilo-Org/kilocode/issues"))
+				await vscode.env.openExternal(vscode.Uri.parse("https://github.com/GDNDZZK/kiracode/issues"))
 			} else if (answer === discordText) {
 				await vscode.env.openExternal(vscode.Uri.parse("https://discord.gg/fxrhCFGhkP"))
-			} else if (answer === customerSupport) {
-				await vscode.env.openExternal(vscode.Uri.parse(getAppUrl("/support")))
 			}
 			break
 		}
@@ -2354,7 +2350,7 @@ export const webviewMessageHandler = async (
 					await provider.providerSettingsManager.saveConfig(message.text, message.apiConfiguration)
 					const listApiConfig = await provider.providerSettingsManager.listConfig()
 					await updateGlobalState("listApiConfigMeta", listApiConfig)
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload") // kilocode_change: Reload autocomplete model when API provider settings change
+					vscode.commands.executeCommand("kira-code.autocomplete.reload") // kilocode_change: Reload autocomplete model when API provider settings change
 				} catch (error) {
 					provider.log(
 						`Error save api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -2417,7 +2413,7 @@ export const webviewMessageHandler = async (
 				const currentApiConfigName = getGlobalState("currentApiConfigName") || "default"
 				const isActiveProfile = message.text === currentApiConfigName
 				await provider.upsertProviderProfile(message.text, configToSave, isActiveProfile) // Activate if it's the current active profile
-				vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+				vscode.commands.executeCommand("kira-code.autocomplete.reload")
 				// kilocode_change end
 
 				// Ensure state is posted to webview after profile update to reflect organization mode changes
@@ -2426,7 +2422,7 @@ export const webviewMessageHandler = async (
 				}
 
 				// kilocode_change: Reload autocomplete model when API provider settings change
-				vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+				vscode.commands.executeCommand("kira-code.autocomplete.reload")
 			}
 			// kilocode_change end: check for kilocodeToken change to remove organizationId and fetch organization modes
 			break
@@ -2453,7 +2449,7 @@ export const webviewMessageHandler = async (
 					await provider.activateProviderProfile({ name: newName })
 
 					// kilocode_change: Reload autocomplete model when API provider settings change
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+					vscode.commands.executeCommand("kira-code.autocomplete.reload")
 				} catch (error) {
 					provider.log(
 						`Error rename api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -2530,7 +2526,7 @@ export const webviewMessageHandler = async (
 					await provider.activateProviderProfile({ name: newName })
 
 					// kilocode_change: Reload autocomplete model when API provider settings change
-					vscode.commands.executeCommand("kilo-code.autocomplete.reload")
+					vscode.commands.executeCommand("kira-code.autocomplete.reload")
 				} catch (error) {
 					provider.log(
 						`Error delete api configuration: ${JSON.stringify(error, Object.getOwnPropertyNames(error), 2)}`,
@@ -4753,6 +4749,29 @@ export const webviewMessageHandler = async (
 			}
 			break
 		}
+		// kilocode_change end
+
+		// kilocode_change start: Web Server settings
+		case "webServerEnabled":
+			await updateGlobalState("webServerEnabled", message.bool ?? false)
+			await provider.postStateToWebview()
+			break
+		case "webServerPort":
+			await updateGlobalState("webServerPort", message.value ?? 22141)
+			await provider.postStateToWebview()
+			break
+		case "webServerAccessToken":
+			await provider.contextProxy.storeSecret("webServerAccessToken", message.text ?? "")
+			await provider.postStateToWebview()
+			break
+		case "startWebServer":
+			await provider.startWebServer()
+			await provider.postStateToWebview()
+			break
+		case "stopWebServer":
+			await provider.stopWebServer()
+			await provider.postStateToWebview()
+			break
 		// kilocode_change end
 
 		default: {

@@ -41,10 +41,11 @@
 		"ui": "واجهة المستخدم",
 		"experimental": "تجريبي",
 		"language": "اللغة",
-		"about": "عن Kilo Code",
+		"about": "عن Kira Code",
 		"autoPurge": "التنظيف التلقائي",
 		"agentBehaviour": "سلوك الوكيل",
-		"autocomplete": "الإكمال التلقائي"
+		"autocomplete": "الإكمال التلقائي",
+		"webServer": "Web Access"
 	},
 	"about": {
 		"bugReport": {
@@ -62,16 +63,25 @@
 		"contact": {
 			"label": "تحتاج تتواصل معنا؟ راسلنا"
 		},
-		"community": "تبي نصائح أو تتسولف مع مستخدمين آخرين؟ انضم لـ <redditLink>reddit.com/r/kilocode</redditLink> أو <discordLink>kilo.ai/discord</discordLink>",
+		"community": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactSupport": "تواصل مع الدعم",
 		"contactSupportDesc": "احصل على مساعدة من فريق دعم العملاء",
 		"joinCommunity": "انضم للمجتمع",
-		"joinCommunityDesc": "تواصل مع مستخدمين آخرين وشارك الأفكار",
+		"joinCommunityDesc": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
 		"contactAndCommunity": "التواصل والمجتمع",
 		"manageSettings": "إدارة الإعدادات",
 		"debugMode": {
 			"label": "تفعيل وضع التصحيح",
 			"description": "فعّل وضع التصحيح لإظهار أزرار إضافية في رأس المهمة لعرض سجل محادثات API ورسائل UI كملفات JSON منسقة مؤقتة."
+		},
+		"basedOn": {
+			"label": "مبني على",
+			"name": "Kilo Code",
+			"description": "Kira Code مبني على الإصدار القديم من Kilo Code. قمنا بعمل fork من الإصدار الكلاسيكي لأننا نفضل فلسفة التصميم الأصلية على الإصدارات الأحدث."
+		},
+		"webRemote": {
+			"label": "التحكم عن بعد عبر الويب",
+			"description": "تحكم ومراقبة وكيل البرمجة الذكي الخاص بك عن بعد عبر متصفح الويب، مما يتيح سير عمل مرن عبر أجهزة متعددة."
 		}
 	},
 	"slashCommands": {
@@ -88,7 +98,7 @@
 		}
 	},
 	"prompts": {
-		"description": "اضبط الموجهات المساعدة لعمليات مثل تحسين الموجه وشرح الكود وإصلاح المشاكل. هذي الموجهات تساعد Kilo Code يقدّم دعم أفضل للمهام المتكررة."
+		"description": "اضبط الموجهات المساعدة لعمليات مثل تحسين الموجه وشرح الكود وإصلاح المشاكل. هذي الموجهات تساعد Kira Code يقدّم دعم أفضل للمهام المتكررة."
 	},
 	"codeIndex": {
 		"title": "فهرسة قاعدة الكود",
@@ -225,18 +235,18 @@
 	},
 	"autoApproval": {
 		"title": "الموافقة التلقائية",
-		"description": "السماح لـ Kilo Code بتنفيذ العمليات تلقائيًا بدون طلب الموافقة. فعّل هذه الإعدادات فقط إذا كنت تثق بالذكاء الاصطناعي تمامًا وتفهم المخاطر الأمنية المرتبطة."
+		"description": "السماح لـ Kira Code بتنفيذ العمليات تلقائيًا بدون طلب الموافقة. فعّل هذه الإعدادات فقط إذا كنت تثق بالذكاء الاصطناعي تمامًا وتفهم المخاطر الأمنية المرتبطة."
 	},
 	"autoApprove": {
-		"description": "خلّ Kilo Code ينفذ العمليات تلقائيًا بدون موافقة. فعّلها فقط إذا كنت واثق من الأمان.",
+		"description": "خلّ Kira Code ينفذ العمليات تلقائيًا بدون موافقة. فعّلها فقط إذا كنت واثق من الأمان.",
 		"toggleShortcut": "تقدر تضبط اختصار لوحة مفاتيح لهذا الإعداد <SettingsLink>في تفضيلات IDE</SettingsLink>.",
 		"enabled": "الموافقة التلقائية مفعلة",
 		"readOnly": {
 			"label": "قراءة",
-			"description": "يسمح لـ Kilo Code يعرض المجلدات ويقرأ الملفات تلقائي.",
+			"description": "يسمح لـ Kira Code يعرض المجلدات ويقرأ الملفات تلقائي.",
 			"outsideWorkspace": {
 				"label": "تشمل الملفات خارج المشروع",
-				"description": "اسمح لـ Kilo Code يقرأ ملفات برّا مساحة العمل بدون موافقة."
+				"description": "اسمح لـ Kira Code يقرأ ملفات برّا مساحة العمل بدون موافقة."
 			}
 		},
 		"write": {
@@ -245,11 +255,11 @@
 			"delayLabel": "تأخير بعد الكتابة لفحص المشاكل",
 			"outsideWorkspace": {
 				"label": "تشمل الملفات خارج المشروع",
-				"description": "اسمح لـ Kilo Code يعدل ملفات خارج مساحة العمل بدون موافقة."
+				"description": "اسمح لـ Kira Code يعدل ملفات خارج مساحة العمل بدون موافقة."
 			},
 			"protected": {
 				"label": "تشمل الملفات المحمية",
-				"description": "اسمح لـ Kilo Code يعدل ملفات إعدادات مصغرة بدون موافقة."
+				"description": "اسمح لـ Kira Code يعدل ملفات إعدادات مصغرة بدون موافقة."
 			}
 		},
 		"browser": {
@@ -603,7 +613,7 @@
 			"apiKeyPlaceholder": "أدخل مفتاح API",
 			"apiKeyInfo": "سيتم إرسال مفتاح API في ترويسة Authorization",
 			"description": "Ollama يشغّل نماذج محليًا. راجع دليلهم.",
-			"warning": "ملاحظة: Kilo Code يعمل أفضل مع Claude. النماذج الضعيفة قد لا تؤدي المطلوب."
+			"warning": "ملاحظة: Kira Code يعمل أفضل مع Claude. النماذج الضعيفة قد لا تؤدي المطلوب."
 		},
 		"unboundApiKey": "مفتاح Unbound",
 		"getUnboundApiKey": "احصل على مفتاح Unbound",
@@ -672,7 +682,7 @@
 		},
 		"consecutiveMistakeLimit": {
 			"label": "حد الأخطاء والتكرار",
-			"description": "عدد الأخطاء المتتالية أو الإجراءات المتكررة قبل إظهار حوار 'Kilo Code يواجه مشكلة'",
+			"description": "عدد الأخطاء المتتالية أو الإجراءات المتكررة قبل إظهار حوار 'Kira Code يواجه مشكلة'",
 			"unlimitedDescription": "إعادة المحاولة غير المحدودة مفعلة (المتابعة التلقائية). لن يظهر الحوار أبداً.",
 			"warning": "⚠️ تعيين القيمة إلى 0 يسمح بإعادة المحاولة غير المحدودة مما قد يستهلك استخدام API كبير"
 		},
@@ -750,7 +760,7 @@
 	"browser": {
 		"enable": {
 			"label": "تفعيل أداة المتصفح",
-			"description": "إذا تم التفعيل، Kilo Code يقدر يستخدم المتصفح مع النماذج الداعمة. <0>تعرف أكثر</0>"
+			"description": "إذا تم التفعيل، Kira Code يقدر يستخدم المتصفح مع النماذج الداعمة. <0>تعرف أكثر</0>"
 		},
 		"viewport": {
 			"label": "حجم العرض",
@@ -855,7 +865,7 @@
 		},
 		"tts": {
 			"label": "تفعيل النص إلى كلام",
-			"description": "يقرأ ردود Kilo Code بصوت عالٍ.",
+			"description": "يقرأ ردود Kira Code بصوت عالٍ.",
 			"speedLabel": "السرعة"
 		}
 	},
@@ -863,7 +873,7 @@
 		"description": "تحكّم بالمعلومات المُدرجة في سياق الذكاء.",
 		"autoCondenseContextPercent": {
 			"label": "نسبة تشغيل التلخيص الذكي",
-			"description": "عند الوصول لهذه النسبة، يختصر Kilo Code السياق."
+			"description": "عند الوصول لهذه النسبة، يختصر Kira Code السياق."
 		},
 		"condensingApiConfiguration": {
 			"label": "إعداد API للتلخيص",
@@ -1022,7 +1032,7 @@
 	},
 	"toolProtocol": {
 		"label": "بروتوكول استدعاء الأدوات",
-		"description": "اختر كيف يتواصل Kilo Codeo مع API. Native يستخدم API لاستدعاء الدوال الخاص بالمزود، بينما XML يستخدم تعريفات الأدوات بـ XML.",
+		"description": "اختر كيف يتواصل Kira Codeo مع API. Native يستخدم API لاستدعاء الدوال الخاص بالمزود، بينما XML يستخدم تعريفات الأدوات بـ XML.",
 		"default": "افتراضي",
 		"xml": "XML",
 		"native": "Native",
@@ -1058,7 +1068,7 @@
 		},
 		"todoList": {
 			"label": "تفعيل أداة قائمة المهام",
-			"description": "عند التفعيل، يمكن لـ Kilo Code إنشاء وإدارة قوائم المهام لتتبع تقدم المهام. هذا يساعد في تنظيم المهام المعقدة إلى خطوات قابلة للإدارة."
+			"description": "عند التفعيل، يمكن لـ Kira Code إنشاء وإدارة قوائم المهام لتتبع تقدم المهام. هذا يساعد في تنظيم المهام المعقدة إلى خطوات قابلة للإدارة."
 		}
 	},
 	"experimental": {
@@ -1092,7 +1102,7 @@
 		},
 		"MORPH_FAST_APPLY": {
 			"name": "تفعيل Fast Apply",
-			"description": "عند التفعيل، يستطيع Kilo Code تعديل الملفات باستخدام Fast Apply مع نماذج متخصصة محسّنة لتعديلات الكود. يتطلب Kilo Gateway Provider أو OpenRouter أو مفتاح Morph API.",
+			"description": "عند التفعيل، يستطيع Kira Code تعديل الملفات باستخدام Fast Apply مع نماذج متخصصة محسّنة لتعديلات الكود. يتطلب Kilo Gateway Provider أو OpenRouter أو مفتاح Morph API.",
 			"apiProvider": "مزود API",
 			"apiProviderList": {
 				"current": "الحالي"
@@ -1110,7 +1120,7 @@
 		},
 		"PREVENT_FOCUS_DISRUPTION": {
 			"name": "التحرير في الخلفية",
-			"description": "منع تعطيل تركيز المحرر عند التفعيل. تحدث تعديلات الملفات في الخلفية دون فتح عروض diff أو سرقة التركيز. يمكنك الاستمرار في العمل دون انقطاع بينما يقوم Kilo Code بإجراء التغييرات. يمكن فتح الملفات دون تركيز لالتقاط التشخيصات أو إبقاؤها مغلقة تماماً."
+			"description": "منع تعطيل تركيز المحرر عند التفعيل. تحدث تعديلات الملفات في الخلفية دون فتح عروض diff أو سرقة التركيز. يمكنك الاستمرار في العمل دون انقطاع بينما يقوم Kira Code بإجراء التغييرات. يمكن فتح الملفات دون تركيز لالتقاط التشخيصات أو إبقاؤها مغلقة تماماً."
 		},
 		"ASSISTANT_MESSAGE_PARSER": {
 			"name": "استخدام محلل الرسائل الجديد",
@@ -1139,7 +1149,7 @@
 		},
 		"RUN_SLASH_COMMAND": {
 			"name": "تمكين أوامر الشرطة المدفوعة بالنموذج",
-			"description": "عند التمكين، يمكن لـ Kilo Code تشغيل أوامر الشرطة الخاصة بك لتنفيذ سير العمل."
+			"description": "عند التمكين، يمكن لـ Kira Code تشغيل أوامر الشرطة الخاصة بك لتنفيذ سير العمل."
 		},
 		"MULTIPLE_NATIVE_TOOL_CALLS": {
 			"name": "استدعاءات أدوات متوازية",
@@ -1155,7 +1165,7 @@
 		},
 		"SPEECH_TO_TEXT": {
 			"name": "التحويل من الكلام إلى النص (STT)",
-			"description": "عند التفعيل، يمكن لـ Kilo Code تحويل صوتك إلى نص باستخدام نموذج Whisper من OpenAI. انقر على زر الميكروفون في المحادثة لبدء التسجيل. يتطلب تثبيت FFmpeg ومزود API OpenAI مُكوَّن."
+			"description": "عند التفعيل، يمكن لـ Kira Code تحويل صوتك إلى نص باستخدام نموذج Whisper من OpenAI. انقر على زر الميكروفون في المحادثة لبدء التسجيل. يتطلب تثبيت FFmpeg ومزود API OpenAI مُكوَّن."
 		},
 		"CUSTOM_TOOLS": {
 			"name": "تفعيل الأدوات المخصصة",
@@ -1171,7 +1181,7 @@
 	},
 	"promptCaching": {
 		"label": "تعطيل تخزين الموجهات",
-		"description": "عند التفعيل، ما يستخدم Kilo Code الكاش لهذا النموذج."
+		"description": "عند التفعيل، ما يستخدم Kira Code الكاش لهذا النموذج."
 	},
 	"temperature": {
 		"useCustom": "استخدام درجة حرارة مخصصة",
@@ -1203,7 +1213,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "الإضافة تجلب تلقائياً أحدث قائمة بالنماذج المتاحة على <serviceLink>{{serviceName}}</serviceLink>. إذا كنت غير متأكد من النموذج الذي تختاره، فإن Kilo Code يعمل بشكل أفضل مع <defaultModelLink>{{defaultModelId}}</defaultModelLink>.",
+		"automaticFetch": "الإضافة تجلب تلقائياً أحدث قائمة بالنماذج المتاحة على <serviceLink>{{serviceName}}</serviceLink>. إذا كنت غير متأكد من النموذج الذي تختاره، فإن Kira Code يعمل بشكل أفضل مع <defaultModelLink>{{defaultModelId}}</defaultModelLink>.",
 		"label": "النموذج",
 		"searchPlaceholder": "بحث",
 		"noMatchFound": "ما فيه تطابق",
@@ -1213,11 +1223,11 @@
 		"allModels": "جميع النماذج"
 	},
 	"footer": {
-		"feedback": "عندك سؤال أو ملاحظة؟ افتح تذكرة في <githubLink>github.com/Kilo-Org/kilocode</githubLink> أو انضم لـ <redditLink>r/kilocode</redditLink> أو <discordLink>kilo.ai/discord</discordLink>.",
-		"support": "للاستفسارات المالية: <supportLink>https://kilo.ai/support</supportLink>",
+		"feedback": "Kira Code مبني على <kiloCodeLink>الإصدار القديم من Kilo Code</kiloCodeLink>. المستودع: <githubLink>github.com/GDNDZZK/kiracode</githubLink>",
+		"support": "قم بزيارة <githubLink>المستودع</githubLink> للحصول على الدعم والمناقشات.",
 		"telemetry": {
 			"label": "السماح بتقارير الأخطاء والاستخدام",
-			"description": "ساعد في تحسين Kilo Code بإرسال بيانات الاستخدام وتقارير الأخطاء. لا يتم إرسال أي كود أو مطالبات أو معلومات شخصية أبداً. راجع سياسة الخصوصية لمزيد من التفاصيل."
+			"description": "ساعد في تحسين Kira Code بإرسال بيانات الاستخدام وتقارير الأخطاء. لا يتم إرسال أي كود أو مطالبات أو معلومات شخصية أبداً. راجع سياسة الخصوصية لمزيد من التفاصيل."
 		},
 		"settings": {
 			"import": "استيراد",

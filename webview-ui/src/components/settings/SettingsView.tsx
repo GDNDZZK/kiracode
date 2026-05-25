@@ -19,6 +19,7 @@ import {
 	FlaskConical,
 	AlertTriangle,
 	Globe,
+	Wifi, // kilocode_change: Web Server icon
 	Info,
 	Bot, // kilocode_change
 	MessageSquare,
@@ -79,6 +80,7 @@ import { TerminalSettings } from "./TerminalSettings"
 import { ExperimentalSettings } from "./ExperimentalSettings"
 import { LanguageSettings } from "./LanguageSettings"
 import { About } from "./About"
+import { WebServerSettings } from "./WebServerSettings" // kilocode_change: Web Server settings
 import { Section } from "./Section"
 import PromptsSettings from "./PromptsSettings"
 import deepEqual from "fast-deep-equal" // kilocode_change
@@ -121,6 +123,7 @@ export const sectionNames = [
 	"ui",
 	"experimental",
 	"language",
+	"webServer", // kilocode_change: Web Server settings
 	"about",
 ] as const
 
@@ -264,6 +267,11 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 		includeCurrentTime,
 		includeCurrentCost,
 		maxGitStatusFiles,
+		// kilocode_change start: Web Server settings
+		webServerPort,
+		webServerAccessToken,
+		webServerStatus, // kilocode_change: Web Server status
+		// kilocode_change end: Web Server settings
 	} = cachedState
 
 	const apiConfiguration = useMemo(() => cachedState.apiConfiguration ?? {}, [cachedState.apiConfiguration])
@@ -647,6 +655,10 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 				value: autoPurgeIncompleteTaskRetentionDays,
 			})
 			// kilocode_change end - Auto-purge settings
+			// kilocode_change start: Web Server settings
+			vscode.postMessage({ type: "webServerPort", value: webServerPort ?? 22141 })
+			vscode.postMessage({ type: "webServerAccessToken", text: webServerAccessToken ?? "" })
+			// kilocode_change end: Web Server settings
 			vscode.postMessage({ type: "debugSetting", bool: cachedState.debug })
 
 			// kilocode_change: After saving, sync cachedState to extensionState without clobbering
@@ -776,6 +788,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 			{ id: "experimental", icon: FlaskConical },
 			{ id: "language", icon: Globe },
 			// { id: "mcp", icon: Server }, // kilocode_change - merged into agentBehaviour
+			{ id: "webServer" as const, icon: Wifi }, // kilocode_change: Web Server settings
 			{ id: "about", icon: Info },
 		],
 		[], // kilocode_change
@@ -1308,6 +1321,17 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>((props, ref)
 						{renderTab === "language" && (
 							<LanguageSettings language={language || "en"} setCachedStateField={setCachedStateField} />
 						)}
+
+						{/* kilocode_change start: Web Server Section */}
+						{activeTab === "webServer" && (
+							<WebServerSettings
+								webServerPort={webServerPort}
+								webServerAccessToken={webServerAccessToken}
+								webServerStatus={webServerStatus}
+								setCachedStateField={setCachedStateField}
+							/>
+						)}
+						{/* kilocode_change end */}
 
 						{/* About Section */}
 						{activeTab === "about" && (

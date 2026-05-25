@@ -51,6 +51,24 @@ export const About = ({
 			</SectionHeader>
 
 			<Section>
+				{/* kilocode_change start - Project info section */}
+				<div className="mb-4">
+					<h3 className="text-vscode-foreground text-sm font-medium mb-2">
+						{t("settings:about.basedOn.label")} {t("settings:about.basedOn.name")}
+					</h3>
+					<p className="text-vscode-descriptionForeground text-sm mb-3">
+						{t("settings:about.basedOn.description")}
+					</p>
+					<div className="flex items-center gap-2 mb-3">
+						<span className="text-vscode-foreground text-sm font-medium">
+							✨ {t("settings:about.webRemote.label")}
+						</span>
+					</div>
+					<p className="text-vscode-descriptionForeground text-sm mb-3">
+						{t("settings:about.webRemote.description")}
+					</p>
+				</div>
+				{/* kilocode_change end - Project info section */}
 				<div style={{ display: isVsCode ? "none" : undefined }}>
 					<VSCodeCheckbox
 						checked={telemetrySetting !== "disabled"}
@@ -74,23 +92,11 @@ export const About = ({
 					<Trans
 						i18nKey="settings:footer.feedback"
 						components={{
-							githubLink: <VSCodeLink href="https://github.com/Kilo-Org/kilocode" />,
-							redditLink: <VSCodeLink href="https://reddit.com/r/kilocode" />,
-							discordLink: <VSCodeLink href="https://kilo.ai/discord" />,
+							githubLink: <VSCodeLink href="https://github.com/GDNDZZK/kiracode" />,
+							kiloCodeLink: <VSCodeLink href="https://github.com/Kilo-Org/kilocode-legacy" />,
 						}}
 					/>
 				</div>
-
-				{/* kilocode_change start */}
-				<div>
-					<Trans
-						i18nKey="settings:footer.support"
-						components={{
-							supportLink: <VSCodeLink href="https://kilo.ai/support" />,
-						}}
-					/>
-				</div>
-				{/* kilocode_change end */}
 
 				<div className="flex flex-wrap items-center gap-2 mt-2">
 					<Button onClick={() => vscode.postMessage({ type: "exportSettings" })} className="w-28">

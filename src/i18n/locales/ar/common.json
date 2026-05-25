@@ -13,8 +13,7 @@
 		"description": "نود نسمع رأيك أو نساعدك إذا واجهت أي مشكلة.",
 		"githubIssues": "أبلغ عن مشكلة في GitHub",
 		"githubDiscussions": "انضم لنقاشات GitHub",
-		"discord": "شارك مجتمعنا في ديسكورد",
-		"customerSupport": "الدعم الفني"
+		"discord": "شارك مجتمعنا في ديسكورد"
 	},
 	"welcome": "ياهلا، {{name}}! عندك {{count}} تنبيه.",
 	"items": {

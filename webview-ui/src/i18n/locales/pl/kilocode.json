@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "Witaj w Kilo Code!",
-		"introText1": "Kilo Code to darmowy, otwartoźródłowy agent kodowania AI.",
+		"greeting": "Witaj w Kira Code!",
+		"introText1": "Kira Code to darmowy, otwartoźródłowy agent kodowania AI.",
 		"introText2": "Współpracuje z najnowszymi modelami AI, takimi jak Claude Opus 4.5, Gemini 3 Pro, GPT-5.2 i ponad 450 innymi.",
 		"introText3": "Stwórz darmowe konto, aby zacząć.",
 		"ctaButton": "Rozpocznij",
@@ -58,7 +58,8 @@
 		"sections": {
 			"mcp": "Serwery MCP",
 			"agentBehaviour": "Zachowanie agenta",
-			"skills": "Umiejętności"
+			"skills": "Umiejętności",
+			"webServer": "Web Access"
 		},
 		"provider": {
 			"account": "Konto Kilo Code",
@@ -70,7 +71,7 @@
 				"title": "Routing dostawców",
 				"managedByOrganization": "Zarządzaj routingiem dostawców na poziomie organizacji",
 				"createOrganization": "Utwórz organizację, aby zarządzać routingiem dostawców",
-				"description": "Kilo Code kieruje żądania do najlepszych dostępnych dostawców dla Twojego modelu. Domyślnie żądania są równoważone obciążeniem między najlepszymi dostawcami, aby zmaksymalizować czas działania. Możesz jednak wybrać konkretnego dostawcę do użycia dla tego modelu.",
+				"description": "Kira Code kieruje żądania do najlepszych dostępnych dostawców dla Twojego modelu. Domyślnie żądania są równoważone obciążeniem między najlepszymi dostawcami, aby zmaksymalizować czas działania. Możesz jednak wybrać konkretnego dostawcę do użycia dla tego modelu.",
 				"sorting": {
 					"default": "Domyślne sortowanie dostawców",
 					"price": "Preferuj dostawców z niższą ceną",
@@ -101,15 +102,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Zezwól na odczyt bardzo dużych plików",
-				"description": "Gdy włączone, Kilo Code będzie wykonywać odczyty bardzo dużych plików lub wyjść MCP, nawet jeśli istnieje duże prawdopodobieństwo przepełnienia okna kontekstu (rozmiar zawartości >80% okna kontekstu)."
+				"description": "Gdy włączone, Kira Code będzie wykonywać odczyty bardzo dużych plików lub wyjść MCP, nawet jeśli istnieje duże prawdopodobieństwo przepełnienia okna kontekstu (rozmiar zawartości >80% okna kontekstu)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Włącz powiadomienia systemowe",
-			"description": "Gdy włączone, Kilo Code będzie wysyłać powiadomienia systemowe o ważnych wydarzeniach, takich jak zakończenie zadania lub błędy.",
+			"description": "Gdy włączone, Kira Code będzie wysyłać powiadomienia systemowe o ważnych wydarzeniach, takich jak zakończenie zadania lub błędy.",
 			"testButton": "Testuj powiadomienie",
-			"testTitle": "Kilo Code",
-			"testMessage": "To jest testowe powiadomienie z Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "To jest testowe powiadomienie z Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -126,6 +127,29 @@
 			"embeddingBatchSizeDescription": "Liczba segmentów kodu grupowanych razem do generowania embeddingów i aktualizacji magazynu wektorów. Wyższe wartości mogą przyspieszyć indeksowanie, ale mogą zwiększyć zużycie pamięci. Niższe wartości zmniejszają zużycie pamięci, ale mogą spowolnić indeksowanie.",
 			"scannerMaxBatchRetriesLabel": "Maksymalna Liczba Ponowień Partii Skanera",
 			"scannerMaxBatchRetriesDescription": "Maksymalna liczba ponowień nieudanej partii podczas skanowania katalogów. Wyższe wartości zwiększają odporność na przejściowe błędy, ale mogą spowolnić indeksowanie, jeśli błędy się utrzymują. Niższe wartości kończą się szybciej niepowodzeniem, ale mogą pominąć zawartość przy tymczasowych problemach."
+		},
+		"webServer": {
+			"title": "Web Server Settings",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"toolCallStyle": {
@@ -137,7 +161,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code chce skondensować Twoją rozmowę",
+			"wantsToCondense": "Kira Code chce skondensować Twoją rozmowę",
 			"condenseConversation": "Skondensuj Rozmowę"
 		},
 		"seeNewChanges": "Pokaż nowe zmiany",
@@ -176,14 +200,14 @@
 			"modes": "Tryby",
 			"skills": "Umiejętności"
 		},
-		"ariaLabel": "Reguły Kilo Code",
+		"ariaLabel": "Reguły Kira Code",
 		"tabs": {
 			"rules": "Reguły",
 			"workflows": "Przepływy Pracy"
 		},
 		"description": {
-			"rules": "Reguły pozwalają dostarczyć Kilo Code instrukcje, których powinien przestrzegać we wszystkich trybach i dla wszystkich promptów. To trwały sposób dołączania kontekstu i preferencji dla wszystkich rozmów w twoim obszarze roboczym lub globalnie.",
-			"workflows": "Przepływy pracy to przygotowany szablon dla rozmowy. Przepływy pracy pozwalają zdefiniować prompty, których często używasz, i mogą zawierać serię kroków, aby poprowadzić Kilo Code przez powtarzalne zadania, takie jak wdrażanie usługi lub przesyłanie PR. Aby wywołać przepływ pracy, wpisz",
+			"rules": "Reguły pozwalają dostarczyć Kira Code instrukcje, których powinien przestrzegać we wszystkich trybach i dla wszystkich promptów. To trwały sposób dołączania kontekstu i preferencji dla wszystkich rozmów w twoim obszarze roboczym lub globalnie.",
+			"workflows": "Przepływy pracy to przygotowany szablon dla rozmowy. Przepływy pracy pozwalają zdefiniować prompty, których często używasz, i mogą zawierać serię kroków, aby poprowadzić Kira Code przez powtarzalne zadania, takie jak wdrażanie usługi lub przesyłanie PR. Aby wywołać przepływ pracy, wpisz",
 			"workflowsInChat": "w czacie."
 		},
 		"sections": {
@@ -255,11 +279,11 @@
 			"keybindingDescription": "Funkcje Autocomplete mogą być wyzwalane przez polecenia. Możesz skonfigurować <DocsLink>Skróty Klawiszowe tutaj</DocsLink>.",
 			"enableAutoTrigger": {
 				"label": "Włącz Autocomplete",
-				"description": "Gdy włączone, Kilo Code automatycznie wyzwoli Autocomplete, gdy przestaniesz pisać. Może to być przydatne do szybkich poprawek i sugestii."
+				"description": "Gdy włączone, Kira Code automatycznie wyzwoli Autocomplete, gdy przestaniesz pisać. Może to być przydatne do szybkich poprawek i sugestii."
 			},
 			"autoTriggerDelay": {
 				"label": "Opóźnienie Automatycznego Wyzwalania",
-				"description": "Opóźnienie w sekundach przed tym, jak Kilo Code wyzwoli Autocomplete po tym, jak przestaniesz pisać. Krótsze opóźnienie oznacza szybsze sugestie, ale może być bardziej zasobożerne."
+				"description": "Opóźnienie w sekundach przed tym, jak Kira Code wyzwoli Autocomplete po tym, jak przestaniesz pisać. Krótsze opóźnienie oznacza szybsze sugestie, ale może być bardziej zasobożerne."
 			},
 			"enableSmartInlineTaskKeybinding": {
 				"label": "Ręczne uzupełnianie ({{keybinding}})",
@@ -271,7 +295,7 @@
 			"provider": "Dostawca",
 			"enableChatAutocomplete": {
 				"label": "Automatyczne uzupełnianie wpisów czatu",
-				"description": "Po włączeniu, Kilo Code będzie sugerować uzupełnienia podczas pisania w oknie czatu. Naciśnij Tab, aby zaakceptować sugestie."
+				"description": "Po włączeniu, Kira Code będzie sugerować uzupełnienia podczas pisania w oknie czatu. Naciśnij Tab, aby zaakceptować sugestie."
 			},
 			"snooze": {
 				"label": "Wstrzymaj Autocomplete",
@@ -294,7 +318,7 @@
 			},
 			"noCredits": {
 				"title": "Brak kredytów na koncie",
-				"description": "Twoje konto Kilo Code nie ma kredytów. Aby korzystać z autouzupełniania, dodaj kredyty do swojego konta.",
+				"description": "Twoje konto Kira Code nie ma kredytów. Aby korzystać z autouzupełniania, dodaj kredyty do swojego konta.",
 				"buyCredits": "Kup kredyty →"
 			}
 		}

@@ -249,6 +249,11 @@ export const globalSettingsSchema = z.object({
 	lastModeExportPath: z.string().optional(),
 	lastModeImportPath: z.string().optional(),
 	appendSystemPrompt: z.string().optional(), // kilocode_change: Custom text to append to system prompt (CLI only)
+	// kilocode_change start: Web Server settings
+	webServerEnabled: z.boolean().optional(),
+	webServerPort: z.number().min(1024).max(65535).optional(),
+	webServerAccessToken: z.string().optional(),
+	// kilocode_change end
 })
 
 export type GlobalSettings = z.infer<typeof globalSettingsSchema>
@@ -322,6 +327,7 @@ export const SECRET_STATE_KEYS = [
 export const GLOBAL_SECRET_KEYS = [
 	"openRouterImageApiKey", // For image generation
 	"kiloCodeImageApiKey",
+	"webServerAccessToken", // kilocode_change: Web Server access token
 ] as const
 
 // Type for the actual secret storage keys

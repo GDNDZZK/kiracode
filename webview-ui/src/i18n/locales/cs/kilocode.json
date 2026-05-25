@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "Vítej v Kilo Code!",
-		"introText1": "Kilo Code je bezplatný open source AI coding agent.",
+		"greeting": "Vítej v Kira Code!",
+		"introText1": "Kira Code je bezplatný open source AI coding agent.",
 		"introText2": "Funguje s nejnovějšími AI modely jako Claude Opus 4.5, Gemini 3 Pro, GPT-5.2 a více než 450 dalšími.",
 		"introText3": "Vytvoř si bezplatný účet a začni.",
 		"ctaButton": "Začít",
@@ -65,7 +65,8 @@
 		"sections": {
 			"mcp": "MCP servery",
 			"agentBehaviour": "Chování agenta",
-			"skills": "Dovednosti"
+			"skills": "Dovednosti",
+			"webServer": "Web Access"
 		},
 		"provider": {
 			"account": "Účet Kilo Code",
@@ -77,7 +78,7 @@
 				"title": "Směrování poskytovatelů",
 				"managedByOrganization": "Spravovat směrování poskytovatelů na úrovni organizace",
 				"createOrganization": "Vytvořit organizaci pro správu směrování poskytovatelů",
-				"description": "Kilo Code směruje požadavky na nejlepší dostupné poskytovatele pro váš model. Ve výchozím nastavení jsou požadavky rozloženy mezi nejlepší poskytovatele, aby se maximalizovala doba provozu. Můžete si však vybrat konkrétního poskytovatele, kterého chcete pro tento model použít.",
+				"description": "Kira Code směruje požadavky na nejlepší dostupné poskytovatele pro váš model. Ve výchozím nastavení jsou požadavky rozloženy mezi nejlepší poskytovatele, aby se maximalizovala doba provozu. Můžete si však vybrat konkrétního poskytovatele, kterého chcete pro tento model použít.",
 				"sorting": {
 					"default": "Výchozí řazení poskytovatelů",
 					"price": "Upřednostnit poskytovatele s nižší cenou",
@@ -108,15 +109,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Povolit čtení velmi velkých souborů",
-				"description": "Když je povoleno, Kilo Code provede čtení velmi velkých souborů nebo výstupů MCP i když existuje vysoká pravděpodobnost přetečení kontextového okna (velikost obsahu >80% kontextového okna)."
+				"description": "Když je povoleno, Kira Code provede čtení velmi velkých souborů nebo výstupů MCP i když existuje vysoká pravděpodobnost přetečení kontextového okna (velikost obsahu >80% kontextového okna)."
 			}
 		},
 		"systemNotifications": {
 			"label": "Povolit systémová oznámení",
-			"description": "Když je povoleno, Kilo Code bude odesílat systémová oznámení pro důležité události jako dokončení úkolu nebo chyby.",
+			"description": "Když je povoleno, Kira Code bude odesílat systémová oznámení pro důležité události jako dokončení úkolu nebo chyby.",
 			"testButton": "Otestovat oznámení",
-			"testTitle": "Kilo Code",
-			"testMessage": "Toto je testovací oznámení z Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "Toto je testovací oznámení z Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -133,11 +134,34 @@
 			"embeddingBatchSizeDescription": "Počet segmentů kódu, které se seskupí pro generování embeddingů a vektové upserty. Vyšší hodnoty mohou zlepšit rychlost indexování, ale mohou zvýšit spotřebu paměti. Nižší hodnoty snižují spotřebu paměti, ale mohou zpomalit indexování.",
 			"scannerMaxBatchRetriesLabel": "Maximální počet opakování dávky skeneru",
 			"scannerMaxBatchRetriesDescription": "Maximální počet pokusů o opakování neúspěšné dávky během skenování adresářů. Vyšší hodnoty zvyšují odolnost vůči přechodným chybám, ale mohou zpomalit indexování, pokud chyby přetrvávají. Nižší hodnoty selhávají rychleji, ale mohou při dočasných problémech přeskočit obsah."
+		},
+		"webServer": {
+			"title": "Web Server Settings",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code chce zkrátit tvou konverzaci",
+			"wantsToCondense": "Kira Code chce zkrátit tvou konverzaci",
 			"condenseConversation": "Zkrátit konverzaci"
 		},
 		"seeNewChanges": "Zobrazit nové změny",
@@ -176,14 +200,14 @@
 			"modes": "Režimy",
 			"skills": "Dovednosti"
 		},
-		"ariaLabel": "Kilo Code Rules",
+		"ariaLabel": "Kira Code Rules",
 		"tabs": {
 			"rules": "Pravidla",
 			"workflows": "Pracovní postupy"
 		},
 		"description": {
-			"rules": "Pravidla ti umožňují poskytnout Kilo Code pokyny, které by měl dodržovat ve všech režimech a pro všechny prompty. Je to trvalý způsob, jak zahrnout kontext a preference pro všechny konverzace ve tvém pracovním prostoru nebo globálně.",
-			"workflows": "Pracovní postupy jsou připravená šablona pro konverzaci. Pracovní postupy ti mohou umožnit definovat prompty, které často používáš, a mohou zahrnovat řadu kroků k vedení Kilo Code přes opakující se úkoly, jako je nasazení služby nebo odeslání PR. Pro vyvolání pracovního postupu napiš",
+			"rules": "Pravidla ti umožňují poskytnout Kira Code pokyny, které by měl dodržovat ve všech režimech a pro všechny prompty. Je to trvalý způsob, jak zahrnout kontext a preference pro všechny konverzace ve tvém pracovním prostoru nebo globálně.",
+			"workflows": "Pracovní postupy jsou připravená šablona pro konverzaci. Pracovní postupy ti mohou umožnit definovat prompty, které často používáš, a mohou zahrnovat řadu kroků k vedení Kira Code přes opakující se úkoly, jako je nasazení služby nebo odeslání PR. Pro vyvolání pracovního postupu napiš",
 			"workflowsInChat": "v chatu."
 		},
 		"sections": {
@@ -298,7 +322,7 @@
 			},
 			"noCredits": {
 				"title": "Na vašem účtu nejsou žádné kredity",
-				"description": "Váš účet Kilo Code nemá žádné kredity. Pro použití automatického dokončování prosím přidejte kredity na svůj účet.",
+				"description": "Váš účet Kira Code nemá žádné kredity. Pro použití automatického dokončování prosím přidejte kredity na svůj účet.",
 				"buyCredits": "Koupit kredity →"
 			},
 			"codeEditorSuggestions": "Návrhy v editoru kódu",

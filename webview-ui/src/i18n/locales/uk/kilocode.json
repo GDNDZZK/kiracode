@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "Ласкаво просимо до Kilo Code!",
-		"introText1": "Kilo Code — це безкоштовний агент кодування AI з відкритим кодом.",
+		"greeting": "Ласкаво просимо до Kira Code!",
+		"introText1": "Kira Code — це безкоштовний агент кодування AI з відкритим кодом.",
 		"introText2": "Працює з найновішими моделями AI, такими як Claude Opus 4.5, Gemini 3 Pro, GPT-5.2 та понад 450 іншими.",
 		"introText3": "Створи безкоштовний акаунт, щоб почати.",
 		"ctaButton": "Почати",
@@ -65,12 +65,13 @@
 		"sections": {
 			"mcp": "MCP сервери",
 			"agentBehaviour": "Поведінка агента",
-			"skills": "Навички"
+			"skills": "Навички",
+			"webServer": "Web Access"
 		},
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "Дозволити дуже великі читання файлів",
-				"description": "Коли увімкнено, Kilo Code виконуватиме дуже великі читання файлів або виводу MCP, навіть якщо існує висока ймовірність переповнення вікна контексту (розмір вмісту >80% вікна контексту)."
+				"description": "Коли увімкнено, Kira Code виконуватиме дуже великі читання файлів або виводу MCP, навіть якщо існує висока ймовірність переповнення вікна контексту (розмір вмісту >80% вікна контексту)."
 			}
 		},
 		"codeIndex": {
@@ -89,7 +90,7 @@
 				"title": "Маршрутизація провайдерів",
 				"managedByOrganization": "Керувати маршрутизацією провайдерів на рівні організації",
 				"createOrganization": "Створити організацію для керування маршрутизацією провайдерів",
-				"description": "Kilo Code направляє запити до найкращих доступних провайдерів для вашої моделі. За замовчуванням запити розподіляються між провідними провайдерами для максимального часу безвідмовної роботи. Однак ви можете вибрати конкретного провайдера для використання з цією моделлю.",
+				"description": "Kira Code направляє запити до найкращих доступних провайдерів для вашої моделі. За замовчуванням запити розподіляються між провідними провайдерами для максимального часу безвідмовної роботи. Однак ви можете вибрати конкретного провайдера для використання з цією моделлю.",
 				"sorting": {
 					"default": "Стандартне сортування провайдерів",
 					"price": "Віддавати перевагу провайдерам з нижчою ціною",
@@ -119,10 +120,10 @@
 		},
 		"systemNotifications": {
 			"label": "Увімкнути системні сповіщення",
-			"description": "Коли увімкнено, Kilo Code надсилатиме системні сповіщення про важливі події, такі як завершення завдання або помилки.",
+			"description": "Коли увімкнено, Kira Code надсилатиме системні сповіщення про важливі події, такі як завершення завдання або помилки.",
 			"testButton": "Тестове сповіщення",
-			"testTitle": "Kilo Code",
-			"testMessage": "Це тестове сповіщення від Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "Це тестове сповіщення від Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -133,6 +134,29 @@
 					"current": "Використати поточну конфігурацію"
 				}
 			}
+		},
+		"webServer": {
+			"title": "Web Server Settings",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"toolCallStyle": {
@@ -144,7 +168,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code хоче стиснути твою розмову",
+			"wantsToCondense": "Kira Code хоче стиснути твою розмову",
 			"condenseConversation": "Стиснути розмову"
 		},
 		"seeNewChanges": "Показати нові зміни",
@@ -183,14 +207,14 @@
 			"modes": "Режими",
 			"skills": "Навички"
 		},
-		"ariaLabel": "Kilo Code Rules",
+		"ariaLabel": "Kira Code Rules",
 		"tabs": {
 			"rules": "Правила",
 			"workflows": "Робочі процеси"
 		},
 		"description": {
-			"rules": "Правила дозволяють тобі надавати Kilo Code інструкції, яких він повинен дотримуватися в усіх режимах і для всіх промптів. Це постійний спосіб включити контекст і налаштування для всіх розмов у твоєму робочому просторі або глобально.",
-			"workflows": "Робочі процеси - це підготовлений шаблон для розмови. Робочі процеси можуть дозволити тобі визначити промпти, які ти часто використовуєш, і можуть включати серію кроків для керування Kilo Code через повторювані завдання, такі як розгортання сервісу або надсилання PR. Щоб викликати робочий процес, введи",
+			"rules": "Правила дозволяють тобі надавати Kira Code інструкції, яких він повинен дотримуватися в усіх режимах і для всіх промптів. Це постійний спосіб включити контекст і налаштування для всіх розмов у твоєму робочому просторі або глобально.",
+			"workflows": "Робочі процеси - це підготовлений шаблон для розмови. Робочі процеси можуть дозволити тобі визначити промпти, які ти часто використовуєш, і можуть включати серію кроків для керування Kira Code через повторювані завдання, такі як розгортання сервісу або надсилання PR. Щоб викликати робочий процес, введи",
 			"workflowsInChat": "в чаті."
 		},
 		"sections": {

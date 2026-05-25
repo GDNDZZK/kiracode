@@ -2,6 +2,25 @@ import type { WebviewApi } from "vscode-webview"
 
 import { MaybeTypedWebviewMessage as WebviewMessage } from "@roo/WebviewMessage" // kilocode_change - using MaybeTypedWebviewMessage
 
+// kilocode_change start
+import type { Transport } from "../transport/types"
+
+/**
+ * Web transport override for use in browser mode.
+ * When set, postMessage will route through this transport
+ * instead of logging to console.
+ */
+let webTransportOverride: Transport | null = null
+
+/**
+ * Set the web transport override for browser mode.
+ * This is called by WebApp when a WebSocket connection is established.
+ */
+export function setWebTransport(transport: Transport | null): void {
+	webTransportOverride = transport
+}
+// kilocode_change end
+
 /**
  * A utility wrapper around the acquireVsCodeApi() function, which enables
  * message passing and state management between the webview and extension
@@ -33,6 +52,9 @@ class VSCodeAPIWrapper {
 	public postMessage(message: WebviewMessage) {
 		if (this.vsCodeApi) {
 			this.vsCodeApi.postMessage(message)
+		} else if (webTransportOverride) {
+			// kilocode_change: Use web transport in browser mode
+			webTransportOverride.postMessage(message)
 		} else {
 			console.log(message)
 		}

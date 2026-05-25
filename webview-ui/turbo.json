@@ -7,6 +7,11 @@
 		},
 		"build:nightly": {
 			"outputs": ["../apps/vscode-nightly/build/webview-ui/**"]
-		}
+		},
+		"build:web": {
+			// kilocode_change
+			"dependsOn": ["^build"],
+			"outputs": ["dist-web/**"]
+		} // kilocode_change end
 	}
 }

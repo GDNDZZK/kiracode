@@ -84,7 +84,7 @@ const KiloLogo = () => {
 		<div className="flex items-center justify-center" style={{ width: "56px", height: "56px", margin: "0 auto" }}>
 			<img
 				src={`${iconsBaseUri}/${iconFile}`}
-				alt="Kilo Code"
+				alt="Kira Code"
 				className="w-full h-full object-contain"
 				style={{ opacity: 0.85 }}
 			/>
@@ -1310,7 +1310,8 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 
 	const handleRowHeightChange = useCallback(
 		(isTaller: boolean) => {
-			if (isAtBottom) {
+			if (isAtBottom && stickyFollowRef.current) {
+				// kilocode_change: add stickyFollowRef check
 				if (isTaller) {
 					scrollToBottomSmooth()
 				} else {
@@ -1329,6 +1330,13 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 		}
 	}, [])
 	useEvent("wheel", handleWheel, window, { passive: true })
+
+	// kilocode_change start: Disable sticky follow on touch move (mobile scroll)
+	const handleTouchMove = useCallback(() => {
+		stickyFollowRef.current = false
+	}, [])
+	useEvent("touchmove", handleTouchMove, window, { passive: true })
+	// kilocode_change end
 
 	// Also disable sticky follow when the chat container is scrolled away from bottom
 	useEffect(() => {
@@ -1568,11 +1576,13 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 	useEffect(() => {
 		window.addEventListener("keydown", handleKeyDown)
 		window.addEventListener("wheel", handleWheel, { passive: true }) // kilocode_change
+		window.addEventListener("touchmove", handleTouchMove, { passive: true }) // kilocode_change: mobile scroll
 		return () => {
 			window.removeEventListener("keydown", handleKeyDown)
 			window.removeEventListener("wheel", handleWheel) // kilocode_change
+			window.removeEventListener("touchmove", handleTouchMove) // kilocode_change: mobile scroll
 		}
-	}, [handleKeyDown, handleWheel]) // kilocode_change
+	}, [handleKeyDown, handleWheel, handleTouchMove]) // kilocode_change
 
 	useImperativeHandle(ref, () => ({
 		acceptInput: () => {

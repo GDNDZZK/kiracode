@@ -13,8 +13,7 @@
 		"description": "Radi by sme počuli tvoju spätnú väzbu alebo ti pomohli s akýmikoľvek problémami, ktoré zažívaš.",
 		"githubIssues": "Nahlásiť problém na GitHube",
 		"githubDiscussions": "Pripojiť sa k diskusiám na GitHube",
-		"discord": "Pripoj sa k našej Discord komunite",
-		"customerSupport": "Zákaznícka podpora"
+		"discord": "Pripoj sa k našej Discord komunite"
 	},
 	"welcome": "Vitaj, {{name}}! Máš {{count}} oznámení.",
 	"items": {

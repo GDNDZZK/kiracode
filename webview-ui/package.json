@@ -5,12 +5,13 @@
 	"scripts": {
 		"lint": "eslint src --ext=ts,tsx --max-warnings=0",
 		"check-types": "tsc",
-		"pretest": "turbo run kilo-code#bundle --cwd ..",
+		"pretest": "turbo run kira-code#bundle --cwd ..",
 		"test": "vitest run",
 		"format": "prettier --write src",
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"build:nightly": "tsc -b && vite build --mode nightly",
+		"build:web": "tsc -b && vite build --config vite.config.web.ts",
 		"preview": "vite preview",
 		"clean": "rimraf ../src/webview-ui ../apps/vscode-nightly/build/webview-ui tsconfig.tsbuildinfo .turbo"
 	},

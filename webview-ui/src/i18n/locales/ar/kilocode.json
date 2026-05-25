@@ -15,8 +15,8 @@
 		}
 	},
 	"welcome": {
-		"greeting": "مرحبًا بك في Kilo Code!",
-		"introText1": "Kilo Code وكيل برمجة مدعوم بالذكاء ومفتوح المصدر ومجاني.",
+		"greeting": "مرحبًا بك في Kira Code!",
+		"introText1": "Kira Code وكيل برمجة مدعوم بالذكاء ومفتوح المصدر ومجاني.",
 		"introText2": "يعمل مع أحدث نماذج الذكاء الاصطناعي مثل Claude Opus 4.5 وGemini 3 Pro وGPT-5.2 وأكثر من 450 نموذج آخر.",
 		"introText3": "أنشئ حسابًا مجانيًا للبدء.",
 		"ctaButton": "ابدأ الآن",
@@ -61,7 +61,8 @@
 		"sections": {
 			"mcp": "خوادم MCP",
 			"agentBehaviour": "سلوك الوكيل",
-			"skills": "المهارات"
+			"skills": "المهارات",
+			"webServer": "Web Access"
 		},
 		"codeIndex": {
 			"embeddingBatchSizeLabel": "حجم دفعة التضمين",
@@ -109,15 +110,15 @@
 		"contextManagement": {
 			"allowVeryLargeReads": {
 				"label": "السماح بقراءة ملفات ضخمة",
-				"description": "إذا تم تفعيله، Kilo Code يقدر يقرأ ملفات ضخمة أو مخرجات MCP حتى لو فيه احتمال يتجاوز حجم السياق (إذا المحتوى تجاوز 80% من حجم السياق)."
+				"description": "إذا تم تفعيله، Kira Code يقدر يقرأ ملفات ضخمة أو مخرجات MCP حتى لو فيه احتمال يتجاوز حجم السياق (إذا المحتوى تجاوز 80% من حجم السياق)."
 			}
 		},
 		"systemNotifications": {
 			"label": "تفعيل إشعارات النظام",
-			"description": "عند التفعيل، سيرسل Kilo Code إشعارات النظام للأحداث المهمة مثل إكمال المهام أو الأخطاء.",
+			"description": "عند التفعيل، سيرسل Kira Code إشعارات النظام للأحداث المهمة مثل إكمال المهام أو الأخطاء.",
 			"testButton": "اختبار الإشعار",
-			"testTitle": "Kilo Code",
-			"testMessage": "هذا إشعار اختباري من Kilo Code."
+			"testTitle": "Kira Code",
+			"testMessage": "هذا إشعار اختباري من Kira Code."
 		},
 		"terminal": {
 			"commandGenerator": {
@@ -128,6 +129,29 @@
 				},
 				"provider": "مزود مولّد أوامر الطرفية"
 			}
+		},
+		"webServer": {
+			"title": "Web Server Settings",
+			"description": "Allow accessing Kira Code from a web browser on your local network.",
+			"enableLabel": "Enable Web Access",
+			"enableDescription": "Start a web server that allows browser-based access to Kira Code.",
+			"statusRunning": "Running on port {{port}}",
+			"statusStopped": "Stopped",
+			"statusError": "Error: {{error}}",
+			"portLabel": "Web Server Port",
+			"portDescription": "The port number for the web server (1024-65535).",
+			"tokenLabel": "Access Token",
+			"tokenPlaceholder": "Enter a secret token for web access authentication",
+			"tokenDescription": "Secret token required for web access authentication. Leave empty to disable authentication.",
+			"showToken": "Show",
+			"hideToken": "Hide",
+			"startServer": "Start Server",
+			"stopServer": "Stop Server",
+			"serverStatus": "Server Status",
+			"running": "Running on port {{port}}",
+			"stopped": "Stopped",
+			"accessUrl": "Access URL",
+			"securityWarning": "Make sure to use this feature only in a trusted network environment."
 		}
 	},
 	"toolCallStyle": {
@@ -139,7 +163,7 @@
 	},
 	"chat": {
 		"condense": {
-			"wantsToCondense": "Kilo Code يقترح تلخيص المحادثة",
+			"wantsToCondense": "Kira Code يقترح تلخيص المحادثة",
 			"condenseConversation": "تلخيص المحادثة"
 		},
 		"seeNewChanges": "عرض التغييرات الجديدة",
@@ -178,13 +202,13 @@
 			"modes": "الأوضاع",
 			"skills": "المهارات"
 		},
-		"ariaLabel": "قواعد Kilo Code",
+		"ariaLabel": "قواعد Kira Code",
 		"tabs": {
 			"rules": "القواعد",
 			"workflows": "سير العمل"
 		},
 		"description": {
-			"rules": "القواعد تتيح لك تحديد تعليمات يلتزم بها Kilo Code في جميع الأنماط والموجهات. وسيلة ثابتة لإضافة تفضيلاتك وسياقك للمحادثات.",
+			"rules": "القواعد تتيح لك تحديد تعليمات يلتزم بها Kira Code في جميع الأنماط والموجهات. وسيلة ثابتة لإضافة تفضيلاتك وسياقك للمحادثات.",
 			"workflows": "سير العمل هو قالب محادثة جاهز. تقدر تستخدمه لتكرار أوامر أو خطوات مثل رفع خدمة أو تقديم PR. لتشغيل سير عمل، اكتب",
 			"workflowsInChat": "في المحادثة."
 		},
@@ -293,7 +317,7 @@
 			},
 			"noCredits": {
 				"title": "لا يوجد رصيد في حسابك",
-				"description": "حساب Kilo Code الخاص بك لا يحتوي على رصيد. لاستخدام الإكمال التلقائي، يرجى إضافة رصيد إلى حسابك.",
+				"description": "حساب Kira Code الخاص بك لا يحتوي على رصيد. لاستخدام الإكمال التلقائي، يرجى إضافة رصيد إلى حسابك.",
 				"buyCredits": "شراء رصيد ←"
 			},
 			"keybindingNotFound": "غير موجود",

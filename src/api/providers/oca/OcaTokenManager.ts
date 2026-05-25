@@ -90,7 +90,7 @@ export class OcaTokenManager {
 		}
 		console.error("OCA: OIDC discovery failed:", lastErr)
 		throw new Error(
-			"Only environment variable based proxy settings is supported. PAC/WPAD files (Ex: http://wpad/wpad.dat) are not supported in kilocode. Remove if any WPAD/PAC reference from your IDE proxy settings, restart the IDE, and try again. (Refer OCA Kilo troubleshooting guide.)",
+			"Only environment variable based proxy settings is supported. PAC/WPAD files (Ex: http://wpad/wpad.dat) are not supported in kiracode. Remove if any WPAD/PAC reference from your IDE proxy settings, restart the IDE, and try again. (Refer OCA Kilo troubleshooting guide.)",
 		)
 	}
 

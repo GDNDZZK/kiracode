@@ -23,6 +23,15 @@
 !webview-ui/build/assets/fonts/*.woff2
 !webview-ui/build/assets/fonts/*.ttf
 
+# kilocode_change: Include dist-web for Web Server static files
+!webview-ui/dist-web/web.html
+!webview-ui/dist-web/assets/*.js
+!webview-ui/dist-web/assets/*.css
+!webview-ui/dist-web/assets/*.map
+!webview-ui/dist-web/assets/*.ttf
+!webview-ui/dist-web/assets/*.woff
+!webview-ui/dist-web/assets/*.woff2
+
 # Include default themes JSON files used in getTheme
 !integrations/theme/default-themes/**
 

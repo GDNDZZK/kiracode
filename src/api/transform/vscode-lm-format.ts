@@ -23,7 +23,7 @@ function asObjectSafe(value: any): object {
 
 		return {}
 	} catch (error) {
-		console.warn("Kilo Code <Language Model API>: Failed to parse object:", error)
+		console.warn("Kira Code <Language Model API>: Failed to parse object:", error)
 		return {}
 	}
 }
@@ -188,7 +188,7 @@ export function extractTextCountFromMessage(message: vscode.LanguageModelChatMes
 					try {
 						text += JSON.stringify(item.input)
 					} catch (error) {
-						console.error("Kilo Code <Language Model API>: Failed to stringify tool call input:", error)
+						console.error("Kira Code <Language Model API>: Failed to stringify tool call input:", error)
 					}
 				}
 			}
