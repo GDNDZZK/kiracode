@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: AIコーディングエージェント、Copilot、および自動補完",
+	"extension.displayName": "Kira Code: コーディングとWebリモートアクセスのためのAIエージェント",
 	"extension.description": "Kilo Code クラシックバージョンをベースに開発。オープンソースの AI コーディングエージェント。自然言語からコードを生成し、タスクを自動化し、ターミナルコマンドを実行します。Web リモートコントロール、インライン自動補完、ブラウザ自動化、自動リファクタリング、プランニング・コーディング・デバッグ用のカスタムモードを備えています。Claude (Anthropic)、Gemini、Grok、GPT、Codex、GLM を含む 500 以上の AI モデルをサポートします。",
 	"views.contextMenu.label": "Kira Code",
 	"views.terminalMenu.label": "Kira Code",

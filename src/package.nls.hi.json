@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: AI कोडिंग एजेंट, Copilot और ऑटोकम्पलीट",
+	"extension.displayName": "Kira Code: कोडिंग और वेब रिमोट एक्सेस के लिए AI एजेंट",
 	"extension.description": "Kilo Code के क्लासिक संस्करण पर आधारित। ओपन सोर्स AI कोडिंग एजेंट जो प्राकृतिक भाषा से कोड जेनरेट करता है, कार्यों को स्वचालित करता है और टर्मिनल कमांड चलाता है। वेब रिमोट कंट्रोल, इनलाइन ऑटोकम्पलीट, ब्राउज़र ऑटोमेशन, स्वचालित रीफैक्टरिंग और प्लानिंग, कोडिंग और डिबगिंग के लिए कस्टम मोड शामिल हैं। Claude (Anthropic), Gemini, Grok, GPT, Codex और GLM सहित 500+ AI मॉडल का समर्थन करता है।",
 	"command.newTask.title": "नया कार्य",
 	"command.explainCode.title": "कोड समझाएं",

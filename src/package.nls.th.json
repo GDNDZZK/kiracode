@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: เอเจนต์เขียนโค้ด AI, Copilot และการเติมข้อความอัตโนมัติ",
+	"extension.displayName": "Kira Code: เอเจนต์ AI สำหรับเขียนโค้ดและการเข้าถึงระยะไกลผ่านเว็บ",
 	"extension.description": "พัฒนาต่อจากเวอร์ชันคลาสสิกของ Kilo Code. เอเจนต์เขียนโค้ด AI แบบ Open Source ที่สร้างโค้ดจากภาษาธรรมชาติ ทำงานอัตโนมัติ และรันคำสั่ง Terminal มีฟีเจอร์ควบคุมระยะไกลผ่านเว็บ, เติมข้อความอัตโนมัติแบบ inline, ระบบอัตโนมัติของเบราว์เซอร์, การ refactor อัตโนมัติ และโหมดที่กำหนดเองสำหรับการวางแผน เขียนโค้ด และดีบัก รองรับโมเดล AI มากกว่า 500 รุ่น รวมถึง Claude (Anthropic), Gemini, Grok, GPT, Codex และ GLM",
 	"views.contextMenu.label": "Kira Code",
 	"views.terminalMenu.label": "Kira Code",

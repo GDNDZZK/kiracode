@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: AI 編碼代理、Copilot 和自動完成",
+	"extension.displayName": "Kira Code: AI 代理程式，用於編碼和 Web 遠端存取",
 	"extension.description": "基於 Kilo Code 經典版本開發。開源 AI 編碼代理，可從自然語言生成程式碼、自動化任務並執行終端命令。新增 Web 遠端控制功能，支援內聯自動補全、瀏覽器自動化、自動重構以及用於規劃、編碼和除錯的自定義模式。支援 500 多種 AI 模型，包括 Claude (Anthropic)、Gemini、Grok、GPT、Codex 和 GLM。",
 	"command.newTask.title": "新建任務",
 	"command.explainCode.title": "解釋程式碼",

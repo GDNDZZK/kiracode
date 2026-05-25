@@ -1,5 +1,5 @@
 {
-	"extension.displayName": "Kira Code: AI Kódovací Agent, Copilot a Automatické Dokončování",
+	"extension.displayName": "Kira Code: AI Agent pro Kódování a Webový Vzdálený Přístup",
 	"extension.description": "Based on the legacy version of Kilo Code. Open Source AI agent pro kódování, který generuje kód z přirozeného jazyka, automatizuje úkoly a spouští příkazy terminálu. Nabízí web remote control, inline automatické dokončování, automatizaci prohlížeče, automatický refaktoring a vlastní režimy pro plánování, kódování a ladění. Podporuje více než 500 AI modelů včetně Claude (Anthropic), Gemini, Grok, GPT, Codex a GLM.",
 	"views.contextMenu.label": "Kira Code",
 	"views.terminalMenu.label": "Kira Code",
