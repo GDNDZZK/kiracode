@@ -493,5 +493,65 @@ describe("MiniMaxHandler", () => {
 			expect(model.cacheWritesPrice).toBe(0.375)
 			expect(model.cacheReadsPrice).toBe(0.03)
 		})
+
+		// kilocode_change start
+		it("should correctly configure MiniMax-M3 model properties", () => {
+			const model = minimaxModels["MiniMax-M3"]
+			expect(model.maxTokens).toBe(131_072)
+			expect(model.contextWindow).toBe(1_000_000)
+			expect(model.supportsImages).toBe(true)
+			expect(model.supportsPromptCache).toBe(true)
+			expect(model.supportsNativeTools).toBe(true)
+			expect(model.defaultToolProtocol).toBe("native")
+			expect(model.preserveReasoning).toBe(true)
+			expect(model.inputPrice).toBe(0.6)
+			expect(model.outputPrice).toBe(2.4)
+			expect(model.cacheWritesPrice).toBe(0.6)
+			expect(model.cacheReadsPrice).toBe(0.12)
+		})
+
+		it("should correctly configure MiniMax-M3-highspeed model properties", () => {
+			const model = minimaxModels["MiniMax-M3-highspeed"]
+			expect(model.maxTokens).toBe(131_072)
+			expect(model.contextWindow).toBe(1_000_000)
+			expect(model.supportsImages).toBe(true)
+			expect(model.supportsPromptCache).toBe(true)
+			expect(model.supportsNativeTools).toBe(true)
+			expect(model.defaultToolProtocol).toBe("native")
+			expect(model.preserveReasoning).toBe(true)
+			expect(model.inputPrice).toBe(0.9)
+			expect(model.outputPrice).toBe(3.6)
+			expect(model.cacheWritesPrice).toBe(0.9)
+			expect(model.cacheReadsPrice).toBe(0.18)
+		})
+
+		it("should return MiniMax-M3 model with correct configuration", () => {
+			const testModelId: MinimaxModelId = "MiniMax-M3"
+			const handlerWithModel = new MiniMaxHandler({
+				apiModelId: testModelId,
+				minimaxApiKey: "test-minimax-api-key",
+			})
+			const model = handlerWithModel.getModel()
+			expect(model.id).toBe(testModelId)
+			expect(model.info).toEqual(minimaxModels[testModelId])
+			expect(model.info.contextWindow).toBe(1_000_000)
+			expect(model.info.maxTokens).toBe(131_072)
+			expect(model.info.supportsImages).toBe(true)
+		})
+
+		it("should return MiniMax-M3-highspeed model with correct configuration", () => {
+			const testModelId: MinimaxModelId = "MiniMax-M3-highspeed"
+			const handlerWithModel = new MiniMaxHandler({
+				apiModelId: testModelId,
+				minimaxApiKey: "test-minimax-api-key",
+			})
+			const model = handlerWithModel.getModel()
+			expect(model.id).toBe(testModelId)
+			expect(model.info).toEqual(minimaxModels[testModelId])
+			expect(model.info.contextWindow).toBe(1_000_000)
+			expect(model.info.maxTokens).toBe(131_072)
+			expect(model.info.supportsImages).toBe(true)
+		})
+		// kilocode_change end
 	})
 })

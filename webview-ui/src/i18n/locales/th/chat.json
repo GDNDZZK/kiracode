@@ -391,7 +391,6 @@
 		"detailsDiscussLinks": "ดูรายละเอียดเพิ่มเติมและพูดคุยใน <discordLink>Discord</discordLink> และ <redditLink>Reddit</redditLink> 🚀",
 		"learnMore": "เรียนรู้เพิ่มเติม",
 		"visitCloudButton": "เยี่ยมชม Roo Code Cloud",
-		"socialLinks": "ติดตามเรา",
 		"stealthModel": {
 			"feature": "<bold>โมเดลแฝงฟรีในเวลาจำกัด</bold> - โมเดลการให้เหตุผลที่รวดเร็วซึ่งเชี่ยวชาญในการเขียนโค้ดแบบ agentic ด้วย context window 262k พร้อมใช้งานผ่าน Roo Code Cloud",
 			"note": "(หมายเหตุ: พรอมต์และผลลัพธ์จะถูกบันทึกโดยผู้สร้างโมเดลเพื่อปรับปรุงโมเดล)",
@@ -422,8 +421,7 @@
 			"specialized": "ขอแนะนำ <bold>Explainer</bold>, <bold>Planner</bold>, และ <bold>Coder</bold> - เอเจนต์คลาวด์เฉพาะทางสามตัวเพื่อยกระดับเวิร์กโฟลว์ของคุณ",
 			"description": "เอเจนต์เหล่านี้ทำงานร่วมกันในคลาวด์และสามารถเรียกใช้งานได้จากเว็บหรือผ่าน Slack",
 			"tryButton": "ลองเอเจนต์คลาวด์"
-		},
-		"careers": "นอกจากนี้ <careersLink>เรากำลังรับสมัครงาน!</careersLink>"
+		}
 	},
 	"reasoning": {
 		"thinking": "กำลังคิด",

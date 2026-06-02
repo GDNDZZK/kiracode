@@ -405,9 +405,7 @@
 			"specialized": "Představujeme <bold>Explainer</bold>, <bold>Planner</bold> a <bold>Coder</bold> - tři specializované cloudové agenty pro vylepšení tvých pracovních postupů.",
 			"description": "Agenti spolupracují v cloudu a lze je spustit z webu nebo přes Slack.",
 			"tryButton": "Vyzkoušet cloudové agenty"
-		},
-		"careers": "Také <careersLink>nabíráme!</careersLink>",
-		"socialLinks": "Připoj se k nám na <xLink>X</xLink>, <discordLink>Discord</discordLink> nebo <redditLink>r/KiraCode</redditLink> 🚀"
+		}
 	},
 	"reasoning": {
 		"thinking": "Přemýšlím",

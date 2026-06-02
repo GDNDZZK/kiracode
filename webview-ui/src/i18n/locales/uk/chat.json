@@ -407,9 +407,7 @@
 			"specialized": "Представляємо <bold>Пояснювача</bold>, <bold>Планувальника</bold> та <bold>Кодера</bold> - трьох спеціалізованих хмарних агентів для покращення твоїх робочих процесів.",
 			"description": "Агенти працюють разом у хмарі та можуть бути активовані з веб-сайту або через Slack.",
 			"tryButton": "Спробувати хмарних агентів"
-		},
-		"careers": "Також, <careersLink>ми наймаємо!</careersLink>",
-		"socialLinks": "Приєднуйся до нас на <xLink>X</xLink>, <discordLink>Discord</discordLink>, або <redditLink>r/RooCode</redditLink> 🚀"
+		}
 	},
 	"reasoning": {
 		"thinking": "Думаю",

@@ -144,6 +144,42 @@ export const minimaxModels = {
 		description:
 			"(high-speed) MiniMax M2.7 builds on M2.5 with improved overall performance for agentic coding tasks and significantly faster response times.",
 	},
+	// kilocode_change start
+	"MiniMax-M3": {
+		maxTokens: 131_072,
+		contextWindow: 1_000_000,
+		supportsImages: true,
+		supportsPromptCache: true,
+		supportsNativeTools: true,
+		defaultToolProtocol: "native",
+		includedTools: ["search_and_replace"],
+		excludedTools: ["apply_diff"],
+		preserveReasoning: true,
+		inputPrice: 0.6,
+		outputPrice: 2.4,
+		cacheWritesPrice: 0.6,
+		cacheReadsPrice: 0.12,
+		description:
+			"MiniMax M3 features 1M context window, native multimodal support (text, image, video), Sparse Attention architecture for efficient long-context processing, and top-tier agentic coding capabilities.",
+	},
+	"MiniMax-M3-highspeed": {
+		maxTokens: 131_072,
+		contextWindow: 1_000_000,
+		supportsImages: true,
+		supportsPromptCache: true,
+		supportsNativeTools: true,
+		defaultToolProtocol: "native",
+		includedTools: ["search_and_replace"],
+		excludedTools: ["apply_diff"],
+		preserveReasoning: true,
+		inputPrice: 0.9,
+		outputPrice: 3.6,
+		cacheWritesPrice: 0.9,
+		cacheReadsPrice: 0.18,
+		description:
+			"(high-speed) MiniMax M3 high-speed variant with the same capabilities as M3 but significantly faster inference speed.",
+	},
+	// kilocode_change end
 } as const satisfies Record<string, ModelInfo>
 
 export const minimaxDefaultModelInfo: ModelInfo = minimaxModels[minimaxDefaultModelId]
