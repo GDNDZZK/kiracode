@@ -359,9 +359,7 @@
 			"specialized": "<bold>Explainer</bold>、<bold>Planner</bold>、<bold>Coder</bold> の 3 つの専門クラウドエージェントを紹介します。ワークフローを強化します。",
 			"description": "エージェントはクラウドで連携して動作し、Web または Slack からトリガーできます。",
 			"tryButton": "クラウドエージェントを試す"
-		},
-		"careers": "また、<careersLink>採用中です！</careersLink>",
-		"socialLinks": "<xLink>X</xLink>、<discordLink>Discord</discordLink>、または<redditLink>r/KiraCode</redditLink>でフォローしてください 🚀"
+		}
 	},
 	"costs": {
 		"totalWithSubtasks": "合計コスト（サブタスク含む）: ${{cost}}",

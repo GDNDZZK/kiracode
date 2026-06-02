@@ -405,7 +405,6 @@
 			"description": "الوكلاء يعملون معاً في السحابة ويمكن تشغيلهم من الويب أو عبر Slack.",
 			"tryButton": "جرّب الوكلاء السحابيين"
 		},
-		"careers": "أيضاً، <careersLink>نحن نوظّف!</careersLink>",
 		"description": "Kira Code {{version}} يجلب ميزات وتحسينات كبيرة بناءً على ملاحظاتكم.",
 		"whatsNew": "الجديد",
 		"feature1": "<bold>إطلاق سوق Kira Code</bold>: السوق صار متاح! اكتشف وثبّت الأنماط و MCPs بسهولة.",
@@ -414,8 +413,7 @@
 		"hideButton": "إخفاء الإعلان",
 		"detailsDiscussLinks": "للتفاصيل والنقاش زرونا في <discordLink>ديسكورد</discordLink> و <redditLink>ريديت</redditLink> 🚀",
 		"learnMore": "اعرف أكثر",
-		"visitCloudButton": "زر Roo Code Cloud",
-		"socialLinks": "تابعنا"
+		"visitCloudButton": "زر Roo Code Cloud"
 	},
 	"reasoning": {
 		"thinking": "يفكّر",
