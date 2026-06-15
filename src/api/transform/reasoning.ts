@@ -1,5 +1,4 @@
 import { BetaThinkingConfigParam } from "@anthropic-ai/sdk/resources/beta"
-import OpenAI from "openai"
 import type { GenerateContentConfig } from "@google/genai"
 
 import type { ModelInfo, ProviderSettings, ReasoningEffortExtended } from "@roo-code/types"
@@ -22,7 +21,14 @@ export type RooReasoningParams = {
 export type AnthropicReasoningParams = BetaThinkingConfigParam | { type: "adaptive" }
 // kilocode_change end
 
-export type OpenAiReasoningParams = { reasoning_effort: OpenAI.Chat.ChatCompletionCreateParams["reasoning_effort"] }
+// kilocode_change start
+export type OpenAiReasoningParams = {
+	reasoning: {
+		effort: ReasoningEffortExtended
+		summary: "auto"
+	}
+}
+// kilocode_change end
 
 // Valid Gemini thinking levels for effort-based reasoning
 const GEMINI_THINKING_LEVELS = ["minimal", "low", "medium", "high"] as const
@@ -130,10 +136,18 @@ export const getOpenAiReasoning = ({
 	if (!shouldUseReasoningEffort({ model, settings })) return undefined
 	if (reasoningEffort === "disable" || !reasoningEffort) return undefined
 
-	// Include "none" | "minimal" | "low" | "medium" | "high" literally
+	// kilocode_change start
+	// Return nested reasoning format: { reasoning: { effort, summary: "auto" } }
+	// This matches the OpenAI Responses API format and is compatible with
+	// reasoning-capable OpenAI-compatible APIs (e.g. GLM).
+	// Supports effort values: xhigh | high | medium | low | minimal | none
 	return {
-		reasoning_effort: reasoningEffort as OpenAI.Chat.ChatCompletionCreateParams["reasoning_effort"],
+		reasoning: {
+			effort: reasoningEffort as ReasoningEffortExtended,
+			summary: "auto",
+		},
 	}
+	// kilocode_change end
 }
 
 export const getGeminiReasoning = ({

@@ -80,7 +80,8 @@ describe("XAIHandler", () => {
 		expect(model.info).toEqual(xaiModels[testModelId])
 	})
 
-	it("should include reasoning_effort parameter for mini models", async () => {
+	// kilocode_change start: reasoning_effort changed to nested reasoning format
+	it("should include reasoning parameter for mini models", async () => {
 		const miniModelHandler = new XAIHandler({
 			apiModelId: "grok-3-mini",
 			reasoningEffort: "high",
@@ -101,15 +102,15 @@ describe("XAIHandler", () => {
 		const messageGenerator = miniModelHandler.createMessage("test prompt", [])
 		await messageGenerator.next() // Start the generator
 
-		// Check that reasoning_effort was included
+		// Check that nested reasoning was included
 		expect(mockCreate).toHaveBeenCalledWith(
 			expect.objectContaining({
-				reasoning_effort: "high",
+				reasoning: { effort: "high", summary: "auto" },
 			}),
 		)
 	})
 
-	it("should not include reasoning_effort parameter for non-mini models", async () => {
+	it("should not include reasoning parameter for non-mini models", async () => {
 		const regularModelHandler = new XAIHandler({
 			apiModelId: "grok-3",
 			reasoningEffort: "high",
@@ -130,11 +131,12 @@ describe("XAIHandler", () => {
 		const messageGenerator = regularModelHandler.createMessage("test prompt", [])
 		await messageGenerator.next() // Start the generator
 
-		// Check call args for reasoning_effort
+		// Check call args for reasoning
 		const calls = mockCreate.mock.calls
 		const lastCall = calls[calls.length - 1][0]
-		expect(lastCall).not.toHaveProperty("reasoning_effort")
+		expect(lastCall).not.toHaveProperty("reasoning")
 	})
+	// kilocode_change end
 
 	it("completePrompt method should return text from OpenAI API", async () => {
 		const expectedResponse = "This is a test response"

@@ -239,6 +239,7 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 				messages: deepseekReasoner
 					? convertToR1Format([{ role: "user", content: systemPrompt }, ...messages])
 					: [systemMessage, ...convertToOpenAiMessages(messages)],
+				...(reasoning && reasoning), // kilocode_change
 				...(metadata?.tools && { tools: this.convertToolsForOpenAI(metadata.tools) }),
 				...(metadata?.tool_choice && { tool_choice: metadata.tool_choice }),
 				...(metadata?.toolProtocol === "native" &&
@@ -314,6 +315,19 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 			...NATIVE_TOOL_DEFAULTS,
 			...(this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults),
 		}
+		// kilocode_change start
+		// For OpenAI Compatible providers, if the user has explicitly set a reasoning effort
+		// and hasn't disabled it, but the model info doesn't declare supportsReasoningEffort,
+		// we treat the model as supporting reasoning effort. This is important for connecting to
+		// reasoning-capable APIs (e.g. GLM) where the user hasn't configured custom model info.
+		if (
+			info.supportsReasoningEffort === undefined &&
+			this.options.enableReasoningEffort !== false &&
+			this.options.reasoningEffort
+		) {
+			info.supportsReasoningEffort = true
+		}
+		// kilocode_change end
 		const params = getModelParams({ format: "openai", modelId: id, model: info, settings: this.options })
 		return { id, info, ...params }
 	}
@@ -321,12 +335,12 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 	async completePrompt(prompt: string): Promise<string> {
 		try {
 			const isAzureAiInference = this._isAzureAiInference(this.options.openAiBaseUrl)
-			const model = this.getModel()
-			const modelInfo = model.info
+			const { id, info: modelInfo, reasoning } = this.getModel() // kilocode_change
 
 			const requestOptions: OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming = {
-				model: model.id,
+				model: id,
 				messages: [{ role: "user", content: prompt }],
+				...(reasoning && reasoning), // kilocode_change
 			}
 
 			// Add max_tokens if needed

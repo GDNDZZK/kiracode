@@ -353,7 +353,8 @@ describe("OpenAiHandler", () => {
 			})
 		})
 
-		it("should include reasoning_effort when reasoning effort is enabled", async () => {
+		// kilocode_change start: reasoning_effort changed to nested reasoning format
+		it("should include reasoning when reasoning effort is enabled", async () => {
 			const reasoningOptions: ApiHandlerOptions = {
 				...mockOptions,
 				enableReasoningEffort: true,
@@ -369,13 +370,13 @@ describe("OpenAiHandler", () => {
 			// Consume the stream to trigger the API call
 			for await (const _chunk of stream) {
 			}
-			// Assert the mockCreate was called with reasoning_effort
+			// Assert the mockCreate was called with nested reasoning format
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning_effort).toBe("high")
+			expect(callArgs.reasoning).toEqual({ effort: "high", summary: "auto" })
 		})
 
-		it("should not include reasoning_effort when reasoning effort is disabled", async () => {
+		it("should not include reasoning when reasoning effort is disabled", async () => {
 			const noReasoningOptions: ApiHandlerOptions = {
 				...mockOptions,
 				enableReasoningEffort: false,
@@ -386,11 +387,53 @@ describe("OpenAiHandler", () => {
 			// Consume the stream to trigger the API call
 			for await (const _chunk of stream) {
 			}
-			// Assert the mockCreate was called without reasoning_effort
+			// Assert the mockCreate was called without reasoning
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning_effort).toBeUndefined()
+			expect(callArgs.reasoning).toBeUndefined()
 		})
+		// kilocode_change end
+
+		// kilocode_change start: test that reasoning is sent when user sets reasoningEffort without supportsReasoningEffort in model info
+		it("should include reasoning when user sets reasoningEffort without supportsReasoningEffort in model info", async () => {
+			// Simulates the real-world scenario: user connects to a reasoning-capable API (e.g. GLM)
+			// via OpenAI Compatible provider, sets reasoningEffort in settings, but doesn't configure
+			// supportsReasoningEffort in custom model info.
+			const compatibleOptions: ApiHandlerOptions = {
+				...mockOptions,
+				reasoningEffort: "xhigh",
+				openAiCustomModelInfo: {
+					contextWindow: 128_000,
+					supportsPromptCache: false,
+					// supportsReasoningEffort is intentionally NOT set
+				},
+			}
+			const compatibleHandler = new OpenAiHandler(compatibleOptions)
+			const stream = compatibleHandler.createMessage(systemPrompt, messages)
+			for await (const _chunk of stream) {
+			}
+			expect(mockCreate).toHaveBeenCalled()
+			const callArgs = mockCreate.mock.calls[0][0]
+			expect(callArgs.reasoning).toEqual({ effort: "xhigh", summary: "auto" })
+		})
+
+		it("should not include reasoning when reasoningEffort is not set and model has no supportsReasoningEffort", async () => {
+			const noEffortOptions: ApiHandlerOptions = {
+				...mockOptions,
+				openAiCustomModelInfo: {
+					contextWindow: 128_000,
+					supportsPromptCache: false,
+				},
+			}
+			const noEffortHandler = new OpenAiHandler(noEffortOptions)
+			const stream = noEffortHandler.createMessage(systemPrompt, messages)
+			for await (const _chunk of stream) {
+			}
+			expect(mockCreate).toHaveBeenCalled()
+			const callArgs = mockCreate.mock.calls[0][0]
+			expect(callArgs.reasoning).toBeUndefined()
+		})
+		// kilocode_change end
 
 		it("should include max_tokens when includeMaxTokens is true", async () => {
 			const optionsWithMaxTokens: ApiHandlerOptions = {
@@ -566,6 +609,23 @@ describe("OpenAiHandler", () => {
 			const result = await handler.completePrompt("Test prompt")
 			expect(result).toBe("")
 		})
+
+		// kilocode_change start: test completePrompt with reasoning
+		it("should include reasoning in completePrompt when reasoning effort is configured", async () => {
+			const reasoningHandler = new OpenAiHandler({
+				...mockOptions,
+				reasoningEffort: "high",
+				openAiCustomModelInfo: {
+					contextWindow: 128_000,
+					supportsPromptCache: false,
+				},
+			})
+			await reasoningHandler.completePrompt("Test prompt")
+			expect(mockCreate).toHaveBeenCalled()
+			const callArgs = mockCreate.mock.calls[0][0]
+			expect(callArgs.reasoning).toEqual({ effort: "high", summary: "auto" })
+		})
+		// kilocode_change end
 	})
 
 	describe("getModel", () => {
