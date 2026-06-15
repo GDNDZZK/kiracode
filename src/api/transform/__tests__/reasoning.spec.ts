@@ -91,6 +91,7 @@ describe("reasoning.ts", () => {
 		it("should return reasoning effort params when model has reasoningEffort property", () => {
 			const modelWithEffort: ModelInfo = {
 				...baseModel,
+				supportsReasoningEffort: true, // kilocode_change
 				reasoningEffort: "medium",
 			}
 
@@ -480,19 +481,22 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(options)
 
-			expect(result).toEqual({ reasoning_effort: "high" })
+			// kilocode_change: nested reasoning format
+			expect(result).toEqual({ reasoning: { effort: "high", summary: "auto" } })
 		})
 
 		it("should return reasoning effort params when model has reasoningEffort property", () => {
 			const modelWithEffort: ModelInfo = {
 				...baseModel,
+				supportsReasoningEffort: true, // kilocode_change
 				reasoningEffort: "medium",
 			}
 
 			const options = { ...baseOptions, model: modelWithEffort }
 			const result = getOpenAiReasoning(options)
 
-			expect(result).toEqual({ reasoning_effort: "medium" })
+			// kilocode_change: nested reasoning format
+			expect(result).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
 		})
 
 		it("should return undefined when model has no reasoning effort capability", () => {
@@ -541,18 +545,91 @@ describe("reasoning.ts", () => {
 			efforts.forEach((effort) => {
 				const modelWithEffort: ModelInfo = {
 					...baseModel,
+					supportsReasoningEffort: true, // kilocode_change
 					reasoningEffort: effort,
 				}
 
 				const options = { ...baseOptions, model: modelWithEffort, reasoningEffort: effort }
 				const result = getOpenAiReasoning(options)
-				expect(result).toEqual({ reasoning_effort: effort })
+				// kilocode_change: nested reasoning format
+				expect(result).toEqual({ reasoning: { effort, summary: "auto" } })
 			})
 		})
+
+		// kilocode_change start
+		it("should handle xhigh reasoning effort value", () => {
+			const modelWithSupported: ModelInfo = {
+				...baseModel,
+				supportsReasoningEffort: true,
+			}
+
+			const settingsWithEffort: ProviderSettings = {
+				reasoningEffort: "xhigh",
+			}
+
+			const options = {
+				...baseOptions,
+				model: modelWithSupported,
+				settings: settingsWithEffort,
+				reasoningEffort: "xhigh" as const,
+			}
+
+			const result = getOpenAiReasoning(options)
+
+			expect(result).toEqual({ reasoning: { effort: "xhigh", summary: "auto" } })
+		})
+
+		it("should return reasoning when OpenAI Compatible provider sets supportsReasoningEffort based on user settings", () => {
+			// Simulates OpenAI Compatible provider flow: openai.ts getModel() detects that the user
+			// has set reasoningEffort and sets supportsReasoningEffort = true before calling getModelParams.
+			// This test verifies getOpenAiReasoning works correctly with that configuration.
+			const model: ModelInfo = {
+				...baseModel,
+				supportsReasoningEffort: true, // Set by openai.ts getModel() when user has reasoningEffort
+			}
+
+			const settingsWithEffort: ProviderSettings = {
+				reasoningEffort: "xhigh",
+			}
+
+			const options = {
+				...baseOptions,
+				model,
+				settings: settingsWithEffort,
+				reasoningEffort: "xhigh" as const,
+			}
+
+			const result = getOpenAiReasoning(options)
+
+			expect(result).toEqual({ reasoning: { effort: "xhigh", summary: "auto" } })
+		})
+
+		it("should return undefined when supportsReasoningEffort is undefined and no model default effort", () => {
+			// When supportsReasoningEffort is undefined and the model has no default reasoningEffort,
+			// getOpenAiReasoning returns undefined. The OpenAI Compatible provider's getModel() method
+			// handles this by setting supportsReasoningEffort = true when the user has set reasoningEffort.
+			const model: ModelInfo = {
+				...baseModel,
+				// supportsReasoningEffort is intentionally undefined
+			}
+
+			const options = {
+				...baseOptions,
+				model,
+				settings: {},
+				reasoningEffort: "medium" as const,
+			}
+
+			const result = getOpenAiReasoning(options)
+
+			expect(result).toBeUndefined()
+		})
+		// kilocode_change end
 
 		it("should not be affected by reasoningBudget parameter", () => {
 			const modelWithEffort: ModelInfo = {
 				...baseModel,
+				supportsReasoningEffort: true, // kilocode_change
 				reasoningEffort: "medium",
 			}
 
@@ -564,7 +641,8 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(optionsWithBudget)
 
-			expect(result).toEqual({ reasoning_effort: "medium" })
+			// kilocode_change: nested reasoning format
+			expect(result).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
 		})
 
 		it("should ignore reasoning budget capabilities for OpenAI", () => {
@@ -943,7 +1021,8 @@ describe("reasoning.ts", () => {
 
 			expect(openRouterResult).toEqual({ effort: "high" })
 			expect(anthropicResult).toBeUndefined()
-			expect(openAiResult).toEqual({ reasoning_effort: "high" })
+			// kilocode_change: nested reasoning format
+			expect(openAiResult).toEqual({ reasoning: { effort: "high", summary: "auto" } })
 		})
 
 		it("should handle model with both reasoning capabilities - budget takes precedence", () => {
@@ -972,7 +1051,8 @@ describe("reasoning.ts", () => {
 			expect(openRouterResult).toEqual({ max_tokens: 1000 })
 			expect(anthropicResult).toEqual({ type: "enabled", budget_tokens: 1000 })
 			// OpenAI should still use effort since it doesn't support budget
-			expect(openAiResult).toEqual({ reasoning_effort: "medium" })
+			// kilocode_change: nested reasoning format
+			expect(openAiResult).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
 		})
 
 		it("should handle empty settings", () => {
@@ -1008,6 +1088,7 @@ describe("reasoning.ts", () => {
 		it("should handle model with reasoningEffort property", () => {
 			const modelWithEffort: ModelInfo = {
 				...baseModel,
+				supportsReasoningEffort: true, // kilocode_change
 				reasoningEffort: "low",
 			}
 
@@ -1023,7 +1104,8 @@ describe("reasoning.ts", () => {
 
 			expect(openRouterResult).toEqual({ effort: "low" })
 			expect(anthropicResult).toBeUndefined()
-			expect(openAiResult).toEqual({ reasoning_effort: "low" })
+			// kilocode_change: nested reasoning format
+			expect(openAiResult).toEqual({ reasoning: { effort: "low", summary: "auto" } })
 		})
 	})
 
@@ -1063,6 +1145,7 @@ describe("reasoning.ts", () => {
 		it("should return correct types for OpenAI reasoning params", () => {
 			const modelWithEffort: ModelInfo = {
 				...baseModel,
+				supportsReasoningEffort: true, // kilocode_change
 				reasoningEffort: "medium",
 			}
 
@@ -1071,7 +1154,8 @@ describe("reasoning.ts", () => {
 
 			expect(result).toBeDefined()
 			if (result) {
-				expect(result).toHaveProperty("reasoning_effort")
+				// kilocode_change: nested reasoning format
+				expect(result).toHaveProperty("reasoning")
 			}
 		})
 	})

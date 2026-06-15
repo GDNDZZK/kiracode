@@ -93,8 +93,8 @@ export const shouldUseReasoningEffort = ({
 		return !!selectedEffort
 	}
 
-	// Not explicitly supported: only allow when the model itself defines a default effort
-	// Ignore settings-only selections when capability is absent/false
+	// Explicitly not supported (false) or undefined: only allow when the model itself defines a default effort
+	// Ignore settings-only selections when capability is explicitly false
 	const modelDefaultEffort = (model as any).reasoningEffort as
 		| "none"
 		| "minimal"
