@@ -8,11 +8,12 @@ import { ZaiApiLine } from "../provider-settings.js"
 // https://docs.z.ai/guides/llm/glm-4.7
 // https://docs.z.ai/guides/llm/glm-5 // kilocode_change
 // https://docs.z.ai/guides/llm/glm-5-turbo // kilocode_change
+// https://docs.z.ai/guides/llm/glm-5.2 // kilocode_change
 // https://docs.z.ai/guides/overview/pricing
 // https://bigmodel.cn/pricing
 
 export type InternationalZAiModelId = keyof typeof internationalZAiModels
-export const internationalZAiDefaultModelId: InternationalZAiModelId = "glm-5" // kilocode_change
+export const internationalZAiDefaultModelId: InternationalZAiModelId = "glm-5.2" // kilocode_change
 export const internationalZAiModels = {
 	"glm-4.5": {
 		maxTokens: 16_384,
@@ -159,6 +160,24 @@ export const internationalZAiModels = {
 		preferredIndex: 1,
 	},
 	// kilocode_change start
+	"glm-5.2": {
+		maxTokens: 131_072,
+		contextWindow: 1_000_000,
+		supportsImages: false,
+		supportsPromptCache: true,
+		supportsNativeTools: true,
+		defaultToolProtocol: "native",
+		supportsReasoningEffort: ["disable", "high", "xhigh"],
+		reasoningEffort: "xhigh",
+		preserveReasoning: true,
+		inputPrice: 0.57,
+		outputPrice: 2.57,
+		cacheWritesPrice: 0,
+		cacheReadsPrice: 0.14,
+		description:
+			"GLM-5.2 is Z.AI's latest flagship model with 1M context, 128K max output, dual thinking modes (High/Max), function calling, and context caching. Max effort recommended for coding.",
+		preferredIndex: 0,
+	},
 	"glm-5": {
 		maxTokens: 131_072,
 		contextWindow: 200_000,
@@ -175,7 +194,7 @@ export const internationalZAiModels = {
 		cacheReadsPrice: 0.2,
 		description:
 			"GLM-5 is Z.AI's flagship text model with 200K context, 128K max output, thinking mode, function calling, and context caching.",
-		preferredIndex: 0,
+		preferredIndex: 1,
 	},
 	"glm-5-turbo": {
 		maxTokens: 131_072,
@@ -243,7 +262,7 @@ export const internationalZAiModels = {
 } as const satisfies Record<string, ModelInfo>
 
 export type MainlandZAiModelId = keyof typeof mainlandZAiModels
-export const mainlandZAiDefaultModelId: MainlandZAiModelId = "glm-5" // kilocode_change
+export const mainlandZAiDefaultModelId: MainlandZAiModelId = "glm-5.2" // kilocode_change
 export const mainlandZAiModels = {
 	"glm-4.5": {
 		maxTokens: 16_384,
@@ -360,6 +379,24 @@ export const mainlandZAiModels = {
 		preferredIndex: 1,
 	},
 	// kilocode_change start
+	"glm-5.2": {
+		maxTokens: 131_072,
+		contextWindow: 1_000_000,
+		supportsImages: false,
+		supportsPromptCache: true,
+		supportsNativeTools: true,
+		defaultToolProtocol: "native",
+		supportsReasoningEffort: ["disable", "high", "xhigh"],
+		reasoningEffort: "xhigh",
+		preserveReasoning: true,
+		inputPrice: 4,
+		outputPrice: 18,
+		cacheWritesPrice: 0,
+		cacheReadsPrice: 1,
+		description:
+			"GLM-5.2 是智谱最新旗舰模型，1M 上下文，128K 最大输出，双思考模式（High/Max），支持函数调用和上下文缓存。推荐编码任务使用 Max 思考力度。",
+		preferredIndex: 0,
+	},
 	"glm-5": {
 		maxTokens: 131_072,
 		contextWindow: 200_000,
@@ -376,7 +413,7 @@ export const mainlandZAiModels = {
 		cacheReadsPrice: 0.14,
 		description:
 			"GLM-5 is Z.AI's flagship text model with 200K context, 128K max output, thinking mode, function calling, and context caching.",
-		preferredIndex: 0,
+		preferredIndex: 1,
 	},
 	"glm-5-turbo": {
 		maxTokens: 131_072,

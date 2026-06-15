@@ -19,7 +19,7 @@ import { BaseOpenAiCompatibleProvider } from "./base-openai-compatible-provider"
 
 // Custom interface for Z.ai params to support thinking mode
 type ZAiChatCompletionParams = OpenAI.Chat.ChatCompletionCreateParamsStreaming & {
-	thinking?: { type: "enabled" | "disabled" }
+	thinking?: { type: "enabled" | "disabled"; budget_tokens?: number }
 }
 
 export class ZAiHandler extends BaseOpenAiCompatibleProvider<string> {
@@ -61,8 +61,11 @@ export class ZAiHandler extends BaseOpenAiCompatibleProvider<string> {
 			// We need to explicitly disable it when reasoning is off.
 			const useReasoning = shouldUseReasoningEffort({ model: info, settings: this.options })
 
+			// Determine the reasoning effort level for GLM-5.2+ models
+			const reasoningEffort = this.options.reasoningEffort ?? info.reasoningEffort
+
 			// Create the stream with our custom thinking parameter
-			return this.createStreamWithThinking(systemPrompt, messages, metadata, useReasoning)
+			return this.createStreamWithThinking(systemPrompt, messages, metadata, useReasoning, reasoningEffort)
 		}
 
 		// For non-thinking models, use the default behavior
@@ -73,12 +76,15 @@ export class ZAiHandler extends BaseOpenAiCompatibleProvider<string> {
 	// kilocode_change start
 	/**
 	 * Creates a stream with explicit thinking control for Z.ai thinking models.
+	 * GLM-5.2+ models support "high" and "max" reasoning effort levels,
+	 * while earlier models (GLM-4.7, GLM-5, GLM-5.1) use "medium".
 	 */
 	private createStreamWithThinking(
 		systemPrompt: string,
 		messages: Anthropic.Messages.MessageParam[],
 		metadata?: ApiHandlerCreateMessageMetadata,
 		useReasoning?: boolean,
+		reasoningEffort?: string,
 	) {
 		const { id: model, info } = this.getModel()
 
@@ -95,6 +101,18 @@ export class ZAiHandler extends BaseOpenAiCompatibleProvider<string> {
 		// Use Z.ai format to preserve reasoning_content and merge post-tool text into tool messages
 		const convertedMessages = convertToZAiFormat(messages, { mergeToolResultText: true })
 
+		// Build thinking parameter based on reasoning effort
+		let thinkingParam: ZAiChatCompletionParams["thinking"]
+		if (!useReasoning) {
+			thinkingParam = { type: "disabled" }
+		} else if (reasoningEffort === "xhigh") {
+			// xhigh effort (GLM-5.2 Max): enable thinking with budget_tokens for deep reasoning
+			thinkingParam = { type: "enabled", budget_tokens: Math.floor((max_tokens ?? 131_072) * 0.8) }
+		} else {
+			// high or medium effort: enable thinking without budget limit
+			thinkingParam = { type: "enabled" }
+		}
+
 		const params: ZAiChatCompletionParams = {
 			model,
 			max_tokens,
@@ -102,8 +120,7 @@ export class ZAiHandler extends BaseOpenAiCompatibleProvider<string> {
 			messages: [{ role: "system", content: systemPrompt }, ...convertedMessages],
 			stream: true,
 			stream_options: { include_usage: true },
-			// Thinking is ON by default, so we explicitly disable when needed.
-			thinking: useReasoning ? { type: "enabled" } : { type: "disabled" },
+			thinking: thinkingParam,
 			...(metadata?.tools && { tools: this.convertToolsForOpenAI(metadata.tools) }),
 			...(metadata?.tool_choice && { tool_choice: metadata.tool_choice }),
 			...(metadata?.toolProtocol === "native" && {
