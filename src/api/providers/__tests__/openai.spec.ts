@@ -112,9 +112,9 @@ describe("OpenAiHandler", () => {
 				apiKey: expect.any(String),
 				defaultHeaders: {
 					"HTTP-Referer": "https://kilocode.ai",
-					"X-Title": "Kilo Code",
+					"X-Title": "Kira Code",
 					"X-KiloCode-Version": Package.version,
-					"User-Agent": `Kilo-Code/${Package.version}`,
+					"User-Agent": `Kira-Code/${Package.version}`,
 				},
 				timeout: expect.any(Number),
 			})
@@ -353,8 +353,8 @@ describe("OpenAiHandler", () => {
 			})
 		})
 
-		// kilocode_change start: reasoning_effort changed to nested reasoning format
-		it("should include reasoning when reasoning effort is enabled", async () => {
+		// kilocode_change start: verify Chat Completions reasoning effort wire format
+		it("should include reasoning_effort when reasoning effort is enabled", async () => {
 			const reasoningOptions: ApiHandlerOptions = {
 				...mockOptions,
 				enableReasoningEffort: true,
@@ -370,13 +370,13 @@ describe("OpenAiHandler", () => {
 			// Consume the stream to trigger the API call
 			for await (const _chunk of stream) {
 			}
-			// Assert the mockCreate was called with nested reasoning format
+			// Assert the Chat Completions API receives its flat reasoning_effort field.
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning).toEqual({ effort: "high", summary: "auto" })
+			expect(callArgs.reasoning_effort).toBe("high")
 		})
 
-		it("should not include reasoning when reasoning effort is disabled", async () => {
+		it("should not include reasoning_effort when reasoning effort is disabled", async () => {
 			const noReasoningOptions: ApiHandlerOptions = {
 				...mockOptions,
 				enableReasoningEffort: false,
@@ -390,12 +390,12 @@ describe("OpenAiHandler", () => {
 			// Assert the mockCreate was called without reasoning
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning).toBeUndefined()
+			expect(callArgs.reasoning_effort).toBeUndefined()
 		})
 		// kilocode_change end
 
-		// kilocode_change start: test that reasoning is sent when user sets reasoningEffort without supportsReasoningEffort in model info
-		it("should include reasoning when user sets reasoningEffort without supportsReasoningEffort in model info", async () => {
+		// kilocode_change start: test that reasoning effort is sent when user sets it without model capability metadata
+		it("should include reasoning_effort when user sets reasoningEffort without supportsReasoningEffort in model info", async () => {
 			// Simulates the real-world scenario: user connects to a reasoning-capable API (e.g. GLM)
 			// via OpenAI Compatible provider, sets reasoningEffort in settings, but doesn't configure
 			// supportsReasoningEffort in custom model info.
@@ -414,10 +414,10 @@ describe("OpenAiHandler", () => {
 			}
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning).toEqual({ effort: "xhigh", summary: "auto" })
+			expect(callArgs.reasoning_effort).toBe("xhigh")
 		})
 
-		it("should not include reasoning when reasoningEffort is not set and model has no supportsReasoningEffort", async () => {
+		it("should not include reasoning_effort when reasoningEffort is not set and model has no supportsReasoningEffort", async () => {
 			const noEffortOptions: ApiHandlerOptions = {
 				...mockOptions,
 				openAiCustomModelInfo: {
@@ -431,7 +431,7 @@ describe("OpenAiHandler", () => {
 			}
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning).toBeUndefined()
+			expect(callArgs.reasoning_effort).toBeUndefined()
 		})
 		// kilocode_change end
 
@@ -610,8 +610,8 @@ describe("OpenAiHandler", () => {
 			expect(result).toBe("")
 		})
 
-		// kilocode_change start: test completePrompt with reasoning
-		it("should include reasoning in completePrompt when reasoning effort is configured", async () => {
+		// kilocode_change start: test completePrompt with reasoning effort
+		it("should include reasoning_effort in completePrompt when reasoning effort is configured", async () => {
 			const reasoningHandler = new OpenAiHandler({
 				...mockOptions,
 				reasoningEffort: "high",
@@ -623,7 +623,7 @@ describe("OpenAiHandler", () => {
 			await reasoningHandler.completePrompt("Test prompt")
 			expect(mockCreate).toHaveBeenCalled()
 			const callArgs = mockCreate.mock.calls[0][0]
-			expect(callArgs.reasoning).toEqual({ effort: "high", summary: "auto" })
+			expect(callArgs.reasoning_effort).toBe("high")
 		})
 		// kilocode_change end
 	})

@@ -48,7 +48,7 @@ export class PoeHandler extends RouterProvider implements SingleCompletionHandle
 	}
 
 	public override async fetchModel() {
-		this.models = await getModels({ provider: this.name, apiKey: this.client.apiKey })
+		this.models = await getModels({ provider: "poe", apiKey: this.client.apiKey ?? undefined }) // kilocode_change
 		return this.getModel()
 	}
 

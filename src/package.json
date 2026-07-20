@@ -3,7 +3,7 @@
 	"displayName": "%extension.displayName%",
 	"description": "%extension.description%",
 	"publisher": "kiracode",
-	"version": "8.0.2",
+	"version": "8.0.3",
 	"icon": "assets/icons/logo-outline-black.png",
 	"galleryBanner": {
 		"color": "#FFFFFF",
@@ -727,7 +727,7 @@
 		"node-ipc": "^12.0.0",
 		"node-machine-id": "^1.1.12",
 		"ollama": "^0.5.17",
-		"openai": "^5.12.2",
+		"openai": "^6.46.0",
 		"openid-client": "^6.8.1",
 		"os-name": "^6.0.0",
 		"p-limit": "^6.2.0",

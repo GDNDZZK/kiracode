@@ -481,8 +481,8 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(options)
 
-			// kilocode_change: nested reasoning format
-			expect(result).toEqual({ reasoning: { effort: "high", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result).toEqual({ reasoning_effort: "high" })
 		})
 
 		it("should return reasoning effort params when model has reasoningEffort property", () => {
@@ -495,8 +495,8 @@ describe("reasoning.ts", () => {
 			const options = { ...baseOptions, model: modelWithEffort }
 			const result = getOpenAiReasoning(options)
 
-			// kilocode_change: nested reasoning format
-			expect(result).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result).toEqual({ reasoning_effort: "medium" })
 		})
 
 		it("should return undefined when model has no reasoning effort capability", () => {
@@ -551,8 +551,8 @@ describe("reasoning.ts", () => {
 
 				const options = { ...baseOptions, model: modelWithEffort, reasoningEffort: effort }
 				const result = getOpenAiReasoning(options)
-				// kilocode_change: nested reasoning format
-				expect(result).toEqual({ reasoning: { effort, summary: "auto" } })
+				// kilocode_change: Chat Completions reasoning format
+				expect(result).toEqual({ reasoning_effort: effort })
 			})
 		})
 
@@ -576,7 +576,7 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(options)
 
-			expect(result).toEqual({ reasoning: { effort: "xhigh", summary: "auto" } })
+			expect(result).toEqual({ reasoning_effort: "xhigh" })
 		})
 
 		it("should return reasoning when OpenAI Compatible provider sets supportsReasoningEffort based on user settings", () => {
@@ -601,7 +601,7 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(options)
 
-			expect(result).toEqual({ reasoning: { effort: "xhigh", summary: "auto" } })
+			expect(result).toEqual({ reasoning_effort: "xhigh" })
 		})
 
 		it("should return undefined when supportsReasoningEffort is undefined and no model default effort", () => {
@@ -641,8 +641,8 @@ describe("reasoning.ts", () => {
 
 			const result = getOpenAiReasoning(optionsWithBudget)
 
-			// kilocode_change: nested reasoning format
-			expect(result).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result).toEqual({ reasoning_effort: "medium" })
 		})
 
 		it("should ignore reasoning budget capabilities for OpenAI", () => {
@@ -1021,8 +1021,8 @@ describe("reasoning.ts", () => {
 
 			expect(openRouterResult).toEqual({ effort: "high" })
 			expect(anthropicResult).toBeUndefined()
-			// kilocode_change: nested reasoning format
-			expect(openAiResult).toEqual({ reasoning: { effort: "high", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(openAiResult).toEqual({ reasoning_effort: "high" })
 		})
 
 		it("should handle model with both reasoning capabilities - budget takes precedence", () => {
@@ -1051,8 +1051,8 @@ describe("reasoning.ts", () => {
 			expect(openRouterResult).toEqual({ max_tokens: 1000 })
 			expect(anthropicResult).toEqual({ type: "enabled", budget_tokens: 1000 })
 			// OpenAI should still use effort since it doesn't support budget
-			// kilocode_change: nested reasoning format
-			expect(openAiResult).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(openAiResult).toEqual({ reasoning_effort: "medium" })
 		})
 
 		it("should handle empty settings", () => {
@@ -1104,8 +1104,8 @@ describe("reasoning.ts", () => {
 
 			expect(openRouterResult).toEqual({ effort: "low" })
 			expect(anthropicResult).toBeUndefined()
-			// kilocode_change: nested reasoning format
-			expect(openAiResult).toEqual({ reasoning: { effort: "low", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(openAiResult).toEqual({ reasoning_effort: "low" })
 		})
 	})
 
@@ -1154,8 +1154,8 @@ describe("reasoning.ts", () => {
 
 			expect(result).toBeDefined()
 			if (result) {
-				// kilocode_change: nested reasoning format
-				expect(result).toHaveProperty("reasoning")
+				// kilocode_change: Chat Completions reasoning format
+				expect(result).toHaveProperty("reasoning_effort")
 			}
 		})
 	})

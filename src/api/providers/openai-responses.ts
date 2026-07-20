@@ -29,6 +29,8 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 	private readonly providerName = "OpenAI Compatible (Responses)"
 	private abortController?: AbortController
 	private readonly toolCallIdentityById = new Map<string, { id: string; name: string }>()
+	private emittedText = false
+	private readonly emittedToolCallIds = new Set<string>()
 	private readonly isAzureAiInferenceEndpoint: boolean
 	private readonly isAzureOpenAiEndpoint: boolean
 
@@ -103,7 +105,7 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 			model: string
 			input: Array<{ role: "user" | "assistant"; content: any[] } | { type: string; content: string }>
 			stream: boolean
-			reasoning?: { summary?: "auto" }
+			reasoning?: { effort?: ModelInfo["reasoningEffort"]; summary?: "auto" }
 			text?: { verbosity: string }
 			temperature?: number
 			max_output_tokens?: number
@@ -121,13 +123,24 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 			parallel_tool_calls?: boolean
 		}
 
+		// kilocode_change start
+		const selectedEffort =
+			this.options.enableReasoningEffort === false || this.options.reasoningEffort === "disable"
+				? undefined
+				: (this.options.reasoningEffort ?? model.info.reasoningEffort)
+		const reasoning = {
+			...(selectedEffort ? { effort: selectedEffort } : {}),
+			...(this.options.enableResponsesReasoningSummary ? { summary: "auto" as const } : {}),
+		}
+		// kilocode_change end
+
 		const body: ResponsesRequestBody = {
 			model: model.id,
 			input: formattedInput,
 			stream: true,
 			store: false,
 			instructions: systemPrompt,
-			...(this.options.enableResponsesReasoningSummary ? { reasoning: { summary: "auto" as const } } : {}),
+			...(Object.keys(reasoning).length > 0 ? { reasoning } : {}), // kilocode_change
 			...(model.info.supportsTemperature !== false &&
 				typeof this.options.modelTemperature === "number" && {
 					temperature: this.options.modelTemperature,
@@ -165,6 +178,10 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 
 	private async *executeRequest(requestBody: any): ApiStream {
 		this.abortController = new AbortController()
+		this.emittedText = false
+		this.emittedToolCallIds.clear()
+		this.toolCallIdentityById.clear()
+		let receivedSdkEvent = false // kilocode_change
 
 		try {
 			const stream = (await (this.client as any).responses.create(requestBody, {
@@ -178,6 +195,7 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 			}
 
 			for await (const event of stream) {
+				receivedSdkEvent = true // kilocode_change
 				if (this.abortController.signal.aborted) {
 					break
 				}
@@ -186,8 +204,15 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 					yield outChunk
 				}
 			}
-		} catch (_sdkErr: any) {
+		} catch (sdkError: any) {
+			// kilocode_change start
+			// Retrying after a stream has started can duplicate output and hides terminal
+			// Responses API errors such as max_output_tokens exhaustion.
+			if (receivedSdkEvent) {
+				throw sdkError
+			}
 			yield* this.makeResponsesApiRequest(requestBody)
+			// kilocode_change end
 		} finally {
 			this.abortController = undefined
 		}
@@ -350,14 +375,17 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 					if (!line.startsWith("data: ")) continue
 					const data = line.slice(6).trim()
 					if (data === "[DONE]") return
+					let event: any // kilocode_change
 					try {
-						const event = JSON.parse(data)
-						for await (const outChunk of this.processEvent(event)) {
-							yield outChunk
-						}
-					} catch (error) {
+						event = JSON.parse(data)
+					} catch {
 						continue
 					}
+					// kilocode_change start
+					for await (const outChunk of this.processEvent(event)) {
+						yield outChunk
+					}
+					// kilocode_change end
 				}
 			}
 		} catch (error) {
@@ -384,6 +412,7 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 		) {
 			const text = event.delta || event.text || event?.content?.[0]?.text
 			if (text) {
+				this.emittedText = true // kilocode_change
 				yield { type: "text", text }
 			}
 			return
@@ -412,6 +441,7 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 				if (eventType === "response.output_item.done") {
 					const args = typeof item.arguments === "string" ? item.arguments : undefined
 					if (item.call_id && item.name && args) {
+						this.emittedToolCallIds.add(item.call_id) // kilocode_change
 						yield {
 							type: "tool_call",
 							id: item.call_id,
@@ -455,8 +485,55 @@ export class OpenAiCompatibleResponsesHandler extends BaseProvider implements Si
 			return
 		}
 
-		if (eventType === "response.completed" || eventType === "response.done") {
-			const usage = event.response?.usage
+		if (
+			eventType === "response.completed" ||
+			eventType === "response.done" ||
+			eventType === "response.incomplete"
+		) {
+			const response = event.response
+
+			// kilocode_change start
+			// Some compatible proxies only populate the final response object and omit
+			// output_text/tool delta events. Recover that output before reporting usage.
+			const shouldRecoverFinalText = !this.emittedText
+			for (const item of response?.output ?? []) {
+				if (item.type === "message" && shouldRecoverFinalText) {
+					for (const content of item.content ?? []) {
+						if (content.type === "output_text" && content.text) {
+							this.emittedText = true
+							yield { type: "text", text: content.text }
+						}
+					}
+				} else if (
+					item.type === "function_call" &&
+					item.call_id &&
+					item.name &&
+					typeof item.arguments === "string" &&
+					!this.emittedToolCallIds.has(item.call_id)
+				) {
+					this.emittedToolCallIds.add(item.call_id)
+					yield {
+						type: "tool_call",
+						id: item.call_id,
+						name: item.name,
+						arguments: item.arguments,
+					}
+				}
+			}
+
+			if (
+				eventType === "response.incomplete" &&
+				response?.incomplete_details?.reason === "max_output_tokens" &&
+				!this.emittedText &&
+				this.emittedToolCallIds.size === 0
+			) {
+				throw new Error(
+					"Responses API exhausted max_output_tokens during reasoning before producing an assistant message. Increase the model max output tokens or disable the max token limit.",
+				)
+			}
+			// kilocode_change end
+
+			const usage = response?.usage
 			if (usage) {
 				yield this.normalizeUsage(usage, this.getModel())
 			}

@@ -75,6 +75,104 @@ describe("OpenAiCompatibleResponsesHandler", () => {
 		expect(handler.getModel().id).toBe("gpt-4o")
 	})
 
+	it("sends the selected reasoning effort using the Responses API format", async () => {
+		const handler = new OpenAiCompatibleResponsesHandler({
+			openAiApiKey: "test-key",
+			openAiModelId: "gpt-5.6-sol",
+			enableReasoningEffort: true,
+			reasoningEffort: "xhigh",
+		} satisfies ApiHandlerOptions)
+
+		mockResponsesCreate.mockResolvedValueOnce({
+			[Symbol.asyncIterator]: async function* () {
+				yield { type: "response.completed", response: { output: [] } }
+			},
+		})
+
+		for await (const _chunk of handler.createMessage(systemPrompt, messages)) {
+		}
+
+		expect(mockResponsesCreate).toHaveBeenCalledWith(
+			expect.objectContaining({ reasoning: { effort: "xhigh", summary: "auto" } }),
+			expect.any(Object),
+		)
+	})
+
+	it("omits reasoning when it is disabled", async () => {
+		const handler = new OpenAiCompatibleResponsesHandler({
+			openAiApiKey: "test-key",
+			openAiModelId: "gpt-5.6-sol",
+			enableReasoningEffort: false,
+			reasoningEffort: "xhigh",
+			enableResponsesReasoningSummary: false,
+		} satisfies ApiHandlerOptions)
+
+		mockResponsesCreate.mockResolvedValueOnce({
+			[Symbol.asyncIterator]: async function* () {
+				yield { type: "response.completed", response: { output: [] } }
+			},
+		})
+
+		for await (const _chunk of handler.createMessage(systemPrompt, messages)) {
+		}
+
+		expect(mockResponsesCreate.mock.calls[0][0].reasoning).toBeUndefined()
+	})
+
+	it("recovers assistant text from the completed response when a proxy omits delta events", async () => {
+		const handler = new OpenAiCompatibleResponsesHandler({
+			openAiApiKey: "test-key",
+			openAiModelId: "gpt-5.6-sol",
+		} satisfies ApiHandlerOptions)
+
+		mockResponsesCreate.mockResolvedValueOnce({
+			[Symbol.asyncIterator]: async function* () {
+				yield {
+					type: "response.completed",
+					response: {
+						output: [
+							{
+								type: "message",
+								content: [{ type: "output_text", text: "Recovered response" }],
+							},
+						],
+					},
+				}
+			},
+		})
+
+		const chunks: any[] = []
+		for await (const chunk of handler.createMessage(systemPrompt, messages)) {
+			chunks.push(chunk)
+		}
+
+		expect(chunks).toContainEqual({ type: "text", text: "Recovered response" })
+	})
+
+	it("reports max output token exhaustion instead of an empty assistant response", async () => {
+		const handler = new OpenAiCompatibleResponsesHandler({
+			openAiApiKey: "test-key",
+			openAiModelId: "gpt-5.6-sol",
+		} satisfies ApiHandlerOptions)
+
+		mockResponsesCreate.mockResolvedValueOnce({
+			[Symbol.asyncIterator]: async function* () {
+				yield {
+					type: "response.incomplete",
+					response: {
+						output: [{ type: "reasoning", summary: [] }],
+						incomplete_details: { reason: "max_output_tokens" },
+					},
+				}
+			},
+		})
+
+		await expect(async () => {
+			for await (const _chunk of handler.createMessage(systemPrompt, messages)) {
+			}
+		}).rejects.toThrow("exhausted max_output_tokens during reasoning")
+	})
+
 	it("streams responses via fetch fallback", async () => {
 		const handler = new OpenAiCompatibleResponsesHandler({
 			openAiApiKey: "test-key",
