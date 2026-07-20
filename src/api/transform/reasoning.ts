@@ -1,5 +1,6 @@
 import { BetaThinkingConfigParam } from "@anthropic-ai/sdk/resources/beta"
 import type { GenerateContentConfig } from "@google/genai"
+import type OpenAI from "openai" // kilocode_change
 
 import type { ModelInfo, ProviderSettings, ReasoningEffortExtended } from "@roo-code/types"
 
@@ -23,10 +24,7 @@ export type AnthropicReasoningParams = BetaThinkingConfigParam | { type: "adapti
 
 // kilocode_change start
 export type OpenAiReasoningParams = {
-	reasoning: {
-		effort: ReasoningEffortExtended
-		summary: "auto"
-	}
+	reasoning_effort: OpenAI.Chat.ChatCompletionCreateParams["reasoning_effort"]
 }
 // kilocode_change end
 
@@ -137,15 +135,11 @@ export const getOpenAiReasoning = ({
 	if (reasoningEffort === "disable" || !reasoningEffort) return undefined
 
 	// kilocode_change start
-	// Return nested reasoning format: { reasoning: { effort, summary: "auto" } }
-	// This matches the OpenAI Responses API format and is compatible with
-	// reasoning-capable OpenAI-compatible APIs (e.g. GLM).
-	// Supports effort values: xhigh | high | medium | low | minimal | none
+	// This provider uses Chat Completions, whose wire format is the flat
+	// `reasoning_effort` field. The nested `reasoning` object belongs to the
+	// Responses API and is ignored or rejected by compatible chat endpoints.
 	return {
-		reasoning: {
-			effort: reasoningEffort as ReasoningEffortExtended,
-			summary: "auto",
-		},
+		reasoning_effort: reasoningEffort as OpenAI.Chat.ChatCompletionCreateParams["reasoning_effort"],
 	}
 	// kilocode_change end
 }

@@ -80,7 +80,7 @@ describe("XAIHandler", () => {
 		expect(model.info).toEqual(xaiModels[testModelId])
 	})
 
-	// kilocode_change start: reasoning_effort changed to nested reasoning format
+	// kilocode_change start: Chat Completions reasoning effort format
 	it("should include reasoning parameter for mini models", async () => {
 		const miniModelHandler = new XAIHandler({
 			apiModelId: "grok-3-mini",
@@ -105,7 +105,7 @@ describe("XAIHandler", () => {
 		// Check that nested reasoning was included
 		expect(mockCreate).toHaveBeenCalledWith(
 			expect.objectContaining({
-				reasoning: { effort: "high", summary: "auto" },
+				reasoning_effort: "high",
 			}),
 		)
 	})

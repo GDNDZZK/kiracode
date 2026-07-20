@@ -34,7 +34,11 @@ export class DeepInfraHandler extends RouterProvider implements SingleCompletion
 	}
 
 	public override async fetchModel() {
-		this.models = await getModels({ provider: this.name, apiKey: this.client.apiKey, baseUrl: this.client.baseURL })
+		this.models = await getModels({
+			provider: "deepinfra",
+			apiKey: this.client.apiKey ?? undefined, // kilocode_change
+			baseUrl: this.client.baseURL ?? undefined, // kilocode_change
+		})
 		return this.getModel()
 	}
 

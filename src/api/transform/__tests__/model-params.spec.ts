@@ -507,8 +507,8 @@ describe("getModelParams", () => {
 			expect(result.reasoningEffort).toBe("medium")
 			expect(result.reasoningBudget).toBeUndefined()
 			expect(result.temperature).toBe(0) // Not forced to 1.0 for reasoning effort models
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "medium" })
 		})
 
 		it("should handle supportsReasoningEffort with settings reasoningEffort", () => {
@@ -524,8 +524,8 @@ describe("getModelParams", () => {
 			})
 
 			expect(result.reasoningEffort).toBe("high")
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "high", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "high" })
 		})
 
 		it("should prefer settings reasoningEffort over model reasoningEffort", () => {
@@ -542,8 +542,8 @@ describe("getModelParams", () => {
 			})
 
 			expect(result.reasoningEffort).toBe("high")
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "high", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "high" })
 		})
 
 		it("should not use reasoning effort when supportsReasoningEffort is true but no effort is specified", () => {
@@ -592,8 +592,8 @@ describe("getModelParams", () => {
 			})
 
 			expect(result.reasoningEffort).toBe("minimal")
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "minimal", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "minimal" })
 		})
 
 		it("should include 'none' effort for openai format", () => {
@@ -610,8 +610,8 @@ describe("getModelParams", () => {
 			})
 
 			expect(result.reasoningEffort).toBe("none")
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "none", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "none" })
 		})
 
 		it("should omit reasoning for 'disable' selection", () => {
@@ -836,8 +836,8 @@ describe("getModelParams", () => {
 				})
 
 				expect(result.reasoningEffort).toBe(effort)
-				// kilocode_change: nested reasoning format
-				expect(result.reasoning).toEqual({ reasoning: { effort: effort, summary: "auto" } })
+				// kilocode_change: Chat Completions reasoning format
+				expect(result.reasoning).toEqual({ reasoning_effort: effort })
 			})
 		})
 
@@ -883,8 +883,8 @@ describe("getModelParams", () => {
 				model,
 			})
 
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "medium", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "medium" })
 		})
 
 		it("should return correct reasoning format for openrouter with reasoning effort", () => {
@@ -1012,8 +1012,8 @@ describe("getModelParams", () => {
 
 			expect(result.reasoningEffort).toBe("high")
 			expect(result.verbosity).toBe("low")
-			// kilocode_change: nested reasoning format
-			expect(result.reasoning).toEqual({ reasoning: { effort: "high", summary: "auto" } })
+			// kilocode_change: Chat Completions reasoning format
+			expect(result.reasoning).toEqual({ reasoning_effort: "high" })
 		})
 
 		it("should include verbosity with reasoning budget models", () => {
